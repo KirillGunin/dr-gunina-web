@@ -1,0 +1,150 @@
+@use 'primeicons/primeicons.css';
+@use "./reset.scss";
+
+//PrimeVue
+@use "./primevue/p-popover";
+@use "./primevue/p-card";
+
+//Pages
+@use "./pages/page-home";
+
+//Components
+@use "./components/header";
+@use "./components/button";
+@use "./components/card-service";
+@use "./components/footer";
+
+// Popover
+@use "./components/popover-locale.scss";
+
+//Modals
+@use "./components/modals/modal-service";
+
+/* Light */
+@font-face {
+    font-family: 'Inter';
+    src:
+            url('/fonts/Inter-ExtraLight.woff2') format('woff2'),
+            url('/fonts/Inter-ExtraLight.woff') format('woff');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Light */
+@font-face {
+    font-family: 'Inter';
+    src:
+            url('/fonts/Inter-Light.woff2') format('woff2'),
+            url('/fonts/Inter-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Regular */
+@font-face {
+    font-family: 'Inter';
+    src:
+            url('/fonts/Inter-Regular.woff2') format('woff2'),
+            url('/fonts/Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium */
+@font-face {
+    font-family: 'Inter';
+    src:
+            url('/fonts/Inter-Medium.woff2') format('woff2'),
+            url('/fonts/Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SemiBold */
+@font-face {
+    font-family: 'Inter';
+    src:
+            url('/fonts/Inter-SemiBold.woff2') format('woff2'),
+            url('/fonts/Inter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Bold */
+@font-face {
+    font-family: 'Inter';
+    src:
+            url('/fonts/Inter-Bold.woff2') format('woff2'),
+            url('/fonts/Inter-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+
+    //spacing
+    --spacer-xs: 8px;
+    --spacer-sm: 12px;
+    --spacer-md: 16px;
+    --spacer-lg: 24px;
+    --spacer-xl: 32px;
+    --spacer-2xl: 48px;
+
+    --link-color: var(--p-salmon-300);
+}
+
+.container {
+    max-width: 92rem;
+    width: 100%;
+    padding: 0 28px;
+    margin: 0 auto;
+}
+
+:root {
+    --body-bg: var(--p-surface-50);
+
+    //text
+    --text-color: var(--p-surface-950);
+
+    //header
+    --header-bg: var(--p-surface-50);
+    --header-color: var(--p-green-500);
+    --header-border: var(--p-amber-50);
+    --header-outline-color: var(--p-green-500);
+
+    //shadow
+    --shadow-strong:
+            0 3px 1px -2px rgba(0, 0, 0, 0.2),
+            0 2px 2px 0 rgba(0, 0, 0, 0.14),
+            0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+    --shadow-soft:
+            0 4px 6px -2px rgba(134, 133, 131, 0.3),
+            0 2px 4px 0 rgba(134, 133, 131, 0.2),
+            0 1px 8px 0 rgba(134, 133, 131, 0.15);
+}
+
+:root[class="dark-mode"] {
+    --body-bg: var(--p-surface-800);
+
+    //text
+    --text-color: var(--p-surface-50);
+
+    //header
+    --header-bg: var(--p-surface-800);
+    --header-color: var(--p-neutral-300);
+    --header-outline-color: var(--p-amber-50);
+    --header-shadow:
+            0 3px 1px -2px rgb(212 212 212 / 0.2),
+            0 2px 2px 0  rgb(212 212 212 / 0.14),
+            0 1px 5px 0  rgb(212 212 212 / 0.12);
+}

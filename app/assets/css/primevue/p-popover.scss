@@ -1,0 +1,7 @@
+.p-popover {
+    box-shadow: var(--shadow-strong);
+
+    & .p-popover-content {
+        padding: 4px;
+    }
+}

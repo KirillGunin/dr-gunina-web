@@ -1,0 +1,31 @@
+.p-card {
+    box-shadow: var(--shadow-soft);
+
+    & .p-card-header {
+        height: 360px;
+
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .p-card-body {
+        gap: 12px;
+        height: 100%;
+    }
+
+    .p-card-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+        font-weight: 300;
+        line-height: 1.5;
+        font-size: 16px;
+    }
+
+    .p-card-footer {
+        margin-top: auto;
+    }
+}

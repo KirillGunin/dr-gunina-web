@@ -1,0 +1,49 @@
+.modal-service {
+    &__container {
+        display: flex;
+        gap: 32px;
+        color: var(--text-color);
+    }
+
+    &__image {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 450px;
+        height: 450px;
+
+        & img {
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__title {
+        font-size: 22px;
+        font-weight: 600;
+        margin: var(--spacer-md) 0;
+    }
+
+    &__price {
+        display: block;
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: var(--spacer-lg);
+    }
+
+    &__details {
+        margin-bottom: var(--spacer-2xl);
+    }
+
+    &__detail {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 4px;
+
+        & .svg-icon {
+            width: 5px;
+            height: 5px;
+            margin-right: 4px;
+        }
+    }
+}

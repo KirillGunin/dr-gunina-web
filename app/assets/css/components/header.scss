@@ -1,0 +1,49 @@
+.header {
+    background-color: var(--header-bg);
+    padding: 16px 0;
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: 100%;
+        max-width: 92rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__menu {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+
+        svg {
+            color: var(--header-color);
+            stroke-width: 2.5;
+            width: 100%;
+            max-width: 200px;
+            height: 100%;
+            max-height: 100px;
+        }
+    }
+
+    &__socials {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+
+        & .button {
+            width: 40px;
+            height: 40px;
+            padding: 8px;
+
+            & svg {
+                color: var(--header-color);
+                stroke-width: 2.5;
+            }
+        }
+    }
+}

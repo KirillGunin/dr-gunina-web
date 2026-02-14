@@ -1,0 +1,13 @@
+{
+    "header": {
+        "about": "Sobre",
+        "services": "Servicios",
+        "contacts": "Contactos"
+    },
+    "pages": {
+        "home": {
+            "hook-text": "¿Buscando respuestas sobre la salud de tu hijo?",
+            "about": "Sobre"
+        }
+    }
+}

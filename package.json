@@ -1,0 +1,31 @@
+{
+  "name": "dr-gunina-web",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxtjs/i18n": "^10.2.1",
+    "@primeuix/themes": "^2.0.2",
+    "nuxt": "^4.2.2",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.5.4",
+    "vue": "^3.5.26",
+    "vue-router": "^4.6.4"
+  },
+  "devDependencies": {
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@primevue/nuxt-module": "^4.5.4",
+    "eslint": "^10.0.0",
+    "nuxt-svg-sprite-icon": "^2.0.4",
+    "prettier": "^3.8.1",
+    "sass": "^1.97.2",
+    "typescript": "^5.9.3",
+    "vue-tsc": "^3.2.4"
+  }
+}

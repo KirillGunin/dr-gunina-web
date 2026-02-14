@@ -1,0 +1,108 @@
+<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+    <path
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M27.8534,35.4444h.1182a.5591.5591,0,0,0,.2329-.0456,1.3052,1.3052,0,0,0,.6929-1.3109c-.2329-.8637.6917-2.26,1.5086-3.1588a11.9181,11.9181,0,0,0,4.5551-9.2681A11.0178,11.0178,0,0,0,12.9255,21.66a11.8754,11.8754,0,0,0,4.5421,9.2692.0115.0115,0,0,0,.0117.0117c.42.4658,1.6374,1.9077,1.5566,3.09a1.6948,1.6948,0,0,0,.83,1.3693.631.631,0,0,0,.165.048v5.1636a.799.799,0,0,0,.7959.8064H20.85a3.3362,3.3362,0,0,0,6.183,0h.0246a.8.8,0,0,0,.7958-.8064Z"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="19.2063"
+        y1="37.4949"
+        x2="28.6732"
+        y2="36.4949"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="19.2063"
+        y1="40.9649"
+        x2="28.6732"
+        y2="39.9649"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="24.025"
+        y1="4.5"
+        x2="24.0172"
+        y2="8.8641"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="11.7115"
+        y1="9.5298"
+        x2="14.792"
+        y2="12.6212"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="36.2885"
+        y1="9.6503"
+        x2="33.1971"
+        y2="12.7307"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="6.4"
+        y1="22"
+        x2="11"
+        y2="22"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="36.8"
+        y1="22"
+        x2="41.4"
+        y2="22"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="11.6"
+        y1="34.3"
+        x2="14.8"
+        y2="31.2"
+    />
+
+    <line
+        fill="none"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        x1="36.4"
+        y1="34.3"
+        x2="33.2"
+        y2="31.2"
+    />
+</svg>

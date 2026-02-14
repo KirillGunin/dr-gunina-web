@@ -1,0 +1,31 @@
+.card-service {
+    width: 22.5rem;
+    min-width: 22.5rem;
+
+    //анимация
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.7s ease;
+
+    &__controls {
+        display: flex;
+        gap: 8px;
+    }
+
+    &__price {
+        font-weight: 500;
+        margin-top: 6px;
+    }
+
+    //анимация
+    &.zoom-in {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    //анимация
+    .zoom-out {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+}
