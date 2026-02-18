@@ -21,6 +21,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-module": "^4.1.0",
     "@primevue/nuxt-module": "^4.5.4",
+    "@yandex/ymaps3-types": "^1.0.18650382",
     "eslint": "^10.0.0",
     "nuxt-svg-sprite-icon": "^2.0.4",
     "prettier": "^3.8.1",
