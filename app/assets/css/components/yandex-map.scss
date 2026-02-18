@@ -1,0 +1,25 @@
+.yandex-map {
+    min-width: calc(50% - 0.5rem);
+    width: 100%;
+    min-height: 350px;
+    height: auto;
+
+    & .yandex-marker {
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        user-select: none;
+
+        &::before {
+            content: url("./../../svg/marker.svg");
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+

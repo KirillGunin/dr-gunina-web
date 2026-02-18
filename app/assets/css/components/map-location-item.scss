@@ -1,0 +1,57 @@
+.map-location-items {
+    display: flex;
+    flex-direction: column;
+
+    &__location {
+        display: flex;
+        flex-direction: column;
+        padding: var(--spacer-md);
+        gap: var(--spacer-xs);
+        background: var(--body-bg);
+        width: 400px;
+    }
+
+    &__location-title {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    &__location-address span {
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 13px;
+        color: var(--p-neutral-300);
+    }
+
+    & .pi {
+        font-size: 20px;
+        margin-right: 4px;
+        color: var(--p-neutral-400);
+    }
+
+    & .pi-phone,
+    & .pi-globe {
+        font-size: 18px;
+    }
+
+    &__location-contacts,
+    &__location-website-content,
+    &__location-phones-content {
+        display: flex;
+    }
+
+    &__location-website-content {
+        margin-left: auto;
+    }
+
+    &__location-phones {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__location-website,
+    &__location-phone {
+        font-size: 14px;
+        color: var(--link-color);
+    }
+}

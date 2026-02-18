@@ -141,4 +141,12 @@
         gap: 48px;
         margin-bottom: 48px;
     }
+
+    &__map {
+        display: flex;
+        margin-bottom: var(--spacer-2xl);
+        box-shadow: var(--shadow-soft);
+        border-radius: 16px;
+        overflow: hidden;
+    }
 }
