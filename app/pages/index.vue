@@ -63,7 +63,7 @@
                 />
             </section>
 
-            <section class="page-home__map">
+            <section class="page-home__map" id="contacts">
                 <YandexMap
                     ref="yandexMapRef"
                     :center="mapCenter"

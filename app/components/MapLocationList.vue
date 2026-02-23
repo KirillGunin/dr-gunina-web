@@ -45,6 +45,7 @@
 
             <AppButton
                 variant="outlined"
+                severity="success"
                 rounded
                 size="small"
                 @click="emits('location:click', location)"
