@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header ref="header" class="header">
         <div class="container">
             <div class="header__container">
                 <!-- Навигация -->
@@ -13,8 +13,8 @@
                             <AppButton
                                 rounded
                                 :label="$t(item.title)"
-                                :raised="item.active"
-                                :variant="item.active ? 'outlined' : 'text'"
+                                :raised="activeSection === item.link"
+                                :variant="activeSection === item.link ? 'outlined' : 'text'"
                                 @click="scrollToSection(item.link)"
                             />
                         </li>
@@ -56,6 +56,9 @@
 import { ref } from 'vue';
 
 const isDarkMode = ref<boolean>(false);
+const activeSection = ref<string>('about');
+const header = ref<HTMLElement | null>(null);
+let observer: IntersectionObserver;
 
 const toggleMode = () => {
     isDarkMode.value = !isDarkMode.value;
@@ -64,8 +67,9 @@ const toggleMode = () => {
 
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
-    if (element) {
-        const offset = 80;
+
+    if (element && header.value) {
+        const offset = header.value.getBoundingClientRect().height;
         const elementPosition = element.offsetTop - offset;
 
         window.scrollTo({
@@ -76,8 +80,32 @@ const scrollToSection = (sectionId: string) => {
 };
 
 const navigationItems = [
-    { title: 'header.about', link: 'about', active: true },
-    { title: 'header.services', link: 'services', active: false },
-    { title: 'header.contacts', link: 'contacts', active: false },
+    { title: 'header.about', link: 'about' },
+    { title: 'header.services', link: 'services' },
+    { title: 'header.contacts', link: 'contacts' },
 ];
+
+onMounted(() => {
+    const sections = navigationItems
+        .map((i) => document.getElementById(i.link))
+        .filter(Boolean) as HTMLElement[];
+
+    observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((e) => {
+                if (e.isIntersecting) {
+                    activeSection.value = e.target.id;
+                }
+            });
+        },
+        {
+            // rootMargin: '-20% 0px -40% 0px',
+            threshold: 0.3,
+        }
+    );
+
+    sections.forEach((s) => observer.observe(s));
+});
+
+onUnmounted(() => observer?.disconnect());
 </script>

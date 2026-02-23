@@ -4,11 +4,11 @@
         v-animateonscroll="{
             enterClass: 'zoom-in',
             leaveClass: 'zoom-out',
-            threshold: 0.1
+            threshold: 0.1,
         }"
     >
         <template #header>
-            <img :src="service.img" :alt="service.title">
+            <img :src="service.img" :alt="service.title" />
         </template>
 
         <template v-if="service.title" #title>
@@ -25,14 +25,15 @@
                 <AppButton
                     label="Подробнее"
                     size="small"
+                    severity="success"
                     raised
                     @click="emits('open:info-modal', service)"
                 />
 
                 <AppButton
                     size="small"
+                    severity="success"
                     variant="outlined"
-                    severity="warn"
                     raised
                     :label="service.actionTitle"
                 />
@@ -42,14 +43,14 @@
 </template>
 
 <script setup lang="ts">
-import type { Service } from "~/types/service";
+import type { Service } from '~/types/service';
 
 defineProps<{
     service: Service;
 }>();
 
 const emits = defineEmits<{
-    (event: "open:info-modal", service: Service): void;
-    (event: "purchase", service: Service): void;
+    (event: 'open:info-modal', service: Service): void;
+    (event: 'purchase', service: Service): void;
 }>();
 </script>
