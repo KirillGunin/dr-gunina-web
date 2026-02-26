@@ -18,20 +18,20 @@
 type ButtonProps = {
     label?: string;
     rounded?: boolean;
-    variant?: "text" | "outlined" | "link" | undefined;
-    severity?: "secondary" | "success" | "info" | "warn" | "danger" | undefined;
-    size?: "small" | "normal" | "large"
+    variant?: 'text' | 'outlined' | 'link' | undefined;
+    severity?: 'secondary' | 'success' | 'info' | 'warn' | 'danger' | undefined;
+    size?: 'small' | 'normal' | 'large';
     raised?: boolean;
-    icon?: string | undefined
+    icon?: string | undefined;
 };
 
 withDefaults(defineProps<ButtonProps>(), {
-    label: "",
+    label: '',
     rounded: false,
     variant: undefined,
     severity: undefined,
-    size: "normal",
-    raised: true,
-    icon: undefined
-})
+    size: 'normal',
+    raised: false,
+    icon: undefined,
+});
 </script>

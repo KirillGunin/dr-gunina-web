@@ -44,9 +44,8 @@
             </div>
 
             <AppButton
-                variant="outlined"
-                severity="success"
-                rounded
+                variant="text"
+                raised
                 size="small"
                 @click="emits('location:click', location)"
             >
