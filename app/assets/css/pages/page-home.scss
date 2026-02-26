@@ -8,7 +8,7 @@
 
     &__welcome-title {
         position: absolute;
-        z-index: 2;
+        z-index: 3;
         width: 50%;
         margin-top: 80px;
         font-size: 60px;
@@ -16,6 +16,8 @@
     }
 
     &__welcome-content {
+        position: relative;
+        overflow: hidden;
         width: 100%;
         display: flex;
         padding: 40px;
@@ -40,7 +42,7 @@
             width: 100%;
             height: auto;
             border-radius: 50%;
-            z-index: 1;
+            z-index: 2;
             margin-top: auto;
         }
 
@@ -52,8 +54,16 @@
             aspect-ratio: 1 / 1;
             background: var(--p-green-300);
             border-radius: 50%;
-            z-index: 0;
+            z-index: 1;
         }
+    }
+
+    &__welcome-background {
+        position: absolute;
+        opacity: 0.6;
+        top: 0;
+        left: 0;
+        width: 100%;
     }
 
     //about
@@ -140,13 +150,5 @@
         width: 100%;
         gap: 48px;
         margin-bottom: 48px;
-    }
-
-    &__map {
-        display: flex;
-        margin-bottom: var(--spacer-2xl);
-        box-shadow: var(--shadow-soft);
-        border-radius: 16px;
-        overflow: hidden;
     }
 }

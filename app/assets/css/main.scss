@@ -15,6 +15,7 @@
 @use "./components/footer";
 @use "./components/yandex-map";
 @use "./components/map-location-item";
+@use "./components/contacts-map-section";
 
 // Popover
 @use "./components/popover-locale.scss";
@@ -123,6 +124,9 @@ body {
     --header-border: var(--p-amber-50);
     --header-outline-color: var(--p-green-500);
 
+    //footer
+    --footer-bg: var(--p-neutral-50);
+
     //shadow
     --shadow-strong:
             0 3px 1px -2px rgba(0, 0, 0, 0.2),
@@ -149,4 +153,7 @@ body {
             0 3px 1px -2px rgb(212 212 212 / 0.2),
             0 2px 2px 0  rgb(212 212 212 / 0.14),
             0 1px 5px 0  rgb(212 212 212 / 0.12);
+
+    //footer
+    --footer-bg: var(--p-surface-700);
 }
