@@ -11,12 +11,8 @@
                     </p>
 
                     <nav class="footer__nav-links" aria-label="Footer navigation">
-                        <NuxtLink class="footer__nav-link" to="/service-terms">
-                            Порядок оформления, сроки исполнения услуги и условия оплаты
-                        </NuxtLink>
-
-                        <NuxtLink class="footer__nav-link" to="/legal-rules">
-                            Политика обработки персональных данных
+                        <NuxtLink class="footer__nav-link" to="/privacy">
+                            Правовые документы
                         </NuxtLink>
                     </nav>
                 </div>

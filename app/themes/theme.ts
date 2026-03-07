@@ -8,7 +8,6 @@ const CustomPreset = definePreset(Aura, {
             50: '#5a7f2b',
             100: '#4a6826',
         },
-
         rose: {
             50: '#fffdfd',
             100: '#fdd1d6',

@@ -4,7 +4,7 @@
             <div class="header__container">
                 <!-- Навигация -->
                 <nav class="header__navigation" aria-label="Main navigation">
-                    <ul class="header__menu">
+                    <ul v-if="!isPrivacyPage" class="header__menu">
                         <li
                             class="header__menu-item"
                             v-for="item in navigationItems"
@@ -19,6 +19,13 @@
                             />
                         </li>
                     </ul>
+
+                    <NuxtLink v-else to="/" class="header__menu-item--home">
+                        <AppButton rounded raised variant="outlined">
+                            <SvgIcon name="home" style="stroke-width: 2.5" />
+                            Домой
+                        </AppButton>
+                    </NuxtLink>
                 </nav>
 
                 <!-- Логотип -->
@@ -54,11 +61,16 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
+import { useRoute } from '#vue-router';
+
+const route = useRoute();
 
 const isDarkMode = ref<boolean>(false);
 const activeSection = ref<string>('about');
 const header = ref<HTMLElement | null>(null);
 let observer: IntersectionObserver;
+
+const isPrivacyPage = computed(() => route.path === '/privacy');
 
 const toggleMode = () => {
     isDarkMode.value = !isDarkMode.value;
