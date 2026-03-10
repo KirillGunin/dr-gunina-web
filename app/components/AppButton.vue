@@ -19,7 +19,7 @@ type ButtonProps = {
     label?: string;
     rounded?: boolean;
     variant?: 'text' | 'outlined' | 'link' | undefined;
-    severity?: 'secondary' | 'success' | 'info' | 'warn' | 'danger' | undefined;
+    severity?: 'secondary' | 'success' | 'info' | 'warn' | 'danger' | 'contrast' | undefined;
     size?: 'small' | 'normal' | 'large';
     raised?: boolean;
     icon?: string | undefined;

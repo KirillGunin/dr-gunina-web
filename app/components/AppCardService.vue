@@ -17,13 +17,13 @@
 
         <template v-if="service.content" #content>
             <p>{{ service.content }}</p>
-            <p class="card-service__price">{{ service.price }}</p>
+            <p class="card-service__price">{{ formatPrice(service.price) }}</p>
         </template>
 
         <template #footer>
             <div class="card-service__controls">
                 <AppButton
-                    label="Подробнее"
+                    :label="$t('others.details')"
                     size="small"
                     severity="success"
                     raised
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import type { Service } from '~/types/service';
+import type { Service } from '@/types/service';
 
 defineProps<{
     service: Service;

@@ -131,6 +131,13 @@ const CustomPreset = definePreset(Aura, {
                             hoverBorderColor: '{olive.100}',
                             borderColor: '{olive.50}',
                         },
+                        contrast: {
+                            borderColor: '{green.500}',
+                            color: '{neutral.500}',
+                            background: '{salomie.300}',
+                            hoverBackground: '{salomie.200}',
+                            hoverColor: '{neutral.500}',
+                        },
                     },
                     outlined: {
                         primary: {
