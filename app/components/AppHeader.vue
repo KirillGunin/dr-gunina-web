@@ -14,7 +14,8 @@
                                 rounded
                                 :label="$t(item.title)"
                                 :raised="activeSection === item.link"
-                                :variant="activeSection === item.link ? 'outlined' : 'text'"
+                                :severity="activeSection === item.link ? 'contrast' : undefined"
+                                :variant="activeSection === item.link ? undefined : 'text'"
                                 @click="scrollToSection(item.link)"
                             />
                         </li>

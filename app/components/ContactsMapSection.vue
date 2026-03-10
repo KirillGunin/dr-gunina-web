@@ -22,7 +22,7 @@ const mapCenter = ref<[number, number]>([30.120702, 59.572617]);
 const yandexMapRef = ref<InstanceType<typeof YandexMap> | null>(null);
 
 const markerClick = (location: Location) => {
-    console.log('Clicked Location:', location);
+    //console.log('Clicked Location:', location);
 };
 
 const locationClick = (location: Location) => {

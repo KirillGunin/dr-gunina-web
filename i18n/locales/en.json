@@ -9,5 +9,95 @@
             "hook-text": "Still looking for answers about your child's health?",
             "about": "About me"
         }
+    },
+    "services": {
+        "lure": {
+            "title": "Course \"Intro to Solids\"",
+            "content": "Basic rules for introducing complementary foods based on modern recommendations",
+            "actionTitle": "Get the course",
+            "details": {
+                "detail_1": "Closed group in Telegram channel with convenient short videos;",
+                "detail_2": "The latest information about complementary feeding;",
+                "detail_3": "Ready-made introduction scheme;",
+                "detail_4": "First aid for allergic reactions."
+            },
+            "attachment": {
+                "title": "Briefly about complementary feeding.pdf"
+            },
+            "modalActionButton": "Buy the \"About Complementary Feeding\" course"
+        },
+        "group_chat": {
+            "title": "Group Support Chat",
+            "content": "Ask unlimited questions in the general chat.",
+            "actionTitle": "Join support chat",
+            "details": {
+                "detail_1": "Closed group in Telegram channel with Q&A format;",
+                "detail_2": "Ability to get answers to other participants' questions;",
+                "detail_3": "Psychologist consultation twice a month;",
+                "detail_4": "Sleep specialist consultation twice a month;",
+                "detail_5": "Home workouts from a fitness trainer on demand;",
+                "detail_6": "Therapeutic fairy tales on demand."
+            },
+            "modalActionButton": "Join support chat"
+        },
+        "info_service": {
+            "title": "Information Service",
+            "content": "Get urgent answers to your questions without losing time",
+            "actionTitle": "Book a service",
+            "details": {
+                "detail_1": "Discuss a diagnosis, diagnostic options and treatment of a disease;",
+                "detail_2": "Maintaining contact until improvement;",
+                "detail_3": "Get another point of view or confirm the existing one."
+            },
+            "modalActionButton": "Book a service"
+        },
+        "no_panic": {
+            "title": "Course \"No Panic\"",
+            "content": "Everything parents need to know about first aid and child safety",
+            "actionTitle": "Get the course",
+            "details": {
+                "detail_1": "Safe environment for a child at home;",
+                "detail_2": "What to do if...?;",
+                "detail_3": "First medical aid in emergencies;",
+                "detail_4": "Online safety;",
+                "detail_5": "Child online risk memo;",
+                "detail_6": "Sexual safety;",
+                "detail_7": "Critical conditions with ARVI and intestinal infections;",
+                "detail_8": "First aid checklist for emergencies;",
+                "detail_9": "\"Home medicine cabinet\" checklist;",
+                "detail_10": "Feedback;"
+            },
+            "attachment": {
+                "title": "\"Home medicine cabinet\" checklist.pdf"
+            },
+            "modalActionButton": "Buy the \"No Panic\" course"
+        },
+        "individual_chat": {
+            "title": "Individual Chat",
+            "content": "If it is important for you that the issue is discussed within the doctor-patient framework",
+            "actionTitle": "Join individual chat",
+            "details": {
+                "detail_1": "If it is important for you that the problem is discussed exclusively in a private conversation, not in a general chat;",
+                "detail_2": "If you want to get answers to questions faster."
+            },
+            "modalActionButton": "Join individual chat"
+        },
+        "vaccination": {
+            "title": "Vaccination Schedule",
+            "content": "Individual catch-up vaccination schedule.",
+            "actionTitle": "Get vaccination schedule",
+            "details": {
+                "detail_1": "If you are afraid of vaccination and want to discuss it;",
+                "detail_2": "If you want a catch-up vaccination schedule;",
+                "detail_3": "If you are in another country and want to understand which vaccinations are needed."
+            },
+            "attachment": {
+                "title": "Measles prevention.pdf"
+            },
+            "modalActionButton": "Get vaccination schedule"
+        }
+    },
+    "others": {
+        "details": "Details"
     }
 }

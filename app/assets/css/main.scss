@@ -113,6 +113,11 @@ body {
         width: 23px;
         height: 23px;
     }
+
+    // link
+    a {
+        color: var(--link-color);
+    }
 }
 
 .container {
