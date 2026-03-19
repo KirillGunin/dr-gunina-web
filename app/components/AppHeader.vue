@@ -80,16 +80,10 @@ const toggleMode = () => {
 
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
+    if (!element) return;
 
-    if (element && header.value) {
-        const offset = header.value.getBoundingClientRect().height;
-        const elementPosition = element.offsetTop - offset;
-
-        window.scrollTo({
-            top: elementPosition,
-            behavior: 'smooth',
-        });
-    }
+    const top = element.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
 };
 
 const navigationItems = [
@@ -111,10 +105,7 @@ onMounted(() => {
                 }
             });
         },
-        {
-            // rootMargin: '-20% 0px -40% 0px',
-            threshold: 0.3,
-        }
+        { threshold: 0.3 }
     );
 
     sections.forEach((s) => observer.observe(s));

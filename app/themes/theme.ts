@@ -75,6 +75,9 @@ const CustomPreset = definePreset(Aura, {
             500: '#361C00',
             600: '#281500',
         },
+        blue: {
+            600: '#2b344e',
+        },
     },
     semantic: {
         colorScheme: {

@@ -3,16 +3,7 @@
     &__welcome {
         position: relative;
         display: flex;
-        margin-bottom: 48px;
-    }
-
-    &__welcome-title {
-        position: absolute;
-        z-index: 3;
-        width: 50%;
-        margin-top: 80px;
-        font-size: 60px;
-        font-weight: 600;
+        margin-bottom: var(--spacer-3xl);
     }
 
     &__welcome-content {
@@ -20,30 +11,54 @@
         overflow: hidden;
         width: 100%;
         display: flex;
-        padding: 40px;
+        padding: var(--spacer-xl) var(--spacer-4xl);
         border: 1px solid var(--header-outline-color);
         border-radius: 24px;
         justify-content: space-between;
         box-shadow: var(--shadow-soft);
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("/images/background.png") center / cover no-repeat;
+            opacity: 0.6;
+        }
     }
 
-    &__welcome-empty-block {
-        width: 45%;
+    &__welcome-hook-content {
+        position: absolute;
+        width: 50%;
+        height: calc(100% - var(--spacer-xl) * 2);
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 100px;
+    }
+
+    &__welcome-hook-title {
+        display: flex;
+        flex-direction: column;
+        font-family: "Glina", system-ui, -apple-system, sans-serif;
+        font-size: 80px;
+        line-height: 0.9;
+        color: var(--p-blue-600);
+    }
+
+    &__welcome-hook-action {
+        margin-right: 120px;
+        animation: pulse 1.2s ease-in-out infinite alternate;
     }
 
     &__welcome-image {
         position: relative;
         display: flex;
-        width: 55%;
+        width: 47%;
 
         & img {
-            position: relative;
-            max-width: 620px;
-            width: 100%;
-            height: auto;
             border-radius: 50%;
             z-index: 2;
-            margin-top: auto;
         }
 
         & div {
@@ -58,14 +73,6 @@
         }
     }
 
-    &__welcome-background {
-        position: absolute;
-        opacity: 0.6;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
-
     //about
     &__about {
         display: grid;
@@ -76,8 +83,6 @@
 
     &__about-image {
         max-height: 600px;
-        //opacity: 0;
-        //transform: scale(0.9);
         transition: transform 0.7s ease, opacity 0.7s ease;
 
         & img {
@@ -98,8 +103,6 @@
     }
 
     &__about-content {
-        //opacity: 0;
-        //transform: scale(0.9);
         transition: transform 0.7s ease, opacity 0.7s ease;
 
         &.swipe-in {

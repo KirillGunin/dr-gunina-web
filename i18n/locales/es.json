@@ -4,9 +4,13 @@
         "services": "Servicios",
         "contacts": "Contactos"
     },
+    "footer": {
+        "map-action": "Ver en el mapa"
+    },
     "pages": {
         "home": {
             "hook-text": "¿Buscando respuestas sobre la salud de tu hijo?",
+            "hook-action": "Resolverlo juntos",
             "about": "Sobre"
         }
     },
@@ -67,6 +71,9 @@
                 "detail_9": "Lista de verificación \"Botiquín doméstico\";",
                 "detail_10": "Comentarios;",
                 "detail_11": "Lista de verificación \"Botiquín doméstico\".pdf"
+            },
+            "attachment": {
+                "title": "Brevemente sobre la alimentación complementaria.pdf"
             },
             "modalActionButton": "Comprar el curso \"Sin pánico\""
         },
