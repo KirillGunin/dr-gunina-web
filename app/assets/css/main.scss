@@ -25,6 +25,9 @@
 //Modals
 @use "./components/modals/modal-service";
 
+// Animations
+@use "./animations/pulse";
+
 /* Light */
 @font-face {
     font-family: 'Inter';
@@ -91,6 +94,15 @@
     font-display: swap;
 }
 
+/* Banner font */
+@font-face {
+    font-family: "Glina";
+    src: url("/fonts/Glina.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--body-bg);
@@ -104,7 +116,9 @@ body {
     --spacer-ml: 20px;
     --spacer-lg: 24px;
     --spacer-xl: 32px;
-    --spacer-2xl: 48px;
+    --spacer-2xl: 40px;
+    --spacer-3xl: 48px;
+    --spacer-4xl: 56px;
 
     --link-color: var(--p-salmon-300);
 

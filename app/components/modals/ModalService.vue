@@ -42,7 +42,7 @@
                     </li>
 
                     <li
-                        v-if="service.attachment?.title"
+                        v-if="service.attachment !== null"
                         class="modal-service__detail modal-service__detail--link"
                     >
                         <SvgIcon name="circle" />

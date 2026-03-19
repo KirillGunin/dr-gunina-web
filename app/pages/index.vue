@@ -3,22 +3,28 @@
         <div class="container">
             <section class="page-home__welcome">
                 <div class="page-home__welcome-content">
-                    <div class="page-home__welcome-empty-block">
-                        <p class="page-home__welcome-title">
-                            {{ $t('pages.home.hook-text') }}
-                        </p>
+                    <div class="page-home__welcome-hook">
+                        <div class="page-home__welcome-hook-content">
+                            <span class="page-home__welcome-hook-title">
+                                {{ $t('pages.home.hook-text') }}
+                            </span>
+
+                            <AppButton
+                                v-if="infoService !== null"
+                                class="page-home__welcome-hook-action"
+                                :label="$t('pages.home.hook-action')"
+                                raised
+                                severity="success"
+                                rounded
+                                size="large"
+                                @click="openModalConsultation($event)"
+                            />
+                        </div>
                     </div>
 
                     <div class="page-home__welcome-image">
                         <img src="/images/main.png" alt="Главная заставка" />
-                        <div></div>
                     </div>
-
-                    <img
-                        class="page-home__welcome-background"
-                        src="/images/background.png"
-                        alt="фон"
-                    />
                 </div>
             </section>
 
@@ -28,7 +34,7 @@
                     v-animateonscroll="{
                         enterClass: 'swipe-in',
                         leaveClass: 'swipe-out',
-                        threshold: 0.2,
+                        threshold: 0,
                     }"
                 >
                     <img src="/images/main.png" alt="Главная заставка" />
@@ -39,7 +45,7 @@
                     v-animateonscroll="{
                         enterClass: 'swipe-in',
                         leaveClass: 'swipe-out',
-                        threshold: 0.2,
+                        threshold: 0,
                     }"
                 >
                     <h4 class="page-home__about-title">{{ $t('pages.home.about') }}</h4>
@@ -85,9 +91,31 @@ import type { Service } from '@/types/service';
 const modalService = ref<boolean>(false);
 const selectedService = ref<Service | null>(null);
 
+const infoService = computed(
+    () => services.find((service: Service) => service.key === 'info_service') ?? null
+);
+
 const openModalService = (service: Service) => {
     selectedService.value = service;
     modalService.value = true;
+};
+
+const openModalConsultation = (event: MouseEvent) => {
+    const service = infoService.value;
+    if (!service) return;
+
+    (event.target as HTMLElement).blur();
+
+    scrollToSection();
+    setTimeout(() => openModalService(service), 0);
+};
+
+const scrollToSection = () => {
+    const element = document.getElementById('services');
+    if (!element) return;
+
+    const top = element.getBoundingClientRect().top + window.scrollY - 140;
+    window.scrollTo({ top, behavior: 'smooth' });
 };
 
 const facts = [
@@ -128,6 +156,7 @@ const services: Service[] = [
         },
         modalActionButton: t('services.lure.modalActionButton'),
         payLink: '#',
+        key: 'lure',
     },
     {
         img: '/images/services/chat-group.png',
@@ -146,6 +175,7 @@ const services: Service[] = [
         attachment: null,
         modalActionButton: t('services.group_chat.modalActionButton'),
         payLink: '#',
+        key: 'group_chat',
     },
     {
         img: '/images/services/service.png',
@@ -161,6 +191,7 @@ const services: Service[] = [
         attachment: null,
         modalActionButton: t('services.info_service.modalActionButton'),
         payLink: '#',
+        key: 'info_service',
     },
     {
         img: '/images/services/first-aid-kit.png',
@@ -186,6 +217,7 @@ const services: Service[] = [
         },
         modalActionButton: t('services.no_panic.modalActionButton'),
         payLink: '#',
+        key: 'no_panic',
     },
     {
         img: '/images/services/service.png',
@@ -200,6 +232,7 @@ const services: Service[] = [
         attachment: null,
         modalActionButton: t('services.individual_chat.modalActionButton'),
         payLink: '#',
+        key: 'individual_chat',
     },
     {
         img: '/images/services/service.png',
@@ -218,6 +251,7 @@ const services: Service[] = [
         },
         modalActionButton: t('services.vaccination.modalActionButton'),
         payLink: '#',
+        key: 'vaccination',
     },
 ];
 </script>

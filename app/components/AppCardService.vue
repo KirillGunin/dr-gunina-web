@@ -4,7 +4,7 @@
         v-animateonscroll="{
             enterClass: 'zoom-in',
             leaveClass: 'zoom-out',
-            threshold: 0.1,
+            threshold: 0,
         }"
     >
         <template #header>

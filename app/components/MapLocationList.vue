@@ -47,10 +47,9 @@
                 variant="text"
                 raised
                 size="small"
+                :label="$t('footer.map-action')"
                 @click="emits('location:click', location)"
-            >
-                Показать на карте
-            </AppButton>
+            />
         </article>
     </div>
 </template>

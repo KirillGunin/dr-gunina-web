@@ -30,7 +30,7 @@
                 top: 0;
                 left: 0;
                 right: 0;
-                height: 90%;
+                height: 89%;
                 z-index: -1;
                 box-shadow: 0 2px 6px 0 rgba(134, 133, 131, 0.3);
                 border-top-left-radius: 8px;
@@ -57,7 +57,7 @@
 
     &__tabs {
         position: relative;
-        height: calc(100vh - 132px - 44px - var(--spacer-2xl));
+        height: calc(100vh - 132px - 44px - var(--spacer-3xl));
         background: var(--folder-peach);
         border-top-right-radius: 8px;
         padding: var(--spacer-lg);

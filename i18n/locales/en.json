@@ -4,9 +4,13 @@
         "services": "Services",
         "contacts": "Contacts"
     },
+    "footer": {
+        "map-action": "Show on map"
+    },
     "pages": {
         "home": {
             "hook-text": "Still looking for answers about your child's health?",
+            "hook-action": "Let's figure it out",
             "about": "About me"
         }
     },
