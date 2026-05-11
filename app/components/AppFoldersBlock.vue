@@ -13,7 +13,8 @@
                 class="folders-block__label"
                 @click="selectFolder(folder)"
             >
-                <span>{{ folder.label }}</span>
+                <SvgIcon :name="folder.icon" />
+                <span class="folders-block__label-title">{{ folder.label }}</span>
             </div>
         </div>
 
@@ -27,9 +28,9 @@
                 ]"
                 class="folders-block__tab"
             >
-                <PrivacyPolicy v-if="tab.label === 'Конфиденциальность'" />
-                <PrivacyService v-if="tab.label === 'Персональные данные'" />
-                <PrivacyOffer v-if="tab.label === 'Договор оферты'" />
+                <PrivacyPolicy v-if="tab.label === $t('pages.legal.confidential-title')" />
+                <PrivacyService v-if="tab.label === $t('pages.legal.conspiracy-title')" />
+                <PrivacyOffer v-if="tab.label === $t('pages.legal.offer-title')" />
             </div>
         </div>
     </div>

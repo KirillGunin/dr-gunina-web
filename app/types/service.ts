@@ -14,4 +14,5 @@ export type Service = {
     payLink: string;
     price: string;
     title: string;
+    command: () => void;
 };

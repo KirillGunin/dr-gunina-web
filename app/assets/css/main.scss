@@ -4,6 +4,10 @@
 //PrimeVue
 @use "./primevue/p-popover";
 @use "./primevue/p-card";
+@use "./primevue/p-accordion";
+@use "./primevue/p-speeddial";
+@use "./primevue/p-textarea";
+@use "./primevue/p-dialog";
 
 //Pages
 @use "./pages/page-home";
@@ -11,13 +15,21 @@
 
 //Components
 @use "./components/header";
-@use "./components/button";
 @use "./components/card-service";
 @use "./components/footer";
 @use "./components/yandex-map";
 @use "./components/map-location-item";
 @use "./components/contacts-map-section";
 @use "./components/folders-block";
+@use "./components/accordion";
+@use "./components/speed-dial";
+@use "./components/field";
+@use "./components/input";
+@use "./components/select";
+@use "./components/modal";
+
+//Forms
+@use "./components/forms/form-appointment";
 
 // Popover
 @use "./components/popover-locale.scss";
@@ -120,7 +132,9 @@ body {
     --spacer-3xl: 48px;
     --spacer-4xl: 56px;
 
+    // text colors
     --link-color: var(--p-salmon-300);
+    --placeholder-color: rgb(117, 117, 117);
 
     // svg
     svg {
@@ -139,6 +153,10 @@ body {
     width: 100%;
     padding: 0 28px;
     margin: 0 auto;
+
+    @media (--screen-xs) {
+        padding: 0 var(--spacer-xs);
+    }
 }
 
 :root {
@@ -146,6 +164,7 @@ body {
 
     //text
     --text-color: var(--p-surface-950);
+    --placeholder-color: rgb(117, 117, 117);
 
     //header
     --header-bg: var(--p-surface-50);
@@ -158,18 +177,19 @@ body {
 
     //shadow
     --shadow-strong:
-            0 3px 1px -2px rgba(0, 0, 0, 0.2),
-            0 2px 2px 0 rgba(0, 0, 0, 0.14),
-            0 1px 5px 0 rgba(0, 0, 0, 0.12);
-
+        0 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 1px 5px 0 rgba(0, 0, 0, 0.12);
     --shadow-soft:
-            0 4px 6px -2px rgba(134, 133, 131, 0.3),
-            0 2px 4px 0 rgba(134, 133, 131, 0.2),
-            0 1px 8px 0 rgba(134, 133, 131, 0.15);
-
+        0 4px 6px -2px rgba(134, 133, 131, 0.3),
+        0 2px 4px 0 rgba(134, 133, 131, 0.2),
+        0 1px 8px 0 rgba(134, 133, 131, 0.15);
     --shadow-soft-no-bottom:
-            -6px -2px 10px -3px rgba(0,0,0,0.3),
-            6px -2px 10px -3px rgba(0,0,0,0.3);
+        -6px -2px 10px -3px rgba(0,0,0,0.3),
+        6px -2px 10px -3px rgba(0,0,0,0.3);
+    --shadow-inner-top:
+            inset 0px 29px 13px -28px rgb(173 173 173 / 60%);
+
 
     // folders
     --folder-green: #CCF085;
@@ -181,23 +201,41 @@ body {
     --folder-peach-heading: #684835;
     --folder-gray-heading: #737171;
     --folder-blue-heading: #205f84;
+
+    // colors
+    --base-gray: #c4c5c4;
 }
 
 :root[class="dark-mode"] {
-    --body-bg: var(--p-surface-800);
+    --body-bg: #262727;
 
     //text
     --text-color: var(--p-surface-50);
 
     //header
     --header-bg: var(--p-surface-800);
-    --header-color: var(--p-neutral-300);
+    --header-color: var(--p-rose-50);
     --header-outline-color: var(--p-amber-50);
     --header-shadow:
-            0 3px 1px -2px rgb(212 212 212 / 0.2),
-            0 2px 2px 0  rgb(212 212 212 / 0.14),
-            0 1px 5px 0  rgb(212 212 212 / 0.12);
+        0 3px 1px -2px rgb(212 212 212 / 0.2),
+        0 2px 2px 0  rgb(212 212 212 / 0.14),
+        0 1px 5px 0  rgb(212 212 212 / 0.12);
 
     //footer
     --footer-bg: var(--p-surface-700);
+
+    // shadow
+    --shadow-strong:
+        0 3px 1px -2px rgba(134, 133, 131, 0.2),
+        0 2px 2px 0 rgba(134, 133, 131, 0.14),
+        0 1px 5px 0 rgba(134, 133, 131, 0.12);
+
+    --shadow-inner-top:
+            inset 0px 29px 13px -28px rgb(0 0 0 / 60%);
 }
+
+// media
+/* https://www.w3.org/TR/mediaqueries-5/#custom-mq */
+@custom-media --screen-xs (max-width: 767px);
+@custom-media --screen-md (max-width: 1023px);
+@custom-media --screen-lg (min-width: 1024px);

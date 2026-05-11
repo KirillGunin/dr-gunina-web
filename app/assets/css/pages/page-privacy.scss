@@ -1,5 +1,12 @@
 .page-privacy {
     &__content {
         padding: 0 0 var(--spacer-3xl) 0;
+        color: var(--p-surface-950);
+    }
+
+    @media (--screen-xs) {
+        &__content {
+            padding-bottom: 0;
+        }
     }
 }

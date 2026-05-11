@@ -1,21 +1,27 @@
 <template>
     <AppModal
         class="modal-service"
-        width="70rem"
+        width="60rem"
+        :header="service.title"
         :visible="visible"
         :pt="{
+            root: {
+                style: {
+                    justifyContent: 'flex-start',
+                },
+            },
             header: {
                 style: {
-                    position: 'absolute',
-                    top: '10px',
-                    right: '10px',
-                    padding: '0',
-                    justifyContent: 'flex-end',
+                    padding: '0 var(--spacer-xs) var(--spacer-md)',
                 },
             },
             content: {
                 style: {
-                    padding: 'var(--spacer-xl)',
+                    padding: '0 var(--spacer-xs) var(--spacer-xs)',
+                    overflow: 'scroll',
+                    flexGrow: '0',
+                    scrollbarWidth: 'none', // Firefox
+                    msOverflowStyle: 'none', // IE
                 },
             },
         }"
@@ -27,8 +33,6 @@
             </div>
 
             <div class="modal-service__content">
-                <h5 class="modal-service__title">{{ service.title }}</h5>
-
                 <span class="modal-service__price">{{ formatPrice(service.price) }}</span>
 
                 <ul class="modal-service__details">
@@ -55,8 +59,10 @@
                 <LazyAppButton
                     rounded
                     raised
-                    severity="contrast"
+                    severity="success"
+                    variant="outlined"
                     :label="service.modalActionButton"
+                    @click="emits('select:action', service)"
                 />
             </div>
         </div>
@@ -77,5 +83,6 @@ withDefaults(defineProps<ServiceProps>(), {
 
 const emits = defineEmits<{
     (event: 'close:visible'): void;
+    (event: 'select:action', service: Service): void;
 }>();
 </script>

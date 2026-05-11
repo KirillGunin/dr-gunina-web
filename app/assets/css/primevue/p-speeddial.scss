@@ -1,0 +1,11 @@
+.p-speeddial {
+    position: relative !important;
+    gap: 0;
+    z-index: 2;
+}
+
+.p-speeddial-mask {
+    position: fixed;
+    z-index: 1;
+    border-radius: unset;
+}

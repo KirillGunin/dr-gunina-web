@@ -63,6 +63,10 @@
                             </span>
                         </li>
                     </ul>
+
+                    <div class="page-home__about-accordion">
+                        <AppAccordion :label="$t('pages.home.about')" :items="facts" />
+                    </div>
                 </div>
             </section>
 
@@ -81,6 +85,12 @@
             :visible="modalService"
             :service="selectedService"
             @close:visible="modalService = false"
+            @select:action="selectAction"
+        />
+
+        <LazyModalsModalAppointment
+            :visible="modalAppointment"
+            @close:visible="modalAppointment = false"
         />
     </div>
 </template>
@@ -89,11 +99,17 @@ const { t } = useI18n();
 import type { Service } from '@/types/service';
 
 const modalService = ref<boolean>(false);
+const modalAppointment = ref<boolean>(false);
 const selectedService = ref<Service | null>(null);
 
 const infoService = computed(
     () => services.find((service: Service) => service.key === 'info_service') ?? null
 );
+
+const selectAction = (service: Service) => {
+    modalService.value = false;
+    service.command();
+};
 
 const openModalService = (service: Service) => {
     selectedService.value = service;
@@ -119,22 +135,22 @@ const scrollToSection = () => {
 };
 
 const facts = [
-    { title: 'Меня зовут Гунина Ксения Александровна;', link: '' },
+    { title: t('pages.facts.me'), link: '' },
     {
-        title: 'Закончила СПБГПМУ в 2015 году и интернатур у по специальности педиатрия там же в 2016 году;',
+        title: t('pages.facts.education'),
         link: '',
     },
     {
-        title: 'В 2019 окончила курсы первичной переподготовки в СЗГМУ им. И. И. Мечникова по специальности аллерголог-иммунолог;',
+        title: t('pages.facts.additional'),
         link: '',
     },
     {
-        title: 'Член EAACI, WAO и Союза Педиатров России, РААКИ, слушатель аллергологического конгресса WAO 2022 и лекций EAACI;',
+        title: t('pages.facts.member'),
         link: '',
     },
-    { title: 'Практика по принципу доказательной медицины;', link: '' },
-    { title: 'Диагностика и лечение с опорой на зарубежные рекомендации.', link: '' },
-    { title: 'Сертификаты', link: '#' },
+    { title: t('pages.facts.practice'), link: '' },
+    { title: t('pages.facts.diagnosis'), link: '' },
+    { title: t('pages.facts.certificate'), link: '#' },
 ];
 
 const services: Service[] = [
@@ -157,6 +173,9 @@ const services: Service[] = [
         modalActionButton: t('services.lure.modalActionButton'),
         payLink: '#',
         key: 'lure',
+        command: () => {
+            console.log(1);
+        },
     },
     {
         img: '/images/services/chat-group.png',
@@ -176,6 +195,9 @@ const services: Service[] = [
         modalActionButton: t('services.group_chat.modalActionButton'),
         payLink: '#',
         key: 'group_chat',
+        command: () => {
+            console.log(2);
+        },
     },
     {
         img: '/images/services/service.png',
@@ -192,6 +214,10 @@ const services: Service[] = [
         modalActionButton: t('services.info_service.modalActionButton'),
         payLink: '#',
         key: 'info_service',
+        command: () => {
+            console.log(3);
+            modalAppointment.value = true;
+        },
     },
     {
         img: '/images/services/first-aid-kit.png',
@@ -218,6 +244,9 @@ const services: Service[] = [
         modalActionButton: t('services.no_panic.modalActionButton'),
         payLink: '#',
         key: 'no_panic',
+        command: () => {
+            console.log(4);
+        },
     },
     {
         img: '/images/services/service.png',
@@ -233,6 +262,9 @@ const services: Service[] = [
         modalActionButton: t('services.individual_chat.modalActionButton'),
         payLink: '#',
         key: 'individual_chat',
+        command: () => {
+            console.log(5);
+        },
     },
     {
         img: '/images/services/service.png',
@@ -252,6 +284,9 @@ const services: Service[] = [
         modalActionButton: t('services.vaccination.modalActionButton'),
         payLink: '#',
         key: 'vaccination',
+        command: () => {
+            console.log(6);
+        },
     },
 ];
 </script>

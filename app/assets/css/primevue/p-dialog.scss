@@ -1,0 +1,16 @@
+.p-dialog {
+    padding: var(--spacer-lg);
+
+    @media (--screen-xs) {
+        height: 100%;
+        width: 100% !important;
+        max-height: 100%;
+        padding: var(--spacer-xs);
+        justify-content: center;
+
+        & .p-dialog-content {
+            display: flex;
+            align-items: flex-start;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.field {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        display: flex;
+        align-items: center;
+        gap: var(--spacer-2xs);
+        margin-bottom: var(--spacer-2xs);
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    &__error {
+        margin-top: var(--spacer-2xs);
+        color: red;
+        font-size: 14px;
+    }
+}

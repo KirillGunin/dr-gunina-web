@@ -5,4 +5,8 @@
     overflow: hidden;
     width: 100%;
     background-color: var(--body-bg);
+
+    @media (--screen-xs) {
+        flex-direction: column;
+    }
 }

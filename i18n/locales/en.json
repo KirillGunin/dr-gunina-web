@@ -12,6 +12,20 @@
             "hook-text": "Still looking for answers about your child's health?",
             "hook-action": "Let's figure it out",
             "about": "About me"
+        },
+        "facts": {
+            "me": "I am Ksenia Aleksandrovna Gunina",
+            "education": "Graduated from Saint Petersburg State Pediatric Medical University in 2015 and completed a pediatric internship there in 2016.",
+            "additional": "In 2019, completed professional retraining courses in allergology and immunology at Mechnikov North-Western State Medical University.",
+            "member": "Member of EAACI, WAO, the Union of Pediatricians of Russia, and RAAKI; attendee of the WAO Allergy Congress 2022 and EAACI lectures.",
+            "practice": "Evidence-based medical practice.",
+            "diagnosis": "Diagnosis and treatment based on international guidelines.",
+            "certificate": "Certificates"
+        },
+        "legal": {
+            "confidential-title": "Privacy Policy",
+            "conspiracy-title": "Personal Data",
+            "offer-title": "Terms of Offer"
         }
     },
     "services": {
@@ -101,7 +115,54 @@
             "modalActionButton": "Get vaccination schedule"
         }
     },
+    "addresses": {
+        "medicom": {
+            "title": "Medicom",
+            "address": "st. Hohlova, 8, Gatchina, Leningragskaya oblast"
+        },
+        "kmb": {
+            "title": "Detskaya Poliklinika",
+            "address": "st. Hohlova, 9, Gatchina, Leningragskaya oblast"
+        }
+    },
+    "forms": {
+        "appointment": {
+            "header": "Book an online consultation",
+            "label-name": "Your name",
+            "placeholder-name": "Enter your name",
+            "label-child-name": "Child's name",
+            "placeholder-child-name": "Enter child's name",
+            "label-child-age": "Child's age",
+            "placeholder-child-age": "Enter child's age",
+            "label-child-gender": "Child's gender",
+            "placeholder-child-gender": "Select child's gender",
+            "label-telegram": "Telegram username",
+            "placeholder-telegram": "Enter username",
+            "label-phone": "Phone number",
+            "label-description": "Consultation topic",
+            "placeholder-description": "Describe your questions or topic",
+            "privacy": "Consent to personal data processing",
+            "action": "Book now",
+            "gender-male": "Male",
+            "gender-female": "Female"
+        }
+    },
+    "errors": {
+        "common": {
+            "required": "Required field",
+            "name": "Field can only contain letters, spaces, hyphens and apostrophes",
+            "more-than": "Value must be greater than",
+            "phone": "Enter a valid phone number"
+        },
+        "appointment": {
+            "phone-or-telegram": "Please provide a phone number or Telegram username",
+            "agreement": "You must agree to the data processing"
+        }
+    },
     "others": {
-        "details": "Details"
+        "details": "Details",
+        "name": "Gunina Ksenia Aleksandrovna",
+        "legal": "Legal documents",
+        "home": "Home"
     }
 }

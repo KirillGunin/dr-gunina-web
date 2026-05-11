@@ -7,6 +7,7 @@ const CustomPreset = definePreset(Aura, {
         olive: {
             50: '#5a7f2b',
             100: '#4a6826',
+            200: '#74953e',
         },
         rose: {
             50: '#fffdfd',
@@ -117,6 +118,9 @@ const CustomPreset = definePreset(Aura, {
     },
     components: {
         button: {
+            root: {
+                raisedShadow: 'var(--shadow-strong)',
+            },
             colorScheme: {
                 light: {
                     root: {
@@ -174,12 +178,28 @@ const CustomPreset = definePreset(Aura, {
                             hoverBorderColor: '{salmon.300}',
                             hoverColor: '{neutral.600}',
                         },
+                        success: {
+                            background: '{olive.200}',
+                            borderColor: '{olive.200}',
+                            hoverBackground: '{olive.100}',
+                            hoverBorderColor: '{olive.100}',
+                            hoverColor: '{rose.50}',
+                            color: '{rose.50}',
+                        },
+                        contrast: {
+                            background: 'transparent',
+                            color: '{rose.50}',
+                        },
                     },
                     outlined: {
                         primary: {
                             borderColor: '{rose.50}',
                             color: '{rose.50}',
                             hoverBackground: '{neutral.700}',
+                        },
+                        success: {
+                            borderColor: '{olive.200}',
+                            color: '{rose.50}',
                         },
                     },
                     text: {
@@ -218,6 +238,67 @@ const CustomPreset = definePreset(Aura, {
                 dark: {
                     root: {
                         color: '{rose.50}',
+                        background: 'var(--p-surface-700)',
+                    },
+                },
+            },
+        },
+        select: {
+            colorScheme: {
+                light: {
+                    root: {
+                        borderColor: '{salmon.300}',
+                        hoverBorderColor: '{salmon.200}',
+                        focusBorderColor: '{salmon.200}',
+                        invalidBorderColor: 'red',
+                        placeholderColor: 'var(--placeholder-color)',
+                        invalidPlaceholderColor: 'var(--placeholder-color)',
+                    },
+                    overlay: {
+                        borderColor: '{salmon.200}',
+                    },
+                    option: {
+                        selectedBackground: '{gray.50}',
+                        selectedFocusBackground: '{gray.100}',
+                        selectedFocusColor: '{surface.950}',
+                        selectedColor: '{surface.950}',
+                        color: '{surface.950}',
+                    },
+                },
+            },
+        },
+        textarea: {
+            colorScheme: {
+                light: {
+                    root: {
+                        borderColor: '{salmon.300}',
+                        hoverBorderColor: '{salmon.200}',
+                        focusBorderColor: '{salmon.300}',
+                        invalidBorderColor: 'red',
+                        invalidPlaceholderColor: 'var(--placeholder-color)',
+                        color: '{surface.950}',
+                        placeholderColor: 'var(--placeholder-color)',
+                        shadow: 'var(--shadow-soft)',
+                        focusRing: {
+                            shadow: 'var(--shadow-soft)',
+                        },
+                    },
+                },
+            },
+        },
+        checkbox: {
+            colorScheme: {
+                light: {
+                    root: {
+                        borderColor: '{salmon.300}',
+                        hoverBorderColor: '{salmon.200}',
+                        focusBorderColor: '{salmon.300}',
+                        invalidBorderColor: 'red',
+                        shadow: 'var(--shadow-soft)',
+                        checkedBackground: '{salmon.300}',
+                        checkedBorderColor: '{salmon.300}',
+                        checkedHoverBackground: '{salmon.200}',
+                        checkedHoverBorderColor: '{salmon.200}',
                     },
                 },
             },
