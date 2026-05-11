@@ -1,0 +1,25 @@
+.input {
+    background: transparent;
+    border: 1px solid var(--p-salmon-300);
+    color: var(--p-neutral-500);
+    box-shadow: var(--shadow-soft);
+    padding: var(--spacer-xs);
+    border-radius: 8px;
+
+    &::placeholder {
+        font-weight: 300;
+    }
+
+    &.invalid {
+        border: 1px solid red;
+    }
+
+    &:focus {
+        outline: none;
+        border-color: var(--p-salmon-300);
+    }
+
+    &:hover {
+        border-color: var(--p-salmon-200);
+    }
+}

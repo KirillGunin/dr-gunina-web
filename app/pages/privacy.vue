@@ -10,19 +10,23 @@
 
 <script setup lang="ts">
 import type { Folder } from '@/types/folder';
+const { t } = useI18n();
 
 const folders: Folder[] = [
     {
-        label: 'Конфиденциальность',
+        label: t('pages.legal.confidential-title'),
         color: 'peach',
+        icon: 'privacy',
     },
     {
-        label: 'Персональные данные',
+        label: t('pages.legal.conspiracy-title'),
         color: 'gray',
+        icon: 'services',
     },
     {
-        label: 'Договор оферты',
+        label: t('pages.legal.offer-title'),
         color: 'blue',
+        icon: 'offer',
     },
 ];
 </script>

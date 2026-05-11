@@ -1,10 +1,14 @@
 .header {
     background-color: var(--header-bg);
-    padding: 16px 0 0;
     position: sticky;
     top: 0;
     z-index: 4;
+    padding-top: var(--spacer-ml);
     margin-bottom: var(--spacer-ml);
+
+    &__burger {
+        display: none;
+    }
 
     &::after {
         content: '';
@@ -44,7 +48,7 @@
             width: 100%;
             max-width: 200px;
             height: 100%;
-            max-height: 100px;
+            max-height: 80px;
         }
     }
 
@@ -62,6 +66,26 @@
                 color: var(--header-color);
                 stroke-width: 2.5;
             }
+        }
+    }
+
+    @media (--screen-xs) {
+        padding-top: var(--spacer-md);
+
+        &__container {
+            padding-bottom: var(--spacer-2xs);
+        }
+
+        &__socials {
+            display: none;
+        }
+
+        &__burger {
+            display: block;
+        }
+
+        &__logo svg {
+            display: none;
         }
     }
 }

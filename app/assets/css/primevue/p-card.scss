@@ -1,5 +1,7 @@
 .p-card {
     box-shadow: var(--shadow-soft);
+    border-radius: 24px;
+    overflow: hidden;
 
     & .p-card-header {
         height: 360px;
@@ -10,12 +12,12 @@
         }
     }
 
-    .p-card-body {
+    & .p-card-body {
         gap: 12px;
         height: 100%;
     }
 
-    .p-card-content {
+    & .p-card-content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -25,7 +27,33 @@
         font-size: 16px;
     }
 
-    .p-card-footer {
+    & .p-card-footer {
         margin-top: auto;
+    }
+
+    @media (--screen-xs) {
+        border-radius: 16px;
+
+        & .p-card-header {
+            height: 220px;
+        }
+
+        & .p-card-body {
+            gap: 8px;
+            padding: var(--spacer-sm);
+        }
+
+        & .p-card-title {
+            font-size: 18px;
+        }
+
+        & .p-card-content {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        & .p-card-footer {
+
+        }
     }
 }

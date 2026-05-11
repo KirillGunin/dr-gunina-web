@@ -7,10 +7,10 @@
         closeOnEscape
         blockScroll
         dismissable-mask
+        :header="header"
         :pt="pt"
         :style="{
             width: width,
-            height: height
         }"
         @update:visible="emits('close:visible')"
     >
@@ -24,17 +24,16 @@
 type DialogProps = {
     visible: boolean;
     width?: string;
-    height?: string;
-    pt?: object
-}
+    pt?: object;
+    header?: string;
+};
 
 withDefaults(defineProps<DialogProps>(), {
     visible: false,
-    width: "25rem",
-    height: "auto",
+    width: '25rem',
 });
 
 const emits = defineEmits<{
-    (event: "close:visible"): void;
+    (event: 'close:visible'): void;
 }>();
 </script>

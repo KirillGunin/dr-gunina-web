@@ -11,11 +11,13 @@
                             :key="item.title"
                         >
                             <AppButton
+                                style="white-space: nowrap"
                                 rounded
                                 :label="$t(item.title)"
                                 :raised="activeSection === item.link"
                                 :severity="activeSection === item.link ? 'contrast' : undefined"
                                 :variant="activeSection === item.link ? undefined : 'text'"
+                                :size="isMobile ? 'small' : 'normal'"
                                 @click="scrollToSection(item.link)"
                             />
                         </li>
@@ -24,7 +26,7 @@
                     <NuxtLink v-else to="/" class="header__menu-item--home">
                         <AppButton rounded raised variant="outlined">
                             <SvgIcon name="home" style="stroke-width: 2.5" />
-                            Домой
+                            {{ $t('others.home') }}
                         </AppButton>
                     </NuxtLink>
                 </nav>
@@ -56,6 +58,11 @@
                         <SvgIcon :name="isDarkMode ? 'lamp-on' : 'lamp-off'" />
                     </AppButton>
                 </div>
+
+                <!-- Бургер -->
+                <div class="header__burger">
+                    <AppSpeedDial />
+                </div>
             </div>
         </div>
     </header>
@@ -63,8 +70,10 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRoute } from '#vue-router';
+import { useBreakpoints } from '~/composables/useBreakpoins';
 
 const route = useRoute();
+const { isMobile } = useBreakpoints();
 
 const isDarkMode = ref<boolean>(false);
 const activeSection = ref<string>('about');

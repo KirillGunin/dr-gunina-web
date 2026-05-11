@@ -8,7 +8,6 @@
         padding: var(--spacer-md) var(--spacer-xl);
         gap: var(--spacer-xs);
         background: var(--body-bg);
-        //width: 400px;
     }
 
     &__location-title {
@@ -25,8 +24,12 @@
 
     & .pi {
         font-size: 20px;
-        margin-right: 4px;
+        margin-right: var(--spacer-2xs);
         color: var(--p-neutral-400);
+
+        &.pi-map-marker {
+            margin-right: var(--spacer-sm);
+        }
     }
 
     & .pi-phone,
@@ -38,10 +41,13 @@
     &__location-website-content,
     &__location-phones-content {
         display: flex;
+        gap: var(--spacer-xs);
     }
 
-    &__location-website-content {
-        margin-left: auto;
+    &__location-contacts {
+        flex-direction: column;
+        gap: var(--spacer-xs);
+        margin-bottom: var(--spacer-2xs);
     }
 
     &__location-phones {
@@ -53,5 +59,17 @@
     &__location-phone {
         font-size: 14px;
         color: var(--link-color);
+        white-space: nowrap;
+    }
+
+    @media (--screen-xs) {
+        &__location {
+            padding: var(--spacer-xs);
+            gap: var(--spacer-2xs);
+        }
+
+        & .pi {
+            margin-right: var(--spacer-2xs);
+        }
     }
 }

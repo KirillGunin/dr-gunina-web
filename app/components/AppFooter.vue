@@ -6,13 +6,13 @@
 
                 <div class="footer__info">
                     <p class="footer__inn">
-                        <span>Гунина Ксения Александровна</span>
+                        <span>{{ $t('others.name') }}</span>
                         <span>ИНН: 470518050729</span>
                     </p>
 
                     <nav class="footer__nav-links" aria-label="Footer navigation">
                         <NuxtLink class="footer__nav-link" to="/privacy">
-                            Правовые документы
+                            {{ $t('others.legal') }}
                         </NuxtLink>
                     </nav>
                 </div>

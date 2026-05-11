@@ -1,10 +1,10 @@
 <template>
     <div>
+        <NuxtRouteAnnouncer />
+
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>
-<!--        <NuxtRouteAnnouncer />-->
     </div>
 </template>
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>

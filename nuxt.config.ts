@@ -1,18 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { resolve } from 'path';
+
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
     vite: {
         resolve: {
             alias: {
-                '@': './app',
+                '@': resolve(__dirname, './app'),
             },
         },
+        // server: {
+        //     headers: {
+        //         'Cache-Control': 'no-store',
+        //     },
+        // },
     },
     devServer: {
         port: 3000,
     },
-    modules: ['@primevue/nuxt-module', 'nuxt-svg-sprite-icon', '@nuxtjs/i18n'],
+    modules: ['@primevue/nuxt-module', 'nuxt-svg-sprite-icon', '@nuxtjs/i18n', '@vueuse/nuxt'],
     i18n: {
         defaultLocale: 'ru',
         locales: [
@@ -20,6 +27,11 @@ export default defineNuxtConfig({
             { code: 'es', name: 'Español', file: 'es.json' },
             { code: 'en', name: 'English', file: 'en.json' },
         ],
+    },
+    postcss: {
+        plugins: {
+            'postcss-custom-media': {},
+        },
     },
     css: ['~/assets/css/main.scss'],
     primevue: {

@@ -1,0 +1,5 @@
+.p-accordion {
+    & .p-accordioncontent-content {
+        padding: 0 var(--spacer-xs) var(--spacer-xs);
+    }
+}

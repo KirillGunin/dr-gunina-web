@@ -28,4 +28,15 @@
         opacity: 0;
         transform: scale(0.9);
     }
+
+    @media (--screen-xs) {
+        width: 100%;
+        min-width: 0;
+
+        & .card-service__controls {
+            & .button {
+                width: 100%;
+            }
+        }
+    }
 }

@@ -1,3 +1,19 @@
+const waitForYmaps = (): Promise<void> => {
+    return new Promise((resolve) => {
+        if (window.ymaps3) {
+            resolve();
+            return;
+        }
+
+        const interval = setInterval(() => {
+            if (window.ymaps3) {
+                clearInterval(interval);
+                resolve();
+            }
+        }, 100);
+    });
+};
+
 export const useYandexMap = () => {
     const initMap = async (
         containerId: string,
@@ -5,6 +21,7 @@ export const useYandexMap = () => {
         zoom: number,
         markers?: Array<{ coordinates: [number, number]; title?: string; onClick?: () => void }>
     ) => {
+        await waitForYmaps();
         await window.ymaps3.ready;
 
         const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
