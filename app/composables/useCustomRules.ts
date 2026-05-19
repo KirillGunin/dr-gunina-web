@@ -3,7 +3,7 @@ import { helpers, required, minLength, maxLength } from '@vuelidate/validators';
 import { useI18n } from '#imports';
 
 const customRules = {
-    name: helpers.regex(/^[А-Яа-яЁё`'\s-]+$/),
+    name: helpers.regex(/^[А-Яа-яЁё`'\s\-A-Za-z]+$/),
     email: helpers.regex(
         /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]{0,61}[a-z0-9])?)+$/
     ),
