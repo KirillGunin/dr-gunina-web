@@ -6,11 +6,12 @@ import { validationMessages } from '@/composables/useCustomRules';
  * @param state - стейт формы
  */
 export const useAppointmentRules = (state: Ref<Record<string, any>>) => {
-    const { required, isTruthy, phoneOrTelegram, phone, minLength } = validationMessages(state);
+    const { required, name, isTruthy, phoneOrTelegram, phone, minLength } =
+        validationMessages(state);
 
     const appointmentRules = {
-        name: { required },
-        child_name: { required },
+        name: { required, name },
+        child_name: { required, name },
         child_age: { required },
         child_gender: { required },
         phone: { phoneOrTelegram, phone },
