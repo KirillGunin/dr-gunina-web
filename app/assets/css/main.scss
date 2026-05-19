@@ -190,7 +190,6 @@ body {
     --shadow-inner-top:
             inset 0px 29px 13px -28px rgb(173 173 173 / 60%);
 
-
     // folders
     --folder-green: #CCF085;
     --folder-peach: #FAEEE7;
@@ -204,6 +203,9 @@ body {
 
     // colors
     --base-gray: #c4c5c4;
+
+    // text color
+    --notice-color: #757575;
 }
 
 :root[class="dark-mode"] {
@@ -232,6 +234,18 @@ body {
 
     --shadow-inner-top:
             inset 0px 29px 13px -28px rgb(0 0 0 / 60%);
+
+    // folders
+    --folder-peach: #A59E9A;
+    --folder-gray: #9A9B9B;
+    --folder-blue: #88A0A7;
+
+    --folder-peach-heading: #4E3B2F;
+    --folder-gray-heading: #545353;
+    --folder-blue-heading: #22495F;
+
+    // text color
+    --notice-color: #403f3f;
 }
 
 // media

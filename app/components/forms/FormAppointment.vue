@@ -2,20 +2,28 @@
     <div class="form-appointment">
         <AppForm
             class="form-appointment__form"
-            :method="createAppointment"
+            :method="
+                (data) =>
+                    createAppointment({
+                        ...data,
+                        phone: data.phone || null,
+                        telegram: data.telegram || null,
+                    })
+            "
             :init-fields="{
                 name: '',
-                childName: '',
-                childAge: '',
-                childGender: '',
-                phone: '',
-                telegram: '',
+                child_name: '',
+                child_age: '',
+                child_gender: '',
+                phone: null,
+                telegram: null,
                 description: '',
                 agreement: false,
             }"
             :rules="appointmentRules"
             v-model="state"
             v-slot="{ fields, frontendErrors, backendErrors, sending }"
+            @success="(response) => emits('success:appointment', response)"
         >
             <div class="form-appointment__fields">
                 <AppField
@@ -37,11 +45,11 @@
 
                 <AppField
                     :label="$t('forms.appointment.label-child-name')"
-                    :frontend-errors="frontendErrors?.childName?.$errors"
+                    :frontend-errors="frontendErrors?.child_name?.$errors"
                     v-slot="{ invalid }"
                 >
                     <AppInput
-                        v-model="fields.childName"
+                        v-model="fields.child_name"
                         :placeholder="$t('forms.appointment.placeholder-child-name')"
                         :mask-options="{
                             regex: '[A-Za-zА-Яа-яЁё\\s-]+',
@@ -54,11 +62,11 @@
 
                 <AppField
                     :label="$t('forms.appointment.label-child-age')"
-                    :frontend-errors="frontendErrors?.childAge?.$errors"
+                    :frontend-errors="frontendErrors?.child_age?.$errors"
                     v-slot="{ invalid }"
                 >
                     <AppInput
-                        v-model="fields.childAge"
+                        v-model="fields.child_age"
                         :placeholder="$t('forms.appointment.placeholder-child-age')"
                         :mask-options="{
                             regex: '\\d*',
@@ -70,18 +78,18 @@
                 </AppField>
 
                 <AppField
-                    :label="$t('forms.appointment.child-gender')"
-                    :frontend-errors="frontendErrors?.childGender?.$errors"
+                    :label="$t('forms.appointment.label-child-gender')"
+                    :frontend-errors="frontendErrors?.child_gender?.$errors"
                     v-slot="{ invalid }"
                 >
                     <AppSelect
-                        :model-value="fields.childGender"
+                        :model-value="fields.child_gender"
                         :placeholder="$t('forms.appointment.placeholder-child-gender')"
                         option-value="value"
                         option-label="label"
                         :options="genders"
                         :invalid="invalid"
-                        @update:model-value="fields.childGender = $event"
+                        @update:model-value="fields.child_gender = $event"
                     />
                 </AppField>
 
@@ -146,7 +154,12 @@
                     v-slot="{ invalid }"
                 >
                     <div class="form-appointment__field--agreement-content">
-                        <a href="/privacy" target="_blank" rel="noreferrer noopener">
+                        <a
+                            class="form-appointment__field--agreement-link"
+                            href="/privacy"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                        >
                             {{ $t('forms.appointment.privacy') }}
                         </a>
 
@@ -171,16 +184,21 @@
 <script lang="ts" setup>
 import { createAppointment } from '~/api/appointment';
 import { useAppointmentRules } from '~/components/forms/validationRules/formAppointmentRules';
+import type { AxiosResponse } from 'axios';
+
+const emits = defineEmits<{
+    (event: 'success:appointment', response: AxiosResponse): void;
+}>();
 
 const { t } = useI18n();
 
 const state = ref({
     name: '',
-    childName: '',
-    childAge: '',
-    childGender: '',
-    phone: '',
-    telegram: '',
+    child_name: '',
+    child_age: '',
+    child_gender: '',
+    phone: null,
+    telegram: null,
     description: '',
     agreement: false,
 });

@@ -4,7 +4,7 @@
             <div class="header__container">
                 <!-- Навигация -->
                 <nav class="header__navigation" aria-label="Main navigation">
-                    <ul v-if="!isPrivacyPage" class="header__menu">
+                    <ul v-if="isHomePage" class="header__menu">
                         <li
                             class="header__menu-item"
                             v-for="item in navigationItems"
@@ -42,15 +42,19 @@
                 <div class="header__socials">
                     <a
                         href="mailto:dr.kseniagunina@yandex.ru?subject=Письмо с сайта&body=Здравствуйте, Ксения Александровна!%0D%0A%0D%0AХочу уточнить по поводу "
+                        target="_blank"
+                        rel="noopener noreferrer"
                     >
                         <AppButton rounded raised variant="outlined">
                             <SvgIcon name="mail" />
                         </AppButton>
                     </a>
 
-                    <AppButton rounded raised variant="outlined">
-                        <SvgIcon name="telegram" />
-                    </AppButton>
+                    <a href="https://t.me/dr_ksgunina" target="_blank" rel="noopener noreferrer">
+                        <AppButton rounded raised variant="outlined">
+                            <SvgIcon name="telegram" />
+                        </AppButton>
+                    </a>
 
                     <AppPopoverLocale />
 
@@ -70,22 +74,19 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRoute } from '#vue-router';
+import { useTheme } from '~/composables/useTheme';
 import { useBreakpoints } from '~/composables/useBreakpoins';
 
 const route = useRoute();
+const localePath = useLocalePath();
 const { isMobile } = useBreakpoints();
+const { isDarkMode, toggleMode } = useTheme();
 
-const isDarkMode = ref<boolean>(false);
 const activeSection = ref<string>('about');
 const header = ref<HTMLElement | null>(null);
 let observer: IntersectionObserver;
 
-const isPrivacyPage = computed(() => route.path === '/privacy');
-
-const toggleMode = () => {
-    isDarkMode.value = !isDarkMode.value;
-    document.documentElement.classList.toggle('dark-mode');
-};
+const isHomePage = computed(() => route.path === localePath('/'));
 
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

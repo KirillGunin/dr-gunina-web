@@ -56,4 +56,11 @@
 
         }
     }
+
+    // dark mode
+    .dark-mode & {
+        & .p-card-header img {
+            opacity: 0.7;
+        }
+    }
 }

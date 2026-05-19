@@ -2,26 +2,31 @@
     <div class="page-privacy">
         <div class="container">
             <div class="page-privacy__content">
-                <AppFoldersBlock :folders="folders" />
+                <AppFoldersBlock
+                    :folders="folders"
+                    :privacy-content="privacyContent"
+                    :loading="loading"
+                />
             </div>
         </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import type { Folder } from '@/types/folder';
+import { fetchPrivacyContent } from '~/api/privacy';
+import type { Folder, FolderContent } from '@/types/folder';
+
 const { t } = useI18n();
+const toast = useToast();
+
+const privacyContent = ref<FolderContent | null>(null);
+const loading = ref<boolean>(true);
 
 const folders: Folder[] = [
     {
-        label: t('pages.legal.confidential-title'),
+        label: t('pages.legal.conspiracy-title'),
         color: 'peach',
         icon: 'privacy',
-    },
-    {
-        label: t('pages.legal.conspiracy-title'),
-        color: 'gray',
-        icon: 'services',
     },
     {
         label: t('pages.legal.offer-title'),
@@ -29,4 +34,16 @@ const folders: Folder[] = [
         icon: 'offer',
     },
 ];
+
+fetchPrivacyContent()
+    .then((response) => (privacyContent.value = response.data))
+    .catch(() =>
+        toast.add({
+            severity: 'error',
+            summary: t('errors.common.error'),
+            detail: t('errors.common.try-later'),
+            life: 3000,
+        })
+    )
+    .finally(() => (loading.value = false));
 </script>

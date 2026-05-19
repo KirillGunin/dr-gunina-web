@@ -152,7 +152,9 @@
             "required": "Required field",
             "name": "Field can only contain letters, spaces, hyphens and apostrophes",
             "more-than": "Value must be greater than",
-            "phone": "Enter a valid phone number"
+            "phone": "Enter a valid phone number",
+            "error": "Error",
+            "try-later": "Please try again later"
         },
         "appointment": {
             "phone-or-telegram": "Please provide a phone number or Telegram username",
@@ -163,6 +165,7 @@
         "details": "Details",
         "name": "Gunina Ksenia Aleksandrovna",
         "legal": "Legal documents",
-        "home": "Home"
+        "home": "Home",
+        "inn": "TIN"
     }
 }

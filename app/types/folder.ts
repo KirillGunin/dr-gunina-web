@@ -3,3 +3,8 @@ export type Folder = {
     color: string;
     icon: string;
 };
+
+export type FolderContent = {
+    policy: string;
+    offer: string;
+};

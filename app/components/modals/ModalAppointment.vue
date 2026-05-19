@@ -22,12 +22,15 @@
         }"
         @close:visible="emits('close:visible')"
     >
-        <FormAppointment />
+        <FormAppointment
+            @success:appointment="(response) => emits('success:appointment', response)"
+        />
     </AppModal>
 </template>
 
 <script setup lang="ts">
 import FormAppointment from '@/components/forms/FormAppointment.vue';
+import type { AxiosResponse } from 'axios';
 
 type ServiceProps = {
     visible: boolean;
@@ -39,5 +42,6 @@ withDefaults(defineProps<ServiceProps>(), {
 
 const emits = defineEmits<{
     (event: 'close:visible'): void;
+    (event: 'success:appointment', response: AxiosResponse): void;
 }>();
 </script>

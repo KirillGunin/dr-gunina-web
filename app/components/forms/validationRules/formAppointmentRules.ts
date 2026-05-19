@@ -10,9 +10,9 @@ export const useAppointmentRules = (state: Ref<Record<string, any>>) => {
 
     const appointmentRules = {
         name: { required },
-        childName: { required },
-        childAge: { required },
-        childGender: { required },
+        child_name: { required },
+        child_age: { required },
+        child_gender: { required },
         phone: { phoneOrTelegram, phone },
         telegram: { phoneOrTelegram, minLength: minLength(5) },
         description: { required },

@@ -18,4 +18,13 @@
         width: 26px;
         stroke-width: 2.2;
     }
+
+    .dark-mode & {
+        &__item {
+            background: var(--p-salomie-300);
+            color: var(--p-green-500);
+            border-color: var(--p-green-500);
+            box-shadow: var(--shadow-soft);
+        }
+    }
 }

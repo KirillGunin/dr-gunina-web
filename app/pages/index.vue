@@ -10,14 +10,13 @@
                             </span>
 
                             <AppButton
-                                v-if="infoService !== null"
                                 class="page-home__welcome-hook-action"
                                 :label="$t('pages.home.hook-action')"
                                 raised
                                 severity="success"
                                 rounded
                                 size="large"
-                                @click="openModalConsultation($event)"
+                                @click="infoService && openModalService(infoService)"
                             />
                         </div>
                     </div>
@@ -29,25 +28,11 @@
             </section>
 
             <section class="page-home__about" id="about">
-                <div
-                    class="page-home__about-image"
-                    v-animateonscroll="{
-                        enterClass: 'swipe-in',
-                        leaveClass: 'swipe-out',
-                        threshold: 0,
-                    }"
-                >
+                <div class="page-home__about-image">
                     <img src="/images/main.png" alt="Главная заставка" />
                 </div>
 
-                <div
-                    class="page-home__about-content"
-                    v-animateonscroll="{
-                        enterClass: 'swipe-in',
-                        leaveClass: 'swipe-out',
-                        threshold: 0,
-                    }"
-                >
+                <div class="page-home__about-content">
                     <h4 class="page-home__about-title">{{ $t('pages.home.about') }}</h4>
 
                     <ul class="page-home__about-facts">
@@ -91,12 +76,16 @@
         <LazyModalsModalAppointment
             :visible="modalAppointment"
             @close:visible="modalAppointment = false"
+            @success:appointment="(response) => successAppointment(response)"
         />
     </div>
 </template>
 <script setup lang="ts">
 const { t } = useI18n();
+import type { AxiosResponse } from 'axios';
 import type { Service } from '@/types/service';
+
+const toast = useToast();
 
 const modalService = ref<boolean>(false);
 const modalAppointment = ref<boolean>(false);
@@ -116,22 +105,10 @@ const openModalService = (service: Service) => {
     modalService.value = true;
 };
 
-const openModalConsultation = (event: MouseEvent) => {
-    const service = infoService.value;
-    if (!service) return;
-
-    (event.target as HTMLElement).blur();
-
-    scrollToSection();
-    setTimeout(() => openModalService(service), 0);
-};
-
-const scrollToSection = () => {
-    const element = document.getElementById('services');
-    if (!element) return;
-
-    const top = element.getBoundingClientRect().top + window.scrollY - 140;
-    window.scrollTo({ top, behavior: 'smooth' });
+const successAppointment = (response: AxiosResponse) => {
+    const message = response.data.message;
+    toast.add({ severity: 'success', summary: message.label, detail: message.text, life: 1000000 });
+    modalAppointment.value = false;
 };
 
 const facts = [

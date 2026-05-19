@@ -33,6 +33,11 @@
         &--agreement-content {
             display: flex;
             gap: var(--spacer-xs);
+
+        }
+
+        &--agreement-link {
+            border-bottom: 1px solid var(--link-color);
         }
     }
 

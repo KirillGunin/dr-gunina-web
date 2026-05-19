@@ -8,7 +8,18 @@
         blockScroll
         dismissable-mask
         :header="header"
-        :pt="pt"
+        :pt="{
+            ...pt,
+            pcCloseButton: {
+                root: {
+                    style: {
+                        outline: 'none',
+                        boxShadow: 'none',
+                        background: 'transparent',
+                    },
+                },
+            },
+        }"
         :style="{
             width: width,
         }"

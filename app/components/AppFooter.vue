@@ -7,11 +7,11 @@
                 <div class="footer__info">
                     <p class="footer__inn">
                         <span>{{ $t('others.name') }}</span>
-                        <span>ИНН: 470518050729</span>
+                        <span>{{ $t('others.inn') }}: 470518050729</span>
                     </p>
 
                     <nav class="footer__nav-links" aria-label="Footer navigation">
-                        <NuxtLink class="footer__nav-link" to="/privacy">
+                        <NuxtLink class="footer__nav-link" :to="localePath('privacy')">
                             {{ $t('others.legal') }}
                         </NuxtLink>
                     </nav>
@@ -20,3 +20,7 @@
         </div>
     </footer>
 </template>
+
+<script lang="ts" setup>
+const localePath = useLocalePath();
+</script>
