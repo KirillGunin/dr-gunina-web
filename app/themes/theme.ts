@@ -8,6 +8,13 @@ const CustomPreset = definePreset(Aura, {
             50: '#5a7f2b',
             100: '#4a6826',
             200: '#74953e',
+            300: '#74953E99',
+            400: '#143914',
+        },
+        lime: {
+            50: '#e6ffe6d9',
+            100: '#85d385',
+            200: '#349a34',
         },
         rose: {
             50: '#fffdfd',
@@ -217,13 +224,15 @@ const CustomPreset = definePreset(Aura, {
                         borderColor: '{green.50}',
                         color: '{neutral.700}',
                         background: '{rose.50}',
+                        shadow: 'var(--shadow-soft)',
                     },
                 },
                 dark: {
                     root: {
-                        borderColor: '{rose.50}',
+                        borderColor: 'transparent',
                         color: '{rose.50}',
-                        background: '{neutral.800}',
+                        background: '{surface.800}',
+                        shadow: 'var(--shadow-soft)',
                     },
                 },
             },
@@ -265,6 +274,18 @@ const CustomPreset = definePreset(Aura, {
                         color: '{surface.950}',
                     },
                 },
+                dark: {
+                    root: {
+                        background: 'transparent',
+                    },
+                    option: {
+                        selectedBackground: '{surface.800}',
+                        selectedFocusBackground: '{surface.800}',
+                        selectedFocusColor: '{rose.50}',
+                        selectedColor: '{rose.50}',
+                        color: '{rose.50}',
+                    },
+                },
             },
         },
         textarea: {
@@ -284,6 +305,12 @@ const CustomPreset = definePreset(Aura, {
                         },
                     },
                 },
+                dark: {
+                    root: {
+                        background: 'transparent',
+                        color: '{rose.50}',
+                    },
+                },
             },
         },
         checkbox: {
@@ -299,6 +326,42 @@ const CustomPreset = definePreset(Aura, {
                         checkedBorderColor: '{salmon.300}',
                         checkedHoverBackground: '{salmon.200}',
                         checkedHoverBorderColor: '{salmon.200}',
+                    },
+                },
+                dark: {
+                    root: {
+                        background: 'transparent',
+                    },
+                },
+            },
+        },
+        toast: {
+            colorScheme: {
+                light: {
+                    success: {
+                        background: '{lime.50}',
+                        borderColor: '{lime.100}',
+                        color: '{lime.200}',
+                        shadow: 'var(--shadow-soft)',
+                    },
+                },
+                dark: {
+                    success: {
+                        background: '{olive.300}',
+                        borderColor: '{olive.400}',
+                        color: '{olive.400}',
+                        shadow: 'var(--shadow-soft)',
+                    },
+                },
+            },
+        },
+        dialog: {
+            colorScheme: {
+                dark: {
+                    root: {
+                        borderColor: 'transparent',
+                        background: '{surface.800}',
+                        shadow: 'var(--shadow-soft)',
                     },
                 },
             },

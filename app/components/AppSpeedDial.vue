@@ -22,31 +22,35 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useI18n } from '#imports';
-
+import { useTheme } from '~/composables/useTheme';
 import type { SpeedDialItem } from '~/types/speedDialItem';
 
 const { setLocale } = useI18n();
+const { isDarkMode, toggleMode } = useTheme();
+
 const isMenuOpen = ref<boolean>(false);
-const isDarkMode = ref<boolean>(false);
 
 const items = computed<SpeedDialItem[]>(() => [
     {
         icon: 'mail',
         command: () => {
-            console.log(1);
+            window.open(
+                'mailto:dr.kseniagunina@yandex.ru?subject=Письмо с сайта&body=Здравствуйте, Ксения Александровна!%0D%0A%0D%0AХочу уточнить по поводу ',
+                '_blank',
+                'noopener noreferrer'
+            );
         },
     },
     {
         icon: 'telegram',
         command: () => {
-            console.log(2);
+            window.open('https://t.me/dr_ksgunina', '_blank', 'noopener noreferrer');
         },
     },
     {
         icon: isDarkMode.value ? 'lamp-on' : 'lamp-off',
         command: () => {
-            isDarkMode.value = !isDarkMode.value;
-            document.documentElement.classList.toggle('dark-mode');
+            toggleMode();
         },
     },
     {

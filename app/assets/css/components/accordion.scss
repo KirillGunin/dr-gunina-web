@@ -53,4 +53,10 @@
         font-size: 14px;
         font-weight: 400;
     }
+
+    .dark-mode & {
+        &__icon {
+            fill: var(--p-rose-50);
+        }
+    }
 }

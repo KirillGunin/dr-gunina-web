@@ -28,20 +28,29 @@
                 ]"
                 class="folders-block__tab"
             >
-                <PrivacyPolicy v-if="tab.label === $t('pages.legal.confidential-title')" />
-                <PrivacyService v-if="tab.label === $t('pages.legal.conspiracy-title')" />
-                <PrivacyOffer v-if="tab.label === $t('pages.legal.offer-title')" />
+                <PrivacyPolicy
+                    v-if="tab.label === $t('pages.legal.conspiracy-title')"
+                    :content="privacyContent?.policy"
+                    :loading="loading"
+                />
+                <PrivacyOffer
+                    v-if="tab.label === $t('pages.legal.offer-title')"
+                    :content="privacyContent?.offer"
+                    :loading="loading"
+                />
             </div>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
-import type { Folder } from '@/types/folder';
 import { ref } from 'vue';
+import type { Folder, FolderContent } from '@/types/folder';
 
 const props = defineProps<{
     folders: Folder[];
+    privacyContent: FolderContent | null;
+    loading: boolean;
 }>();
 
 const activeFolder = ref<Folder>(props.folders[0]!);

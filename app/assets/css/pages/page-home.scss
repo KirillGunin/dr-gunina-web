@@ -75,7 +75,7 @@
     //about
     &__about {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 40% 60%;
         justify-items: center;
         grid-gap: 16px;
         margin-bottom: 48px;
@@ -83,6 +83,7 @@
 
     &__about-image {
         max-height: 600px;
+        width: 100%;
         transition: transform 0.7s ease, opacity 0.7s ease;
 
         & img {
@@ -168,6 +169,19 @@
 
         &__welcome-hook-title {
             font-size: 50px;
+        }
+
+        &__about-title {
+            margin: 0 0 var(--spacer-xs);
+            font-size: 30px;
+        }
+
+        &__about-facts {
+            gap: var(--spacer-2xs);
+        }
+
+        &__about-fact {
+            font-size: 15px;
         }
     }
 
@@ -268,9 +282,7 @@
             gap: var(--spacer-xl);
             margin-bottom: var(--spacer-xl);
         }
-    }
 
-    @media (--screen-xs) {
         &__welcome,
         &__about {
             margin-bottom: var(--spacer-md);
@@ -279,6 +291,28 @@
         &__services {
             margin-bottom: var(--spacer-md);
             gap: var(--spacer-md);
+        }
+    }
+
+    // dark mode
+    .dark-mode & {
+        &__welcome-image {
+            & img {
+                opacity: 0.7;
+            }
+
+            background: var(--p-surface-700);
+            border-radius: 50%;
+
+            @media (--screen-xs) {
+                background: url('/images/main.png') center 0 / cover no-repeat;
+                opacity: 0.7;
+                border-radius: 8px;
+            }
+        }
+
+        &__about-image img {
+            opacity: 0.7;
         }
     }
 }

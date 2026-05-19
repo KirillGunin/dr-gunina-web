@@ -10,6 +10,15 @@ export default defineNuxtConfig({
                 '@': resolve(__dirname, './app'),
             },
         },
+        optimizeDeps: {
+            include: [
+                '@vue/devtools-core',
+                '@vue/devtools-kit',
+                '@vuelidate/core',
+                '@vuelidate/validators',
+                'inputmask',
+            ],
+        },
         // server: {
         //     headers: {
         //         'Cache-Control': 'no-store',
@@ -48,6 +57,11 @@ export default defineNuxtConfig({
                     defer: true,
                 },
             ],
+        },
+    },
+    runtimeConfig: {
+        public: {
+            apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
         },
     },
 });

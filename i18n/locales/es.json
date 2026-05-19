@@ -9,7 +9,7 @@
     },
     "pages": {
         "home": {
-            "hook-text": "¿Buscando respuestas sobre la salud de tu hijo?",
+            "hook-text": "¿Buscando respuestas sobre la salud de tu niño?",
             "hook-action": "Resolverlo juntos",
             "about": "Sobre"
         },
@@ -153,7 +153,9 @@
             "required": "Campo obligatorio",
             "name": "El campo solo puede contener letras, espacios, guiones y apóstrofes",
             "more-than": "El valor debe ser mayor que",
-            "phone": "Ingresa un número de teléfono válido"
+            "phone": "Ingresa un número de teléfono válido",
+            "error": "Error",
+            "try-later": "Por favor, inténtelo más tarde"
         },
         "appointment": {
             "phone-or-telegram": "Indica un número de teléfono o usuario de Telegram",
@@ -164,6 +166,7 @@
         "details": "Detalles",
         "name": "Gunina Ksenia Aleksandrovna",
         "legal": "Documentos legales",
-        "home": "Inicio"
+        "home": "Inicio",
+        "inn": "TIN"
     }
 }

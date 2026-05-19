@@ -1,12 +1,14 @@
+import type { Appointment } from '~/types/appointment';
+
 /**
- * Отправляет запрос на поиск адресов по совпадению
- * @param data - данные для записи консультации
+ * Отправляет запрос для записи на консультацию
+ * @param appointment - данные для записи консультации
  */
-export const createAppointment = async (data: any) => {
-    console.log(123, data);
-    // TODO перенести в дадата модуль
-    // return axios
-    //     .get(`/get_address?address=${encodeURIComponent(search)}`)
-    //     .then((response) => Promise.resolve(response))
-    //     .catch((error) => Promise.reject(error));
+export const createAppointment = async (appointment: Appointment) => {
+    const { $axios } = useNuxtApp();
+
+    return $axios
+        .post('/appointment', appointment)
+        .then((response) => Promise.resolve(response))
+        .catch((error) => Promise.reject(error));
 };

@@ -14,6 +14,9 @@ const waitForYmaps = (): Promise<void> => {
     });
 };
 
+let mapInstance: any = null;
+let schemeLayerInstance: any = null;
+
 export const useYandexMap = () => {
     const initMap = async (
         containerId: string,
@@ -27,12 +30,19 @@ export const useYandexMap = () => {
         const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
             window.ymaps3;
 
+        const theme = useCookie('theme').value === 'dark' ? 'dark' : 'light';
+
         const map = new YMap(document.getElementById(containerId)!, {
             location: { center, zoom },
+            theme: theme,
         });
 
-        //map.addChild(new YMapDefaultSchemeLayer({ theme: 'dark' }));
-        map.addChild(new YMapDefaultSchemeLayer({}));
+        const schemeLayer = new YMapDefaultSchemeLayer({});
+
+        mapInstance = map;
+        schemeLayerInstance = schemeLayer;
+
+        map.addChild(schemeLayer);
         map.addChild(new YMapDefaultFeaturesLayer({}));
 
         if (markers && markers.length > 0) {
@@ -59,5 +69,17 @@ export const useYandexMap = () => {
         return map;
     };
 
-    return { initMap };
+    const setTheme = (theme: 'light' | 'dark') => {
+        if (!mapInstance || !schemeLayerInstance) {
+            return;
+        }
+
+        const { YMapDefaultSchemeLayer } = window.ymaps3;
+
+        mapInstance.removeChild(schemeLayerInstance);
+        schemeLayerInstance = new YMapDefaultSchemeLayer({ theme });
+        mapInstance.addChild(schemeLayerInstance, 0);
+    };
+
+    return { initMap, setTheme };
 };
