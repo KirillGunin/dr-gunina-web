@@ -82,9 +82,11 @@
 </template>
 <script setup lang="ts">
 const { t } = useI18n();
+import { useSeoHome } from '~/composables/seo-index-ru';
 import type { AxiosResponse } from 'axios';
 import type { Service } from '@/types/service';
 
+useSeoHome();
 const toast = useToast();
 
 const modalService = ref<boolean>(false);
