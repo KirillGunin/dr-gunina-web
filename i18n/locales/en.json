@@ -154,6 +154,7 @@
             "more-than": "Value must be greater than",
             "phone": "Enter a valid phone number",
             "error": "Error",
+            "loading-error": "Error loading data",
             "try-later": "Please try again later"
         },
         "appointment": {

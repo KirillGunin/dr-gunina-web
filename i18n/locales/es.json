@@ -155,6 +155,7 @@
             "more-than": "El valor debe ser mayor que",
             "phone": "Ingresa un número de teléfono válido",
             "error": "Error",
+            "loading-error": "Error al cargar datos",
             "try-later": "Por favor, inténtelo más tarde"
         },
         "appointment": {

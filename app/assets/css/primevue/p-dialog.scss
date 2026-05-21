@@ -9,6 +9,7 @@
         max-width: 100%;
         padding: var(--spacer-xs);
         justify-content: center;
+        border-radius: unset;
 
         & .p-dialog-content {
             display: flex;
