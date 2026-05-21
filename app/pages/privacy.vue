@@ -40,9 +40,9 @@ fetchPrivacyContent()
     .catch(() =>
         toast.add({
             severity: 'error',
-            summary: t('errors.common.error'),
+            summary: t('errors.common.loading-error'),
             detail: t('errors.common.try-later'),
-            life: 3000,
+            life: 6000,
         })
     )
     .finally(() => (loading.value = false));

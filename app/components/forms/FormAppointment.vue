@@ -176,6 +176,7 @@
                 severity="success"
                 raised
                 rounded
+                :loading="sending"
             />
         </AppForm>
     </div>
@@ -202,6 +203,7 @@ const state = ref({
     description: '',
     agreement: false,
 });
+
 const { appointmentRules } = useAppointmentRules(state);
 
 const genders = [

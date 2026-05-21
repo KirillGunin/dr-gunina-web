@@ -5,11 +5,13 @@
             v-if="loading"
             color="var(--folder-peach-heading)"
         />
-        <div v-if="!loading" v-html="content" />
+        <div v-if="!loading && content" v-html="DOMPurify.sanitize(content)" />
     </div>
 </template>
 
 <script setup lang="ts">
+import DOMPurify from 'dompurify';
+
 defineProps<{
     loading: boolean;
     content?: string;
@@ -18,6 +20,8 @@ defineProps<{
 
 <style lang="scss">
 .privacy-policy {
+    display: contents;
+
     &__loading {
         position: absolute;
         top: 50%;
