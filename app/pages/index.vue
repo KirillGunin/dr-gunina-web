@@ -109,7 +109,7 @@ const openModalService = (service: Service) => {
 
 const successAppointment = (response: AxiosResponse) => {
     const message = response.data.message;
-    toast.add({ severity: 'success', summary: message.label, detail: message.text, life: 6000 });
+    toast.add({ severity: 'success', summary: message.label, detail: message.text, life: 600000 });
     modalAppointment.value = false;
 };
 
