@@ -16,9 +16,11 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd /var/www/dr-gunina/frontend
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart nuxt-frontend
+	  script: |
+	    cd /var/www/dr-gunina/frontend
+  	    git checkout main
+  	    git pull origin main
+  	    npm install
+  	    rm -rf .output node_modules/.cache
+  	    npm run build
+  	    pm2 restart nuxt-frontend
