@@ -9,7 +9,7 @@
     z-index: 1;
     border-radius: unset !important;
 
-    & .p-overlay-mask {
-        height: 100vh;
+    &.p-overlay-mask {
+        height: 100vh !important;
     }
 }
