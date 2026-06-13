@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 type Props = {
     modelValue: string | null;
-    options: any;
+    options: Record<string, unknown>[];
     placeholder?: string;
     optionLabel: string;
     optionValue: string;
@@ -24,7 +24,7 @@ type Props = {
 
 withDefaults(defineProps<Props>(), {
     modelValue: '',
-    options: [],
+    options: () => [],
     placeholder: '',
     optionLabel: '',
     optionValue: '',

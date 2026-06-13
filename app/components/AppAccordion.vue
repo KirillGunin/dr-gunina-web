@@ -29,9 +29,14 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 
+type AccordionItem = {
+    title: string;
+    link?: string;
+};
+
 defineProps<{
     label: string;
-    items: any;
+    items: AccordionItem[];
 }>();
 
 const isOpen = ref(false);

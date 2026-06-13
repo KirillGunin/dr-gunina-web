@@ -12,7 +12,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     });
 
     axiosInstance.interceptors.request.use((config) => {
-        const i18n = nuxtApp.$i18n as any;
+        const i18n = nuxtApp.$i18n as { locale: Ref<string> };
         config.headers['Accept-Language'] = i18n.locale.value;
         return config;
     });

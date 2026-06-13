@@ -92,14 +92,15 @@ const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (!element) return;
 
-    const top = element.getBoundingClientRect().top + window.scrollY - 140;
+    const offset = (header.value?.offsetHeight ?? 100) + 20;
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: 'smooth' });
 };
 
 const navigationItems = [
-    { title: 'header.about', link: 'about' },
-    { title: 'header.services', link: 'services' },
-    { title: 'header.contacts', link: 'contacts' },
+    { title: 'header.about', link: 'section-about' },
+    { title: 'header.services', link: 'section-services' },
+    { title: 'header.contacts', link: 'section-contacts' },
 ];
 
 onMounted(() => {

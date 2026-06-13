@@ -27,7 +27,7 @@
                 </div>
             </section>
 
-            <section class="page-home__about" id="about">
+            <section class="page-home__about" id="section-about">
                 <div class="page-home__about-image">
                     <img src="/images/main.png" alt="Главная заставка" />
                 </div>
@@ -55,7 +55,7 @@
                 </div>
             </section>
 
-            <section class="page-home__services" id="services">
+            <section class="page-home__services" id="section-services">
                 <AppCardService
                     v-for="service in services"
                     :key="service.img"
@@ -152,9 +152,7 @@ const services: Service[] = [
         modalActionButton: t('services.lure.modalActionButton'),
         payLink: '#',
         key: 'lure',
-        command: () => {
-            console.log(1);
-        },
+        command: () => {},
     },
     {
         img: '/images/services/chat-group.png',
@@ -174,12 +172,10 @@ const services: Service[] = [
         modalActionButton: t('services.group_chat.modalActionButton'),
         payLink: '#',
         key: 'group_chat',
-        command: () => {
-            console.log(2);
-        },
+        command: () => {},
     },
     {
-        img: '/images/services/service.png',
+        img: '/images/services/consultation.png',
         title: t('services.info_service.title'),
         content: t('services.info_service.content'),
         price: '4000',
@@ -193,9 +189,7 @@ const services: Service[] = [
         modalActionButton: t('services.info_service.modalActionButton'),
         payLink: '#',
         key: 'info_service',
-        command: () => {
-            modalAppointment.value = true;
-        },
+        command: () => (modalAppointment.value = true),
     },
     {
         img: '/images/services/first-aid-kit.png',
@@ -222,9 +216,7 @@ const services: Service[] = [
         modalActionButton: t('services.no_panic.modalActionButton'),
         payLink: '#',
         key: 'no_panic',
-        command: () => {
-            console.log(4);
-        },
+        command: () => {},
     },
     {
         img: '/images/services/service.png',
@@ -240,9 +232,7 @@ const services: Service[] = [
         modalActionButton: t('services.individual_chat.modalActionButton'),
         payLink: '#',
         key: 'individual_chat',
-        command: () => {
-            console.log(5);
-        },
+        command: () => {},
     },
     {
         img: '/images/services/service.png',
@@ -262,9 +252,7 @@ const services: Service[] = [
         modalActionButton: t('services.vaccination.modalActionButton'),
         payLink: '#',
         key: 'vaccination',
-        command: () => {
-            console.log(6);
-        },
+        command: () => {},
     },
 ];
 </script>
