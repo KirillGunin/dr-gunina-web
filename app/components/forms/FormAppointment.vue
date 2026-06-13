@@ -8,7 +8,7 @@
                         ...data,
                         phone: data.phone || null,
                         telegram: data.telegram || null,
-                    })
+                    } as Appointment)
             "
             :init-fields="{
                 name: '',
@@ -186,6 +186,7 @@
 import { createAppointment } from '~/api/appointment';
 import { useAppointmentRules } from '~/components/forms/validationRules/formAppointmentRules';
 import type { AxiosResponse } from 'axios';
+import type { Appointment } from '~/types/appointment';
 
 const emits = defineEmits<{
     (event: 'success:appointment', response: AxiosResponse): void;

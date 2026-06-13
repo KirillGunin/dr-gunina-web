@@ -10,7 +10,7 @@
         <slot :invalid="frontendErrors?.length > 0 || backendErrors?.length > 0"></slot>
 
         <div v-if="frontendErrors?.length > 0" class="field__error">
-            {{ frontendErrors[0].$message }}
+            {{ frontendErrors[0]?.$message }}
         </div>
 
         <div v-if="backendErrors?.length > 0" class="field__error">
@@ -24,9 +24,11 @@
 </template>
 
 <script setup lang="ts">
+import type { ErrorObject } from '@vuelidate/core';
+
 interface Props {
     label?: string;
-    frontendErrors?: any;
+    frontendErrors?: ErrorObject[];
     backendErrors?: string[];
     customErrors?: string[];
 }

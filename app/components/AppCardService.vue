@@ -36,6 +36,7 @@
                     variant="outlined"
                     raised
                     :label="service.actionTitle"
+                    @click="service.command"
                 />
             </div>
         </template>

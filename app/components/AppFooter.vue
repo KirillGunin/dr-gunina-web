@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer" id="contacts">
+    <footer class="footer" id="section-contacts">
         <div class="container">
             <div class="footer__content">
                 <ContactsMapSection />

@@ -1,3 +1,5 @@
+import type { YMap, YMapDefaultSchemeLayer } from '@yandex/ymaps3-types';
+
 const waitForYmaps = (): Promise<void> => {
     return new Promise((resolve) => {
         if (window.ymaps3) {
@@ -14,8 +16,8 @@ const waitForYmaps = (): Promise<void> => {
     });
 };
 
-let mapInstance: any = null;
-let schemeLayerInstance: any = null;
+let mapInstance: YMap | null = null;
+let schemeLayerInstance: YMapDefaultSchemeLayer | null = null;
 
 export const useYandexMap = () => {
     const initMap = async (

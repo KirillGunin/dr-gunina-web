@@ -16,10 +16,12 @@ import useVuelidate from '@vuelidate/core';
 import type { ValidationRule } from '@vuelidate/core';
 import type { AxiosResponse } from 'axios';
 
+type FormState = Record<string, any>;
+
 interface Props {
-    method: (data: any) => Promise<any>;
-    modelValue?: Record<string, any>;
-    initFields?: Record<string, any>;
+    method: (data: FormState) => Promise<unknown>;
+    modelValue?: FormState;
+    initFields?: FormState;
     rules?: Record<string, Record<string, ValidationRule | ValidationRule[]>>;
     autoDirty?: boolean;
     lazy?: boolean;
@@ -35,14 +37,14 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const emit = defineEmits<{
-    (event: 'update:modelValue', payload: object): void;
-    (event: 'beforeSend', payload: object): void;
-    (event: 'success', payload: AxiosResponse): void;
-    (event: 'error', payload: object): void;
-    (event: 'validationFailed', payload: object): void;
+    'update:modelValue': [payload: FormState];
+    beforeSend: [payload: FormState];
+    success: [payload: AxiosResponse];
+    error: [payload: Record<string, unknown>];
+    validationFailed: [payload: object];
 }>();
 
-const state = reactive<Record<string, any>>({});
+const state = reactive<FormState>({});
 
 const formData = reactive({
     sending: false,
@@ -86,11 +88,14 @@ async function submit() {
 
         try {
             const response = await props.method(state);
-            emit('success', response);
-        } catch (error: any) {
-            const errorResponseData = error?.response?.data ?? {};
+            emit('success', response as AxiosResponse);
+        } catch (error: unknown) {
+            const axiosError = error as {
+                response?: { data?: { errors?: string[]; message?: string } };
+            };
+            const errorResponseData = axiosError?.response?.data ?? {};
 
-            formData.backendErrors = errorResponseData.errors ?? {};
+            formData.backendErrors = errorResponseData.errors ?? [];
             formData.message = errorResponseData.message ?? 'Unexpected error';
 
             emit('error', errorResponseData);
