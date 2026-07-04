@@ -259,7 +259,7 @@ const CustomPreset = definePreset(Aura, {
                         borderColor: '{salmon.300}',
                         hoverBorderColor: '{salmon.200}',
                         focusBorderColor: '{salmon.200}',
-                        invalidBorderColor: 'red',
+                        invalidBorderColor: 'var(--base-red)',
                         placeholderColor: 'var(--placeholder-color)',
                         invalidPlaceholderColor: 'var(--placeholder-color)',
                     },
@@ -277,6 +277,7 @@ const CustomPreset = definePreset(Aura, {
                 dark: {
                     root: {
                         background: 'transparent',
+                        invalidBorderColor: 'var(--base-red)',
                     },
                     option: {
                         selectedBackground: '{surface.800}',
@@ -295,7 +296,7 @@ const CustomPreset = definePreset(Aura, {
                         borderColor: '{salmon.300}',
                         hoverBorderColor: '{salmon.200}',
                         focusBorderColor: '{salmon.300}',
-                        invalidBorderColor: 'red',
+                        invalidBorderColor: 'var(--base-red)',
                         invalidPlaceholderColor: 'var(--placeholder-color)',
                         color: '{surface.950}',
                         placeholderColor: 'var(--placeholder-color)',
@@ -309,6 +310,7 @@ const CustomPreset = definePreset(Aura, {
                     root: {
                         background: 'transparent',
                         color: '{rose.50}',
+                        invalidBorderColor: 'var(--base-red)',
                     },
                 },
             },
@@ -320,7 +322,7 @@ const CustomPreset = definePreset(Aura, {
                         borderColor: '{salmon.300}',
                         hoverBorderColor: '{salmon.200}',
                         focusBorderColor: '{salmon.300}',
-                        invalidBorderColor: 'red',
+                        invalidBorderColor: 'var(--base-red)',
                         shadow: 'var(--shadow-soft)',
                         checkedBackground: '{salmon.300}',
                         checkedBorderColor: '{salmon.300}',
@@ -331,6 +333,7 @@ const CustomPreset = definePreset(Aura, {
                 dark: {
                     root: {
                         background: 'transparent',
+                        invalidBorderColor: 'var(--base-red)',
                     },
                 },
             },

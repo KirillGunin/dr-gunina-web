@@ -37,6 +37,7 @@
 
 //Modals
 @use "./components/modals/modal-service";
+@use "./components/modals/modal-cookie";
 
 // Animations
 @use "./animations/pulse";
@@ -156,7 +157,7 @@ body {
     margin: 0 auto;
 
     @media (--screen-xs) {
-        padding: 0 var(--spacer-xs);
+        padding: 0 var(--spacer-md);
     }
 }
 
@@ -204,6 +205,7 @@ body {
 
     // colors
     --base-gray: #c4c5c4;
+    --base-red: #ff0000;
 
     // text color
     --notice-color: #757575;
@@ -247,6 +249,8 @@ body {
 
     // text color
     --notice-color: #403f3f;
+
+    --base-red: #ff4c4c;
 }
 
 // media

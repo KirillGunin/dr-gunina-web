@@ -1,0 +1,16 @@
+.modal-cookie {
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__content-text {
+        margin-bottom: var(--spacer-ml);
+    }
+
+    @media (--screen-xs) {
+        height: auto;
+        bottom: 0 !important;
+        right: 0 !important;
+    }
+}
