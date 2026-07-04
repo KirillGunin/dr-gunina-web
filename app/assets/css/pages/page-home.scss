@@ -279,6 +279,8 @@
 
         // services
         &__services {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: var(--spacer-xl);
             margin-bottom: var(--spacer-xl);
         }
@@ -290,7 +292,7 @@
 
         &__services {
             margin-bottom: var(--spacer-md);
-            gap: var(--spacer-md);
+            gap: var(--spacer-ml);
         }
     }
 

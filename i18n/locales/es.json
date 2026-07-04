@@ -114,6 +114,20 @@
                 "title": "Prevención del sarampión.pdf"
             },
             "modalActionButton": "Obtener calendario de vacunación"
+        },
+        "mentoring": {
+            "title": "Mentoría para médicos",
+            "content": "Mentoría personal para médicos",
+            "actionTitle": "Quiero mentoría",
+            "details": {
+                "detail_1": "Respuestas personales mías a cualquier pregunta 6 días a la semana;",
+                "detail_2": "Una llamada a la semana con análisis de casos de mis consultas y las tuyas;",
+                "detail_3": "Consejos prácticos para buscar información."
+            },
+            "attachment": {
+                "title": ""
+            },
+            "modalActionButton": "Quiero mentoría"
         }
     },
     "addresses": {
@@ -162,6 +176,11 @@
             "phone-or-telegram": "Indica un número de teléfono o usuario de Telegram",
             "agreement": "Debes aceptar el tratamiento de datos"
         }
+    },
+    "cookie": {
+        "modal-header": "Cookies",
+        "modal-content": "Este sitio utiliza cookies para analizar el tráfico y comprender cómo los visitantes usan el sitio. Al hacer clic en «Aceptar», usted consiente su uso.",
+        "accept": "Aceptar"
     },
     "others": {
         "details": "Detalles",

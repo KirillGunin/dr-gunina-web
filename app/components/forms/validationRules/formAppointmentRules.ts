@@ -1,11 +1,12 @@
 import type { Ref } from 'vue';
 import { validationMessages } from '@/composables/useCustomRules';
+import type { Appointment } from '~/types/appointment';
 
 /**
  * Возвращает правила валидации формы записи консультации
  * @param state - стейт формы
  */
-export const useAppointmentRules = (state: Ref<Record<string, any>>) => {
+export const useAppointmentRules = (state: Ref<Appointment>) => {
     const { required, name, isTruthy, phoneOrTelegram, phone, minLength } =
         validationMessages(state);
 

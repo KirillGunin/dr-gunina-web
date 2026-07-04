@@ -4,6 +4,7 @@
     overflow: hidden;
 
     & .p-card-header {
+        position: relative;
         height: 360px;
 
         & img {
@@ -35,25 +36,24 @@
         border-radius: 16px;
 
         & .p-card-header {
-            height: 220px;
+            height: 180px;
         }
 
         & .p-card-body {
-            gap: 8px;
+            gap: 0;
             padding: var(--spacer-sm);
         }
 
         & .p-card-title {
-            font-size: 18px;
-        }
-
-        & .p-card-content {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 400;
         }
 
-        & .p-card-footer {
-
+        & .p-card-content {
+            margin-top: var(--spacer-2xs);
+            font-size: 14px;
+            font-weight: 400;
+            justify-content: flex-end;
         }
     }
 

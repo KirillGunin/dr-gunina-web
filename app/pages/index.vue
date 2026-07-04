@@ -27,7 +27,7 @@
                 </div>
             </section>
 
-            <section class="page-home__about" id="about">
+            <section class="page-home__about" id="section-about">
                 <div class="page-home__about-image">
                     <img src="/images/main.png" alt="Главная заставка" />
                 </div>
@@ -55,7 +55,7 @@
                 </div>
             </section>
 
-            <section class="page-home__services" id="services">
+            <section class="page-home__services" id="section-services">
                 <AppCardService
                     v-for="service in services"
                     :key="service.img"
@@ -115,18 +115,9 @@ const successAppointment = (response: AxiosResponse) => {
 
 const facts = [
     { title: t('pages.facts.me'), link: '' },
-    {
-        title: t('pages.facts.education'),
-        link: '',
-    },
-    {
-        title: t('pages.facts.additional'),
-        link: '',
-    },
-    {
-        title: t('pages.facts.member'),
-        link: '',
-    },
+    { title: t('pages.facts.education'), link: '' },
+    { title: t('pages.facts.additional'), link: '' },
+    { title: t('pages.facts.member'), link: '' },
     { title: t('pages.facts.practice'), link: '' },
     { title: t('pages.facts.diagnosis'), link: '' },
     { title: t('pages.facts.certificate'), link: '#' },
@@ -153,7 +144,11 @@ const services: Service[] = [
         payLink: '#',
         key: 'lure',
         command: () => {
-            console.log(1);
+            window.open(
+                'https://self.payanyway.ru/16756515092850',
+                '_blank',
+                'noopener, noreferrer'
+            );
         },
     },
     {
@@ -175,11 +170,37 @@ const services: Service[] = [
         payLink: '#',
         key: 'group_chat',
         command: () => {
-            console.log(2);
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
         },
     },
     {
-        img: '/images/services/service.png',
+        img: '/images/services/individual_chat.png',
+        title: t('services.individual_chat.title'),
+        content: t('services.individual_chat.content'),
+        price: '10000',
+        actionTitle: t('services.individual_chat.actionTitle'),
+        details: [
+            t('services.individual_chat.details.detail_1'),
+            t('services.individual_chat.details.detail_2'),
+        ],
+        attachment: null,
+        modalActionButton: t('services.individual_chat.modalActionButton'),
+        payLink: '#',
+        key: 'individual_chat',
+        command: () => {
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
+    },
+    {
+        img: '/images/services/consultation.png',
         title: t('services.info_service.title'),
         content: t('services.info_service.content'),
         price: '4000',
@@ -193,9 +214,7 @@ const services: Service[] = [
         modalActionButton: t('services.info_service.modalActionButton'),
         payLink: '#',
         key: 'info_service',
-        command: () => {
-            modalAppointment.value = true;
-        },
+        command: () => (modalAppointment.value = true),
     },
     {
         img: '/images/services/first-aid-kit.png',
@@ -223,29 +242,15 @@ const services: Service[] = [
         payLink: '#',
         key: 'no_panic',
         command: () => {
-            console.log(4);
+            window.open(
+                'https://self.payanyway.ru/1672467575731',
+                '_blank',
+                'noopener, noreferrer'
+            );
         },
     },
     {
-        img: '/images/services/service.png',
-        title: t('services.individual_chat.title'),
-        content: t('services.individual_chat.content'),
-        price: '10000',
-        actionTitle: t('services.individual_chat.actionTitle'),
-        details: [
-            t('services.individual_chat.details.detail_1'),
-            t('services.individual_chat.details.detail_2'),
-        ],
-        attachment: null,
-        modalActionButton: t('services.individual_chat.modalActionButton'),
-        payLink: '#',
-        key: 'individual_chat',
-        command: () => {
-            console.log(5);
-        },
-    },
-    {
-        img: '/images/services/service.png',
+        img: '/images/services/vaccination.png',
         title: t('services.vaccination.title'),
         content: t('services.vaccination.content'),
         price: '3000',
@@ -263,7 +268,34 @@ const services: Service[] = [
         payLink: '#',
         key: 'vaccination',
         command: () => {
-            console.log(6);
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
+    },
+    {
+        img: '/images/services/mentoring.png',
+        title: t('services.mentoring.title'),
+        content: t('services.mentoring.content'),
+        price: '4000',
+        actionTitle: t('services.mentoring.actionTitle'),
+        details: [
+            t('services.mentoring.details.detail_1'),
+            t('services.mentoring.details.detail_2'),
+            t('services.mentoring.details.detail_3'),
+        ],
+        attachment: null,
+        modalActionButton: t('services.mentoring.modalActionButton'),
+        payLink: '#',
+        key: 'mentoring',
+        command: () => {
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
         },
     },
 ];

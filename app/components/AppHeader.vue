@@ -82,9 +82,9 @@ const localePath = useLocalePath();
 const { isMobile } = useBreakpoints();
 const { isDarkMode, toggleMode } = useTheme();
 
-const activeSection = ref<string>('about');
+const activeSection = ref<string>('section-about');
 const header = ref<HTMLElement | null>(null);
-let observer: IntersectionObserver;
+let scrollCleanup: (() => void) | null = null;
 
 const isHomePage = computed(() => route.path === localePath('/'));
 
@@ -92,14 +92,15 @@ const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (!element) return;
 
-    const top = element.getBoundingClientRect().top + window.scrollY - 140;
+    const offset = (header.value?.offsetHeight ?? 100) + 20;
+    const top = element.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: 'smooth' });
 };
 
 const navigationItems = [
-    { title: 'header.about', link: 'about' },
-    { title: 'header.services', link: 'services' },
-    { title: 'header.contacts', link: 'contacts' },
+    { title: 'header.about', link: 'section-about' },
+    { title: 'header.services', link: 'section-services' },
+    { title: 'header.contacts', link: 'section-contacts' },
 ];
 
 onMounted(() => {
@@ -107,19 +108,37 @@ onMounted(() => {
         .map((i) => document.getElementById(i.link))
         .filter(Boolean) as HTMLElement[];
 
-    observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((e) => {
-                if (e.isIntersecting) {
-                    activeSection.value = e.target.id;
-                }
-            });
-        },
-        { threshold: 0.3 }
-    );
+    if (!sections.length) return;
 
-    sections.forEach((s) => observer.observe(s));
+    const updateActive = () => {
+        const triggerY = (header.value?.offsetHeight ?? 100) + window.innerHeight * 0.35;
+        let current = sections[0]?.id;
+
+        for (const section of sections) {
+            if (section.getBoundingClientRect().top <= triggerY) {
+                current = section.id;
+            }
+        }
+
+        if (current) {
+            activeSection.value = current;
+        }
+    };
+
+    let rafId = 0;
+    const onScroll = () => {
+        cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(updateActive);
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    updateActive();
+
+    scrollCleanup = () => {
+        window.removeEventListener('scroll', onScroll);
+        cancelAnimationFrame(rafId);
+    };
 });
 
-onUnmounted(() => observer?.disconnect());
+onUnmounted(() => scrollCleanup?.());
 </script>

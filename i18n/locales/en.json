@@ -113,6 +113,20 @@
                 "title": "Measles prevention.pdf"
             },
             "modalActionButton": "Get vaccination schedule"
+        },
+        "mentoring": {
+            "title": "Mentoring for doctors",
+            "content": "Personal mentoring for doctors",
+            "actionTitle": "I want mentoring",
+            "details": {
+                "detail_1": "Personal answers from me to any questions 6 days a week;",
+                "detail_2": "One call per week analyzing cases from my and your appointments;",
+                "detail_3": "Practical advice on how to find information."
+            },
+            "attachment": {
+                "title": ""
+            },
+            "modalActionButton": "I want mentoring"
         }
     },
     "addresses": {
@@ -161,6 +175,11 @@
             "phone-or-telegram": "Please provide a phone number or Telegram username",
             "agreement": "You must agree to the data processing"
         }
+    },
+    "cookie": {
+        "modal-header": "Cookies",
+        "modal-content": "This website uses cookies to analyze traffic and understand how visitors use the site. By clicking \"Accept\", you agree to their use.",
+        "accept": "Accept and close"
     },
     "others": {
         "details": "Details",

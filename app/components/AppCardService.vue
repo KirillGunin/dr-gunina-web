@@ -9,6 +9,10 @@
     >
         <template #header>
             <img :src="service.img" :alt="service.title" />
+
+            <span class="card-service__icon card-service__icon--details">
+                <i class="pi pi-ellipsis-v" @click="emits('open:info-modal', service)"></i>
+            </span>
         </template>
 
         <template v-if="service.title" #title>
@@ -16,8 +20,14 @@
         </template>
 
         <template v-if="service.content" #content>
-            <p>{{ service.content }}</p>
-            <p class="card-service__price">{{ formatPrice(service.price) }}</p>
+            <p class="card-service__description">{{ service.content }}</p>
+            <p class="card-service__price">
+                {{ formatPrice(service.price) }}
+
+                <span class="card-service__icon">
+                    <i class="pi pi-cart-plus" @click="service.command"></i>
+                </span>
+            </p>
         </template>
 
         <template #footer>
@@ -36,6 +46,7 @@
                     variant="outlined"
                     raised
                     :label="service.actionTitle"
+                    @click="service.command"
                 />
             </div>
         </template>

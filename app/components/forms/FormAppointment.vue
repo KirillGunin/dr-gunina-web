@@ -8,7 +8,7 @@
                         ...data,
                         phone: data.phone || null,
                         telegram: data.telegram || null,
-                    })
+                    } as Appointment)
             "
             :init-fields="{
                 name: '',
@@ -143,7 +143,11 @@
                         rows="5"
                         cols="30"
                         :aria-expanded="false"
-                        :pt="{ root: { style: 'resize:none' } }"
+                        :pt="{
+                            root: {
+                                style: { resize: 'none' },
+                            },
+                        }"
                         :invalid="invalid"
                     />
                 </AppField>
@@ -163,7 +167,20 @@
                             {{ $t('forms.appointment.privacy') }}
                         </a>
 
-                        <Checkbox v-model="fields.agreement" binary :invalid="invalid" />
+                        <Checkbox
+                            v-model="fields.agreement"
+                            binary
+                            :invalid="invalid"
+                            :pt="{
+                                border: {
+                                    style: {
+                                        invalid: {
+                                            color: 'var(--base-red)',
+                                        },
+                                    },
+                                },
+                            }"
+                        />
                     </div>
                 </AppField>
             </div>
@@ -186,6 +203,7 @@
 import { createAppointment } from '~/api/appointment';
 import { useAppointmentRules } from '~/components/forms/validationRules/formAppointmentRules';
 import type { AxiosResponse } from 'axios';
+import type { Appointment } from '~/types/appointment';
 
 const emits = defineEmits<{
     (event: 'success:appointment', response: AxiosResponse): void;

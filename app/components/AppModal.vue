@@ -6,7 +6,7 @@
         closable
         closeOnEscape
         blockScroll
-        dismissable-mask
+        :dismissable-mask="dismissableMask"
         :header="header"
         :pt="{
             ...pt,
@@ -37,11 +37,13 @@ type DialogProps = {
     width?: string;
     pt?: object;
     header?: string;
+    dismissableMask?: boolean;
 };
 
 withDefaults(defineProps<DialogProps>(), {
     visible: false,
     width: '25rem',
+    dismissableMask: true,
 });
 
 const emits = defineEmits<{

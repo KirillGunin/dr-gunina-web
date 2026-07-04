@@ -1,4 +1,5 @@
 .field {
+    position: relative;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,8 +14,19 @@
     }
 
     &__error {
+        position: absolute;
+        top: -28px;
+        right: -2px;
+        background: linear-gradient(
+                        to right,
+                        transparent,
+                        var(--body-bg) 12px,
+                        var(--body-bg) calc(100% - 12px),
+                        transparent
+        );
         margin-top: var(--spacer-2xs);
-        color: red;
-        font-size: 14px;
+        color: var(--base-red);
+        font-size: 12px;
+        padding: 0 12px 2px;
     }
 }

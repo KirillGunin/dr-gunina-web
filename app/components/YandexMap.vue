@@ -4,11 +4,12 @@
 
 <script setup lang="ts">
 import { useYandexMap } from '~/composables/useYandexMap';
+import type { YMap } from '@yandex/ymaps3-types';
 import type { Location } from '~/types/location';
 
 const { initMap } = useYandexMap();
 
-let mapInstance: any = null;
+let mapInstance: YMap | null = null;
 
 interface Props {
     center: [number, number];
@@ -22,7 +23,7 @@ const emits = defineEmits<{
 }>();
 
 const markerClick = (location: Location) => {
-    mapInstance.setLocation({
+    mapInstance?.setLocation({
         center: location.coordinates,
         zoom: 17,
         duration: 500,
