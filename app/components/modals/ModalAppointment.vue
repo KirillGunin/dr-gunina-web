@@ -7,7 +7,7 @@
         :pt="{
             header: {
                 style: {
-                    padding: '0 0 var(--spacer-md)',
+                    padding: '0 0 var(--spacer-md) var(--spacer-xs)',
                 },
             },
             content: {

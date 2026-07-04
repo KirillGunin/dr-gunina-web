@@ -143,7 +143,11 @@
                         rows="5"
                         cols="30"
                         :aria-expanded="false"
-                        :pt="{ root: { style: 'resize:none' } }"
+                        :pt="{
+                            root: {
+                                style: { resize: 'none' },
+                            },
+                        }"
                         :invalid="invalid"
                     />
                 </AppField>
@@ -163,7 +167,20 @@
                             {{ $t('forms.appointment.privacy') }}
                         </a>
 
-                        <Checkbox v-model="fields.agreement" binary :invalid="invalid" />
+                        <Checkbox
+                            v-model="fields.agreement"
+                            binary
+                            :invalid="invalid"
+                            :pt="{
+                                border: {
+                                    style: {
+                                        invalid: {
+                                            color: 'var(--base-red)',
+                                        },
+                                    },
+                                },
+                            }"
+                        />
                     </div>
                 </AppField>
             </div>

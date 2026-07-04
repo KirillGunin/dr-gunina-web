@@ -115,18 +115,9 @@ const successAppointment = (response: AxiosResponse) => {
 
 const facts = [
     { title: t('pages.facts.me'), link: '' },
-    {
-        title: t('pages.facts.education'),
-        link: '',
-    },
-    {
-        title: t('pages.facts.additional'),
-        link: '',
-    },
-    {
-        title: t('pages.facts.member'),
-        link: '',
-    },
+    { title: t('pages.facts.education'), link: '' },
+    { title: t('pages.facts.additional'), link: '' },
+    { title: t('pages.facts.member'), link: '' },
     { title: t('pages.facts.practice'), link: '' },
     { title: t('pages.facts.diagnosis'), link: '' },
     { title: t('pages.facts.certificate'), link: '#' },
@@ -152,7 +143,13 @@ const services: Service[] = [
         modalActionButton: t('services.lure.modalActionButton'),
         payLink: '#',
         key: 'lure',
-        command: () => {},
+        command: () => {
+            window.open(
+                'https://self.payanyway.ru/16756515092850',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
     },
     {
         img: '/images/services/chat-group.png',
@@ -172,7 +169,35 @@ const services: Service[] = [
         modalActionButton: t('services.group_chat.modalActionButton'),
         payLink: '#',
         key: 'group_chat',
-        command: () => {},
+        command: () => {
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
+    },
+    {
+        img: '/images/services/individual_chat.png',
+        title: t('services.individual_chat.title'),
+        content: t('services.individual_chat.content'),
+        price: '10000',
+        actionTitle: t('services.individual_chat.actionTitle'),
+        details: [
+            t('services.individual_chat.details.detail_1'),
+            t('services.individual_chat.details.detail_2'),
+        ],
+        attachment: null,
+        modalActionButton: t('services.individual_chat.modalActionButton'),
+        payLink: '#',
+        key: 'individual_chat',
+        command: () => {
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
     },
     {
         img: '/images/services/consultation.png',
@@ -216,26 +241,16 @@ const services: Service[] = [
         modalActionButton: t('services.no_panic.modalActionButton'),
         payLink: '#',
         key: 'no_panic',
-        command: () => {},
+        command: () => {
+            window.open(
+                'https://self.payanyway.ru/1672467575731',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
     },
     {
-        img: '/images/services/service.png',
-        title: t('services.individual_chat.title'),
-        content: t('services.individual_chat.content'),
-        price: '10000',
-        actionTitle: t('services.individual_chat.actionTitle'),
-        details: [
-            t('services.individual_chat.details.detail_1'),
-            t('services.individual_chat.details.detail_2'),
-        ],
-        attachment: null,
-        modalActionButton: t('services.individual_chat.modalActionButton'),
-        payLink: '#',
-        key: 'individual_chat',
-        command: () => {},
-    },
-    {
-        img: '/images/services/service.png',
+        img: '/images/services/vaccination.png',
         title: t('services.vaccination.title'),
         content: t('services.vaccination.content'),
         price: '3000',
@@ -252,7 +267,36 @@ const services: Service[] = [
         modalActionButton: t('services.vaccination.modalActionButton'),
         payLink: '#',
         key: 'vaccination',
-        command: () => {},
+        command: () => {
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
+    },
+    {
+        img: '/images/services/mentoring.png',
+        title: t('services.mentoring.title'),
+        content: t('services.mentoring.content'),
+        price: '4000',
+        actionTitle: t('services.mentoring.actionTitle'),
+        details: [
+            t('services.mentoring.details.detail_1'),
+            t('services.mentoring.details.detail_2'),
+            t('services.mentoring.details.detail_3'),
+        ],
+        attachment: null,
+        modalActionButton: t('services.mentoring.modalActionButton'),
+        payLink: '#',
+        key: 'mentoring',
+        command: () => {
+            window.open(
+                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+                '_blank',
+                'noopener, noreferrer'
+            );
+        },
     },
 ];
 </script>

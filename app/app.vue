@@ -6,6 +6,8 @@
             <NuxtPage />
         </NuxtLayout>
 
+        <ModalCookie :visible="modalCookie" @set:agreement="setCookieAgreement" />
+
         <Toast
             :pt="{
                 closeButton: {
@@ -20,6 +22,17 @@
     </div>
 </template>
 <script setup lang="ts">
+import { useCookieAgreement } from '~/composables/useCookieAgreement';
+import ModalCookie from '~/components/modals/ModalCookie.vue';
+
+const { agreement, setAgreement } = useCookieAgreement();
+const modalCookie = ref<boolean>(true);
+
+const setCookieAgreement = (value: 'accept' | 'decline') => {
+    setAgreement(value);
+    modalCookie.value = false;
+};
+
 useHead({
     script: [
         {
