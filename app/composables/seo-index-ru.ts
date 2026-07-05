@@ -188,6 +188,22 @@ export function useSeoHome() {
                                             //url: 'https://ВАШ_ДОМЕН/ru/vakcinaciya',
                                         },
                                     },
+                                    {
+                                        '@type': 'Offer',
+                                        priceSpecification: {
+                                            '@type': 'PriceSpecification',
+                                            price: '4000',
+                                            priceCurrency: 'RUB',
+                                        },
+                                        itemOffered: {
+                                            '@type': 'Service',
+                                            name: 'Менторство для врачей',
+                                            description:
+                                                'Личное менторство для врачей. Ответы лично от меня на любые вопросы 6 дней в неделю. ' +
+                                                '1 созвон в неделю с разбором случаев в моих и ваших приемов. ' +
+                                                'Практические советы по поиску информации.',
+                                        },
+                                    },
                                 ],
                             },
                         },
