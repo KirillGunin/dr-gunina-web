@@ -49,7 +49,7 @@
             "content": "Haz preguntas ilimitadas en el chat general.",
             "actionTitle": "Unirse al chat de apoyo",
             "details": {
-                "detail_1": "Grupo cerrado en el canal de Telegram con formato de preguntas y respuestas;",
+                "detail_1": "Grupo cerrado en el canal de Telegram con formato de preguntas y respuestas, con opción de prórroga;;",
                 "detail_2": "Posibilidad de obtener respuestas a las preguntas de otros participantes;",
                 "detail_3": "Consulta con psicólogo dos veces al mes;",
                 "detail_4": "Consulta con especialista en sueño dos veces al mes;",
@@ -96,8 +96,9 @@
             "content": "Si es importante para usted que el problema se discuta en el marco médico-paciente",
             "actionTitle": "Unirse al chat individual",
             "details": {
-                "detail_1": "Si es importante para usted que el problema se discuta exclusivamente en una conversación privada y no en un chat general;",
-                "detail_2": "Si desea obtener respuestas a las preguntas más rápidamente."
+                "detail_1": "Chat individual por un mes, con opción de prórroga;",
+                "detail_2": "Si es importante para usted que el problema se discuta exclusivamente en una conversación privada y no en un chat general;",
+                "detail_3": "Si desea obtener respuestas a las preguntas más rápidamente."
             },
             "modalActionButton": "Unirse al chat individual"
         },

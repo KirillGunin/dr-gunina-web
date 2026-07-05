@@ -122,7 +122,7 @@ const facts = [
     { title: t('pages.facts.member'), link: '' },
     { title: t('pages.facts.practice'), link: '' },
     { title: t('pages.facts.diagnosis'), link: '' },
-    { title: t('pages.facts.certificate'), link: '#' },
+    // { title: t('pages.facts.certificate'), link: '' },
 ];
 
 const services: Service[] = [
@@ -218,44 +218,44 @@ const services: Service[] = [
         key: 'info_service',
         command: () => (modalAppointment.value = true),
     },
-    {
-        img: '/images/services/first-aid-kit.png',
-        title: t('services.no_panic.title'),
-        content: t('services.no_panic.content'),
-        price: '5000',
-        actionTitle: t('services.no_panic.actionTitle'),
-        details: [
-            t('services.no_panic.details.detail_1'),
-            t('services.no_panic.details.detail_2'),
-            t('services.no_panic.details.detail_3'),
-            t('services.no_panic.details.detail_4'),
-            t('services.no_panic.details.detail_5'),
-            t('services.no_panic.details.detail_6'),
-            t('services.no_panic.details.detail_7'),
-            t('services.no_panic.details.detail_8'),
-            t('services.no_panic.details.detail_9'),
-            t('services.no_panic.details.detail_10'),
-        ],
-        attachment: {
-            title: t('services.no_panic.attachment.title'),
-            link: '#',
-        },
-        modalActionButton: t('services.no_panic.modalActionButton'),
-        payLink: '#',
-        key: 'no_panic',
-        command: () => {
-            window.open(
-                'https://self.payanyway.ru/1672467575731',
-                '_blank',
-                'noopener, noreferrer'
-            );
-        },
-    },
+    // {
+    //     img: '/images/services/first-aid-kit.png',
+    //     title: t('services.no_panic.title'),
+    //     content: t('services.no_panic.content'),
+    //     price: '5000',
+    //     actionTitle: t('services.no_panic.actionTitle'),
+    //     details: [
+    //         t('services.no_panic.details.detail_1'),
+    //         t('services.no_panic.details.detail_2'),
+    //         t('services.no_panic.details.detail_3'),
+    //         t('services.no_panic.details.detail_4'),
+    //         t('services.no_panic.details.detail_5'),
+    //         t('services.no_panic.details.detail_6'),
+    //         t('services.no_panic.details.detail_7'),
+    //         t('services.no_panic.details.detail_8'),
+    //         t('services.no_panic.details.detail_9'),
+    //         t('services.no_panic.details.detail_10'),
+    //     ],
+    //     attachment: {
+    //         title: t('services.no_panic.attachment.title'),
+    //         link: '#',
+    //     },
+    //     modalActionButton: t('services.no_panic.modalActionButton'),
+    //     payLink: '#',
+    //     key: 'no_panic',
+    //     command: () => {
+    //         window.open(
+    //             'https://self.payanyway.ru/1672467575731',
+    //             '_blank',
+    //             'noopener, noreferrer'
+    //         );
+    //     },
+    // },
     {
         img: '/images/services/vaccination.png',
         title: t('services.vaccination.title'),
         content: t('services.vaccination.content'),
-        price: '3000',
+        price: '4000',
         actionTitle: t('services.vaccination.actionTitle'),
         details: [
             t('services.vaccination.details.detail_1'),
@@ -277,28 +277,28 @@ const services: Service[] = [
             );
         },
     },
-    {
-        img: '/images/services/mentoring.png',
-        title: t('services.mentoring.title'),
-        content: t('services.mentoring.content'),
-        price: '4000',
-        actionTitle: t('services.mentoring.actionTitle'),
-        details: [
-            t('services.mentoring.details.detail_1'),
-            t('services.mentoring.details.detail_2'),
-            t('services.mentoring.details.detail_3'),
-        ],
-        attachment: null,
-        modalActionButton: t('services.mentoring.modalActionButton'),
-        payLink: '#',
-        key: 'mentoring',
-        command: () => {
-            window.open(
-                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
-                '_blank',
-                'noopener, noreferrer'
-            );
-        },
-    },
+    // {
+    //     img: '/images/services/mentoring.png',
+    //     title: t('services.mentoring.title'),
+    //     content: t('services.mentoring.content'),
+    //     price: '4000',
+    //     actionTitle: t('services.mentoring.actionTitle'),
+    //     details: [
+    //         t('services.mentoring.details.detail_1'),
+    //         t('services.mentoring.details.detail_2'),
+    //         t('services.mentoring.details.detail_3'),
+    //     ],
+    //     attachment: null,
+    //     modalActionButton: t('services.mentoring.modalActionButton'),
+    //     payLink: '#',
+    //     key: 'mentoring',
+    //     command: () => {
+    //         window.open(
+    //             'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
+    //             '_blank',
+    //             'noopener, noreferrer'
+    //         );
+    //     },
+    // },
 ];
 </script>

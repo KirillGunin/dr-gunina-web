@@ -33,9 +33,10 @@
 
     &__price {
         display: block;
-        font-size: 16px;
-        font-weight: 400;
+        font-size: 18px;
+        font-weight: 600;
         margin-bottom: var(--spacer-lg);
+        color: var(--p-lime-200);
     }
 
     &__details {
