@@ -49,7 +49,7 @@
             "content": "Ask unlimited questions in the general chat.",
             "actionTitle": "Join support chat",
             "details": {
-                "detail_1": "Closed group in Telegram channel with Q&A format;",
+                "detail_1": "Closed group in Telegram channel with Q&A format, with the option to extend;",
                 "detail_2": "Ability to get answers to other participants' questions;",
                 "detail_3": "Psychologist consultation twice a month;",
                 "detail_4": "Sleep specialist consultation twice a month;",
@@ -95,8 +95,9 @@
             "content": "If it is important for you that the issue is discussed within the doctor-patient framework",
             "actionTitle": "Join individual chat",
             "details": {
-                "detail_1": "If it is important for you that the problem is discussed exclusively in a private conversation, not in a general chat;",
-                "detail_2": "If you want to get answers to questions faster."
+                "detail_1": "Individual chat for one month, with the option to extend;",
+                "detail_2": "If it is important for you that the problem is discussed exclusively in a private conversation, not in a general chat;",
+                "detail_3": "If you want to get answers to questions faster."
             },
             "modalActionButton": "Join individual chat"
         },

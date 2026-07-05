@@ -177,7 +177,7 @@ export function useSeoHome() {
                                         '@type': 'Offer',
                                         priceSpecification: {
                                             '@type': 'PriceSpecification',
-                                            price: '3000',
+                                            price: '4000',
                                             priceCurrency: 'RUB',
                                         },
                                         itemOffered: {

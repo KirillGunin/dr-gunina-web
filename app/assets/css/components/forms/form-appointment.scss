@@ -28,12 +28,17 @@
         &--agreement {
             width: 100%;
             align-items: flex-end;
+
+            & .field__error {
+                bottom: -16px;
+                right: 16px;
+                background: transparent;
+            }
         }
 
         &--agreement-content {
             display: flex;
             gap: var(--spacer-xs);
-
         }
 
         &--agreement-link {
