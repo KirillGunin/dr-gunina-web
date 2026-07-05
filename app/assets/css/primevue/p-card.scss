@@ -36,17 +36,17 @@
         border-radius: 16px;
 
         & .p-card-header {
-            height: 180px;
+            height: 150px;
         }
 
         & .p-card-body {
             gap: 0;
-            padding: var(--spacer-sm);
+            padding: var(--spacer-xs) var(--spacer-sm);
         }
 
         & .p-card-title {
-            font-size: 16px;
-            font-weight: 400;
+            font-size: 15px;
+            font-weight: 500;
         }
 
         & .p-card-content {

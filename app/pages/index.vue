@@ -22,14 +22,14 @@
                     </div>
 
                     <div class="page-home__welcome-image">
-                        <img src="/images/main.png" alt="Главная заставка" />
+                        <img src="/images/main.png" :alt="$t('pages.facts.me')" />
                     </div>
                 </div>
             </section>
 
             <section class="page-home__about" id="section-about">
                 <div class="page-home__about-image">
-                    <img src="/images/main.png" alt="Главная заставка" />
+                    <img src="/images/about.png" :alt="$t('pages.home.about')" />
                 </div>
 
                 <div class="page-home__about-content">
@@ -83,6 +83,7 @@
 <script setup lang="ts">
 const { t } = useI18n();
 import { useSeoHome } from '~/composables/seo-index-ru';
+import { useCookieAgreement } from '~/composables/useCookieAgreement';
 import type { AxiosResponse } from 'axios';
 import type { Service } from '@/types/service';
 
@@ -110,6 +111,7 @@ const openModalService = (service: Service) => {
 const successAppointment = (response: AxiosResponse) => {
     const message = response.data.message;
     toast.add({ severity: 'success', summary: message.label, detail: message.text, life: 6000 });
+    useCookieAgreement().setAgreement('accept');
     modalAppointment.value = false;
 };
 
