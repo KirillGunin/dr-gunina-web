@@ -26,7 +26,7 @@ import { useCookieAgreement } from '~/composables/useCookieAgreement';
 import ModalCookie from '~/components/modals/ModalCookie.vue';
 
 const { agreement, setAgreement } = useCookieAgreement();
-const modalCookie = ref<boolean>(true);
+const modalCookie = ref<boolean>(false);
 
 const setCookieAgreement = (value: 'accept' | 'decline') => {
     setAgreement(value);
@@ -45,5 +45,11 @@ useHead({
             tagPosition: 'head',
         },
     ],
+});
+
+onBeforeMount(() => {
+    if (!agreement.value) {
+        modalCookie.value = true;
+    }
 });
 </script>
