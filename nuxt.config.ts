@@ -28,7 +28,13 @@ export default defineNuxtConfig({
     devServer: {
         port: 3000,
     },
-    modules: ['@primevue/nuxt-module', 'nuxt-svg-sprite-icon', '@nuxtjs/i18n', '@vueuse/nuxt'],
+    modules: [
+        '@primevue/nuxt-module',
+        'nuxt-svg-sprite-icon',
+        '@nuxtjs/i18n',
+        '@vueuse/nuxt',
+        '@nuxtjs/sitemap',
+    ],
     i18n: {
         defaultLocale: 'ru',
         locales: [
