@@ -36,7 +36,7 @@
                 {{ formatPrice(service.price) }}
 
                 <span class="card-service__icon">
-                    <i class="pi pi-cart-plus" @click="service.command"></i>
+                    <i class="pi pi-shopping-bag" @click="service.command"></i>
                 </span>
             </p>
         </template>
