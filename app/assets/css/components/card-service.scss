@@ -26,6 +26,7 @@
         gap: var(--spacer-2xs);
         flex-wrap: wrap;
         align-items: start;
+        align-content: flex-start;
     }
 
     &__price {
@@ -60,11 +61,11 @@
 
         &__tags {
             gap: var(--spacer-2xs);
+            align-content: flex-start
         }
 
         &__price {
             margin: var(--spacer-xs) 0 0;
-            font-size: 14px;
             font-weight: 600;
         }
 
@@ -91,10 +92,6 @@
 
         &__controls {
             display: none;
-        }
-
-        &__controls--mobile {
-
         }
     }
 }
