@@ -21,6 +21,17 @@
 
         <template v-if="service.content" #content>
             <p class="card-service__description">{{ service.content }}</p>
+
+            <div class="card-service__tags">
+                <AppTag
+                    v-for="tag in service.tags"
+                    :key="tag.name"
+                    :name="tag.name"
+                    :color="tag.color"
+                    size="xs"
+                />
+            </div>
+
             <p class="card-service__price">
                 {{ formatPrice(service.price) }}
 

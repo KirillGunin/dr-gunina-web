@@ -1,0 +1,8 @@
+skills:
+  nuxtjs-sitemap-skilld:
+    packageName: "@nuxtjs/sitemap"
+    version: 8.2.2
+    repo: nuxt-modules/sitemap
+    source: "https://github.com/nuxt-modules/sitemap/tree/v8.2.2/docs"
+    syncedAt: 2026-07-06
+    generator: skilld

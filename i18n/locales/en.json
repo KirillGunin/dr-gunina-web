@@ -182,6 +182,18 @@
         "modal-content": "This website uses cookies to analyze traffic and understand how visitors use the site. By clicking \"Accept\", you agree to their use.",
         "accept": "Accept and close"
     },
+    "tag": {
+        "online": "Online",
+        "one-time": "One-time",
+        "feedback": "Feedback",
+        "pdf": "PDF materials",
+        "video": "5 video lessons",
+        "renewal": "Renewal option",
+        "personal": "Personal format",
+        "month": "1 month",
+        "quickly": "Quick replies",
+        "up-to": "Up to 30 people"
+    },
     "others": {
         "details": "Details",
         "name": "Gunina Ksenia Aleksandrovna",

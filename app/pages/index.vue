@@ -127,6 +127,28 @@ const facts = [
 
 const services: Service[] = [
     {
+        img: '/images/services/consultation.png',
+        title: t('services.info_service.title'),
+        content: t('services.info_service.content'),
+        price: '4000',
+        actionTitle: t('services.info_service.actionTitle'),
+        details: [
+            t('services.info_service.details.detail_1'),
+            t('services.info_service.details.detail_2'),
+            t('services.info_service.details.detail_3'),
+        ],
+        attachment: null,
+        modalActionButton: t('services.info_service.modalActionButton'),
+        payLink: '#',
+        key: 'info_service',
+        tags: [
+            { name: t('tag.online'), color: 'rose' },
+            { name: t('tag.one-time'), color: 'green' },
+            { name: t('tag.feedback'), color: 'gray' },
+        ],
+        command: () => (modalAppointment.value = true),
+    },
+    {
         img: '/images/services/lure.png',
         title: t('services.lure.title'),
         content: t('services.lure.content'),
@@ -145,6 +167,11 @@ const services: Service[] = [
         modalActionButton: t('services.lure.modalActionButton'),
         payLink: '#',
         key: 'lure',
+        tags: [
+            { name: t('tag.video'), color: 'rose' },
+            { name: t('tag.pdf'), color: 'green' },
+            { name: t('tag.feedback'), color: 'gray' },
+        ],
         command: () => {
             window.open(
                 'https://self.payanyway.ru/16756515092850',
@@ -171,6 +198,12 @@ const services: Service[] = [
         modalActionButton: t('services.group_chat.modalActionButton'),
         payLink: '#',
         key: 'group_chat',
+        tags: [
+            { name: t('tag.up-to'), color: 'green' },
+            { name: t('tag.quickly'), color: 'rose' },
+            { name: t('tag.month'), color: 'yellow' },
+            { name: t('tag.renewal'), color: 'gray' },
+        ],
         command: () => {
             window.open(
                 'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
@@ -193,6 +226,11 @@ const services: Service[] = [
         modalActionButton: t('services.individual_chat.modalActionButton'),
         payLink: '#',
         key: 'individual_chat',
+        tags: [
+            { name: t('tag.personal'), color: 'green' },
+            { name: t('tag.month'), color: 'yellow' },
+            { name: t('tag.renewal'), color: 'gray' },
+        ],
         command: () => {
             window.open(
                 'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
@@ -200,23 +238,6 @@ const services: Service[] = [
                 'noopener, noreferrer'
             );
         },
-    },
-    {
-        img: '/images/services/consultation.png',
-        title: t('services.info_service.title'),
-        content: t('services.info_service.content'),
-        price: '4000',
-        actionTitle: t('services.info_service.actionTitle'),
-        details: [
-            t('services.info_service.details.detail_1'),
-            t('services.info_service.details.detail_2'),
-            t('services.info_service.details.detail_3'),
-        ],
-        attachment: null,
-        modalActionButton: t('services.info_service.modalActionButton'),
-        payLink: '#',
-        key: 'info_service',
-        command: () => (modalAppointment.value = true),
     },
     // {
     //     img: '/images/services/first-aid-kit.png',
@@ -266,6 +287,11 @@ const services: Service[] = [
             title: t('services.vaccination.attachment.title'),
             link: '/files/Профилактика кори.pdf',
         },
+        tags: [
+            { name: t('tag.personal'), color: 'green' },
+            { name: t('tag.pdf'), color: 'rose' },
+            { name: t('tag.feedback'), color: 'gray' },
+        ],
         modalActionButton: t('services.vaccination.modalActionButton'),
         payLink: '#',
         key: 'vaccination',

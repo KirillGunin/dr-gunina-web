@@ -15,14 +15,12 @@ export function useSeoHome() {
         ogType: 'website',
         ogLocale: 'ru_RU',
         ogLocaleAlternate: ['en_US', 'es_ES'],
-        // ogImage: 'https://ВАШ_ДОМЕН/og/home-ru.jpg', // 1200×630px — добавь позже
-
+        ogImage: 'https://dr-gunina.ru/images/main.png',
         twitterCard: 'summary_large_image',
         twitterTitle:
             'Гунина Ксения Александровна — педиатр, аллерголог, дерматолог, онлайн-консультация',
         twitterDescription:
             'Онлайн-консультация детского врача. Курсы, вакцинация, очный приём в Гатчине.',
-
         robots: 'index, follow',
     });
 
@@ -97,7 +95,7 @@ export function useSeoHome() {
                                                 'Обсуждение диагноза' +
                                                 'Поддержание связи до улучшения.' +
                                                 'Узнать второе мнение врача.',
-                                            //url: 'https://ВАШ_ДОМЕН/ru/konsultaciya-onlayn',
+                                            url: 'https://dr-gunina.ru/images/services/consultation.png',
                                         },
                                     },
                                     {
@@ -113,7 +111,7 @@ export function useSeoHome() {
                                             description:
                                                 'Базовые правила введения прикорма основанные на современных рекомендациях' +
                                                 'Готовая схема введения, первая помощь при аллергических реакциях.',
-                                            //url: 'https://ВАШ_ДОМЕН/ru/konsultaciya-onlayn',
+                                            url: 'https://dr-gunina.ru/images/services/lure.png',
                                             provider: {
                                                 '@type': 'Person',
                                                 name: 'Гунина Ксения Александровна',
@@ -134,9 +132,9 @@ export function useSeoHome() {
                                             '@type': 'Service',
                                             name: 'Групповой чат поддержки для родителей с пидеатром, детским психологом и консультантом по сну',
                                             description:
-                                                'Задавайте неограниченное количество вопросов в общем чате.' +
+                                                'Задавайте неограниченное количество вопросов в общем чате' +
                                                 'консультации психолога и специалиста по сну, ',
-                                            //url: 'https://ВАШ_ДОМЕН/ru/vakcinaciya',
+                                            url: 'https://dr-gunina.ru/images/services/chat-group.png',
                                         },
                                     },
                                     {
@@ -170,7 +168,7 @@ export function useSeoHome() {
                                                 'Если для Вас важно, чтоб вопрос обсуждался в рамках врача и пациента.' +
                                                 'Приватное общение с врачом в индивидуальном чате. ' +
                                                 'Быстрые ответы на вопросы в формате врач–пациент.',
-                                            //url: 'https://ВАШ_ДОМЕН/ru/vakcinaciya',
+                                            url: 'https://dr-gunina.ru/images/services/individual_chat.png',
                                         },
                                     },
                                     {
@@ -186,7 +184,7 @@ export function useSeoHome() {
                                             description:
                                                 'Составление персонального догоняющего графика прививок.' +
                                                 'Консультация по вакцинации.',
-                                            //url: 'https://ВАШ_ДОМЕН/ru/vakcinaciya',
+                                            url: 'https://dr-gunina.ru/images/services/vaccination.png',
                                         },
                                     },
                                     {
