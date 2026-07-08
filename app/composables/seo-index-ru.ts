@@ -27,12 +27,20 @@ export function useSeoHome() {
     useHead({
         htmlAttrs: { lang: 'ru' },
 
+        meta: [
+            { name: 'yandex-verification', content: '49c29ec5e711fd97' },
+            {
+                name: 'google-site-verification',
+                content: '9iyt5xjCkATyl5HyV95l9kBnoAZMAfeSs7wF81-QcR8',
+            },
+        ],
+
         link: [
-            { rel: 'canonical', href: 'https://ВАШ_ДОМЕН' },
-            { rel: 'alternate', hreflang: 'ru', href: 'https://ВАШ_ДОМЕН/' },
-            { rel: 'alternate', hreflang: 'en', href: 'https://ВАШ_ДОМЕН/en/' },
-            { rel: 'alternate', hreflang: 'es', href: 'https://ВАШ_ДОМЕН/es/' },
-            { rel: 'alternate', hreflang: 'x-default', href: 'https://ВАШ_ДОМЕН' },
+            { rel: 'canonical', href: 'https://dr-gunina.ru' },
+            { rel: 'alternate', hreflang: 'ru', href: 'https://dr-gunina.ru/' },
+            { rel: 'alternate', hreflang: 'en', href: 'https://dr-gunina.ru/en/' },
+            { rel: 'alternate', hreflang: 'es', href: 'https://dr-gunina.ru/es/' },
+            { rel: 'alternate', hreflang: 'x-default', href: 'https://dr-gunina.ru' },
         ],
 
         script: [
@@ -43,9 +51,9 @@ export function useSeoHome() {
                     '@graph': [
                         {
                             '@type': 'Physician',
-                            '@id': 'https://ВАШ_ДОМЕН/#physician',
+                            '@id': 'https://dr-gunina.ru/#physician',
                             name: 'Гунина Ксения Александровна',
-                            url: 'https://ВАШ_ДОМЕН',
+                            url: 'https://dr-gunina.ru',
 
                             // Аллергология — через текстовый MedicalSpecialty (Google читает)
                             medicalSpecialty: [
