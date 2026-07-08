@@ -86,3 +86,8 @@ export const fetchUsers = async () => {
 - Do not use `<script>` without `setup` and `lang="ts"`
 - Do not create `.js` files — always `.ts`
 - Do not use `any` type
+
+<!-- skilld -->
+Before modifying code, evaluate each installed skill against the current task.
+For each skill, determine YES/NO relevance and invoke all YES skills before proceeding.
+<!-- /skilld -->

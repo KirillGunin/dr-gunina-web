@@ -30,7 +30,7 @@
     },
     "services": {
         "lure": {
-            "title": "Curso \"Sobre la alimentación complementaria\"",
+            "title": "Curso \"Alimentación complementaria\"",
             "content": "Reglas básicas para introducir la alimentación complementaria basadas en recomendaciones modernas",
             "actionTitle": "Quiero el curso",
             "details": {
@@ -182,6 +182,18 @@
         "modal-header": "Cookies",
         "modal-content": "Este sitio utiliza cookies para analizar el tráfico y comprender cómo los visitantes usan el sitio. Al hacer clic en «Aceptar», usted consiente su uso.",
         "accept": "Aceptar"
+    },
+    "tag": {
+        "online": "En línea",
+        "one-time": "Pago único",
+        "feedback": "Retroalimentación",
+        "pdf": "Materiales en PDF",
+        "video": "5 videolecciones",
+        "renewal": "Opción de renovación",
+        "personal": "Formato personal",
+        "month": "1 mes",
+        "quickly": "Respuestas rápidas",
+        "up-to": "Hasta 30 personas"
     },
     "others": {
         "details": "Detalles",

@@ -1,0 +1,47 @@
+.tag {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+    width: fit-content;
+
+    &--xs {
+        padding: 4px 8px;
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    &--rose {
+        background: var(--p-rose-100);
+        color: var(--p-rose-300);
+    }
+
+    &--green {
+        background: var(--p-lime-50);
+        color: var(--p-olive-400);
+    }
+
+    &--yellow {
+        background: var(--p-salomie-200);
+        color: var(--p-salomie-500);
+    }
+
+    &--gray {
+        background: var(--p-neutral-50);
+        color: var(--p-neutral-600);
+    }
+
+    &--purple {
+        background: #d9d6ff;
+        color: #4b3ba8;
+    }
+
+    @media (--screen-xs) {
+        &--xs {
+            padding: 2px 6px;
+            font-size: 8px;
+            font-weight: 400;
+        }
+    }
+}
