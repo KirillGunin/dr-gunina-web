@@ -11,6 +11,7 @@
         "prepare": "npx skilld prepare || true"
     },
     "dependencies": {
+        "@nuxt/image": "^2.0.0",
         "@nuxtjs/i18n": "^10.2.1",
         "@nuxtjs/sitemap": "^8.2.2",
         "@primeuix/themes": "^2.0.2",
