@@ -29,7 +29,7 @@
     >
         <div class="modal-service__container">
             <div class="modal-service__image">
-                <img :src="service.img" :alt="service.title" />
+                <NuxtImg :src="service.img" :alt="service.title" format="webp" loading="lazy" />
             </div>
 
             <div class="modal-service__content">

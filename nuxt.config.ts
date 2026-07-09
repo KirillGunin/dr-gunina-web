@@ -34,7 +34,12 @@ export default defineNuxtConfig({
         '@nuxtjs/i18n',
         '@vueuse/nuxt',
         '@nuxtjs/sitemap',
+        '@nuxt/image',
     ],
+    image: {
+        format: ['webp'],
+        quality: 80,
+    },
     i18n: {
         defaultLocale: 'ru',
         locales: [

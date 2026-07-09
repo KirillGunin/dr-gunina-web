@@ -22,14 +22,28 @@
                     </div>
 
                     <div class="page-home__welcome-image">
-                        <img src="/images/main.png" :alt="$t('pages.facts.me')" />
+                        <NuxtImg
+                            src="/images/main.png"
+                            :alt="$t('pages.facts.me')"
+                            width="1000"
+                            height="1000"
+                            format="webp"
+                            loading="eager"
+                        />
                     </div>
                 </div>
             </section>
 
             <section class="page-home__about" id="section-about">
                 <div class="page-home__about-image">
-                    <img src="/images/about.png" :alt="$t('pages.home.about')" />
+                    <NuxtImg
+                        src="/images/about.png"
+                        :alt="$t('pages.home.about')"
+                        width="600"
+                        height="600"
+                        format="webp"
+                        loading="lazy"
+                    />
                 </div>
 
                 <div class="page-home__about-content">

@@ -8,7 +8,7 @@
         }"
     >
         <template #header>
-            <img :src="service.img" :alt="service.title" />
+            <NuxtImg :src="service.img" :alt="service.title" format="webp" loading="lazy" />
 
             <span class="card-service__icon card-service__icon--details">
                 <i class="pi pi-ellipsis-v" @click="emits('open:info-modal', service)"></i>
