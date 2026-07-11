@@ -29,6 +29,8 @@
                             height="1000"
                             format="webp"
                             loading="eager"
+                            fetchpriority="high"
+                            sizes="767:100vw 768:650px"
                         />
                     </div>
                 </div>
@@ -103,6 +105,25 @@ import type { Service } from '@/types/service';
 
 useSeoHome();
 const toast = useToast();
+
+const $img = useImage();
+const heroImageSizes = $img.getSizes('/images/main.png', {
+    modifiers: { format: 'webp', width: 1000, height: 1000, quality: $img.options.quality },
+    sizes: '767:100vw 768:650px',
+});
+
+useHead({
+    link: [
+        {
+            rel: 'preload',
+            as: 'image',
+            href: heroImageSizes.src,
+            imagesizes: heroImageSizes.sizes,
+            imagesrcset: heroImageSizes.srcset,
+            fetchpriority: 'high',
+        },
+    ],
+});
 
 const modalService = ref<boolean>(false);
 const modalAppointment = ref<boolean>(false);
