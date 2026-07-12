@@ -2,7 +2,8 @@
     "header": {
         "about": "Sobre",
         "services": "Servicios",
-        "contacts": "Contactos"
+        "contacts": "Contactos",
+        "menu-toggle": "Abrir menú"
     },
     "footer": {
         "map-action": "Ver en el mapa"

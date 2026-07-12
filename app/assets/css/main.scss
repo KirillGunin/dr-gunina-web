@@ -43,6 +43,19 @@
 // Animations
 @use "./animations/pulse";
 
+/* primeicons.css ships with font-display: block, which blocks icon
+   rendering while the font loads. Redeclare with font-display: swap
+   so a fallback shows immediately instead. */
+@font-face {
+    font-family: 'primeicons';
+    font-display: swap;
+    src: url('primeicons/fonts/primeicons.woff2') format('woff2'),
+        url('primeicons/fonts/primeicons.woff') format('woff'),
+        url('primeicons/fonts/primeicons.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Light */
 @font-face {
     font-family: 'Inter';
