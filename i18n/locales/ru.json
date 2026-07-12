@@ -2,7 +2,8 @@
     "header": {
         "about": "Обо мне",
         "services": "Услуги",
-        "contacts": "Контакты"
+        "contacts": "Контакты",
+        "menu-toggle": "Открыть меню"
     },
     "footer": {
         "map-action": "Показать на карте"

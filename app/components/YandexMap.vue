@@ -1,5 +1,5 @@
 <template>
-    <div class="yandex-map" id="yandex-map"></div>
+    <div ref="mapContainer" class="yandex-map" id="yandex-map"></div>
 </template>
 
 <script setup lang="ts">
@@ -9,6 +9,7 @@ import type { Location } from '~/types/location';
 
 const { initMap } = useYandexMap();
 
+const mapContainer = useTemplateRef('mapContainer');
 let mapInstance: YMap | null = null;
 
 interface Props {
@@ -34,15 +35,25 @@ const markerClick = (location: Location) => {
 
 defineExpose({ markerClick });
 
-onMounted(async () => {
-    mapInstance = await initMap(
-        'yandex-map',
-        props.center,
-        props.zoom,
-        props.locations.map((locations) => ({
-            ...locations,
-            onClick: () => markerClick(locations),
-        }))
-    );
-});
+const { stop } = useIntersectionObserver(
+    mapContainer,
+    async ([entry]) => {
+        if (!entry?.isIntersecting) {
+            return;
+        }
+
+        stop();
+
+        mapInstance = await initMap(
+            'yandex-map',
+            props.center,
+            props.zoom,
+            props.locations.map((locations) => ({
+                ...locations,
+                onClick: () => markerClick(locations),
+            }))
+        );
+    },
+    { rootMargin: '200px' }
+);
 </script>
