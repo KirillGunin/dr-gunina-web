@@ -8,7 +8,15 @@
         }"
     >
         <template #header>
-            <NuxtImg :src="service.img" :alt="service.title" format="webp" loading="lazy" />
+            <NuxtImg
+                :src="service.img"
+                :alt="service.title"
+                format="webp"
+                loading="lazy"
+                width="360"
+                height="471"
+                sizes="767:100vw 768:360px"
+            />
 
             <span class="card-service__icon card-service__icon--details">
                 <i class="pi pi-ellipsis-v" @click="emits('open:info-modal', service)"></i>

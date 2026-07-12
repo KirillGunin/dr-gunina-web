@@ -7,11 +7,12 @@
             type="quarter-circle"
             direction="down-left"
             :buttonProps="{ severity: 'contrast', rounded: true }"
+            :ariaLabel="t('header.menu-toggle')"
             @show="isMenuOpen = true"
             @hide="isMenuOpen = false"
         >
             <template #item="{ item, toggleCallback }">
-                <div class="speed-dial__item" @click="toggleCallback">
+                <div class="speed-dial__item" role="menuitem" tabindex="0" @click="toggleCallback">
                     <SvgIcon v-if="item.icon" :name="item.icon" />
                 </div>
             </template>
@@ -25,7 +26,7 @@ import { useI18n } from '#imports';
 import { useTheme } from '~/composables/useTheme';
 import type { SpeedDialItem } from '~/types/speedDialItem';
 
-const { setLocale } = useI18n();
+const { t, setLocale } = useI18n();
 const { isDarkMode, toggleMode } = useTheme();
 
 const isMenuOpen = ref<boolean>(false);

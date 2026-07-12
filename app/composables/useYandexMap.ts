@@ -1,19 +1,25 @@
 import type { YMap, YMapDefaultSchemeLayer } from '@yandex/ymaps3-types';
 
-const waitForYmaps = (): Promise<void> => {
-    return new Promise((resolve) => {
-        if (window.ymaps3) {
-            resolve();
-            return;
-        }
+let ymapsScriptPromise: Promise<void> | null = null;
 
-        const interval = setInterval(() => {
-            if (window.ymaps3) {
-                clearInterval(interval);
-                resolve();
-            }
-        }, 100);
-    });
+const loadYmapsScript = (): Promise<void> => {
+    if (window.ymaps3) {
+        return Promise.resolve();
+    }
+
+    if (!ymapsScriptPromise) {
+        const { public: publicConfig } = useRuntimeConfig();
+
+        ymapsScriptPromise = new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = `https://api-maps.yandex.ru/v3/?apikey=${publicConfig.yandexMapsApiKey}&lang=ru_RU`;
+            script.onload = () => resolve();
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
+
+    return ymapsScriptPromise;
 };
 
 let mapInstance: YMap | null = null;
@@ -26,7 +32,7 @@ export const useYandexMap = () => {
         zoom: number,
         markers?: Array<{ coordinates: [number, number]; title?: string; onClick?: () => void }>
     ) => {
-        await waitForYmaps();
+        await loadYmapsScript();
         await window.ymaps3.ready;
 
         const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
