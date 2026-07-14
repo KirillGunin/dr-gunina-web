@@ -3,7 +3,11 @@
         "about": "Обо мне",
         "services": "Услуги",
         "contacts": "Контакты",
-        "menu-toggle": "Открыть меню"
+        "menu-toggle": "Открыть меню",
+        "email-link": "Написать письмо",
+        "telegram-link": "Открыть Telegram",
+        "theme-toggle-dark": "Включить тёмную тему",
+        "theme-toggle-light": "Включить светлую тему"
     },
     "footer": {
         "map-action": "Показать на карте"

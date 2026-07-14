@@ -89,11 +89,14 @@
             @select:action="selectAction"
         />
 
-        <LazyModalsModalAppointment
-            :visible="modalAppointment"
-            @close:visible="modalAppointment = false"
-            @success:appointment="(response) => successAppointment(response)"
-        />
+        <Transition :duration="300">
+            <LazyModalsModalAppointment
+                v-if="modalAppointment"
+                :visible="modalAppointment"
+                @close:visible="modalAppointment = false"
+                @success:appointment="(response) => successAppointment(response)"
+            />
+        </Transition>
     </div>
 </template>
 <script setup lang="ts">

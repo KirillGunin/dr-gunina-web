@@ -47,6 +47,30 @@ export default defineNuxtConfig({
         format: ['webp'],
         quality: 80,
     },
+    nitro: {
+        prerender: {
+            routes: [
+                '/_ipx/f_webp&q_80&s_650x650/images/main.png',
+                '/_ipx/f_webp&q_80&s_767x767/images/main.png',
+                '/_ipx/f_webp&q_80&s_1300x1300/images/main.png',
+                '/_ipx/f_webp&q_80&s_1534x1534/images/main.png',
+                '/_ipx/f_webp&q_80&s_600x600/images/about.png',
+                '/_ipx/f_webp&q_80&s_1200x1200/images/about.png',
+                ...[
+                    'consultation',
+                    'lure',
+                    'chat-group',
+                    'individual_chat',
+                    'vaccination',
+                ].flatMap((name) => [
+                    `/_ipx/f_webp&q_80&s_360x471/images/services/${name}.png`,
+                    `/_ipx/f_webp&q_80&s_720x942/images/services/${name}.png`,
+                    `/_ipx/f_webp&q_80&s_767x1003/images/services/${name}.png`,
+                    `/_ipx/f_webp&q_80&s_1534x2006/images/services/${name}.png`,
+                ]),
+            ],
+        },
+    },
     i18n: {
         defaultLocale: 'ru',
         locales: [
@@ -73,6 +97,34 @@ export default defineNuxtConfig({
                 { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
                 { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
                 { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
+                {
+                    rel: 'preload',
+                    as: 'font',
+                    type: 'font/woff2',
+                    href: '/fonts/Inter-Regular.woff2',
+                    crossorigin: 'anonymous',
+                },
+                {
+                    rel: 'preload',
+                    as: 'font',
+                    type: 'font/woff2',
+                    href: '/fonts/Inter-Medium.woff2',
+                    crossorigin: 'anonymous',
+                },
+                {
+                    rel: 'preload',
+                    as: 'font',
+                    type: 'font/woff2',
+                    href: '/fonts/Inter-SemiBold.woff2',
+                    crossorigin: 'anonymous',
+                },
+                {
+                    rel: 'preload',
+                    as: 'font',
+                    type: 'font/otf',
+                    href: '/fonts/Glina.otf',
+                    crossorigin: 'anonymous',
+                },
             ],
         },
     },
