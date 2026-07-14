@@ -3,7 +3,11 @@
         "about": "About",
         "services": "Services",
         "contacts": "Contacts",
-        "menu-toggle": "Open menu"
+        "menu-toggle": "Open menu",
+        "email-link": "Send an email",
+        "telegram-link": "Open Telegram",
+        "theme-toggle-dark": "Switch to dark theme",
+        "theme-toggle-light": "Switch to light theme"
     },
     "footer": {
         "map-action": "Show on map"
