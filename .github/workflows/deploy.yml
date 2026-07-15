@@ -22,5 +22,5 @@ jobs:
             git reset --hard origin/main
             npm install
             rm -rf .output node_modules/.cache
-            npm run build
+            NODE_OPTIONS="--max-old-space-size=3072" npm run build
             pm2 restart nuxt-frontend
