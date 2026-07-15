@@ -12,7 +12,13 @@
             @hide="isMenuOpen = false"
         >
             <template #item="{ item, toggleCallback }">
-                <div class="speed-dial__item" role="menuitem" tabindex="0" @click="toggleCallback">
+                <div
+                    class="speed-dial__item"
+                    role="menuitem"
+                    tabindex="0"
+                    :aria-label="(item as SpeedDialItem).label"
+                    @click="toggleCallback"
+                >
                     <SvgIcon v-if="item.icon" :name="item.icon" />
                 </div>
             </template>
@@ -34,6 +40,7 @@ const isMenuOpen = ref<boolean>(false);
 const items = computed<SpeedDialItem[]>(() => [
     {
         icon: 'mail',
+        label: t('header.email-link'),
         command: () => {
             window.open(
                 'mailto:dr.kseniagunina@yandex.ru?subject=Письмо с сайта&body=Здравствуйте, Ксения Александровна!%0D%0A%0D%0AХочу уточнить по поводу ',
@@ -44,30 +51,35 @@ const items = computed<SpeedDialItem[]>(() => [
     },
     {
         icon: 'telegram',
+        label: t('header.telegram-link'),
         command: () => {
             window.open('https://t.me/dr_ksgunina', '_blank', 'noopener noreferrer');
         },
     },
     {
         icon: isDarkMode.value ? 'lamp-on' : 'lamp-off',
+        label: isDarkMode.value ? t('header.theme-toggle-light') : t('header.theme-toggle-dark'),
         command: () => {
             toggleMode();
         },
     },
     {
         icon: 'ru',
+        label: t('header.ru'),
         command: () => {
             setLocale('ru');
         },
     },
     {
         icon: 'en',
+        label: t('header.en'),
         command: () => {
             setLocale('en');
         },
     },
     {
         icon: 'es',
+        label: t('header.es'),
         command: () => {
             setLocale('es');
         },
