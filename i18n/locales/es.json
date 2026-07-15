@@ -7,7 +7,10 @@
         "email-link": "Enviar un correo",
         "telegram-link": "Abrir Telegram",
         "theme-toggle-dark": "Cambiar a tema oscuro",
-        "theme-toggle-light": "Cambiar a tema claro"
+        "theme-toggle-light": "Cambiar a tema claro",
+        "ru": "Сambiar to russian",
+        "en": "Сambiar to english",
+        "es": "Сambiar to spanish"
     },
     "footer": {
         "map-action": "Ver en el mapa"
