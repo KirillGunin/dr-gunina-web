@@ -51,7 +51,7 @@
         & .p-card-title {
             font-size: 14px;
             font-weight: 400;
-            margin-right: 60px;
+            margin-right: var(--spacer-2xl);
         }
 
         & .p-card-content {
