@@ -46,6 +46,7 @@ export default defineNuxtConfig({
     image: {
         format: ['webp'],
         quality: 80,
+        domains: [new URL(process.env.NUXT_PUBLIC_API_BASE_URL ?? 'http://127.0.0.1:8000').host],
     },
     nitro: {
         prerender: {

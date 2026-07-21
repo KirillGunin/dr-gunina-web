@@ -1,4 +1,6 @@
 .page-home {
+    margin-bottom: var(--spacer-xl);
+
     //welcome
     &__welcome {
         position: relative;
@@ -186,6 +188,8 @@
     }
 
     @media (--screen-xs) {
+        margin-bottom: var(--spacer-ml);
+
         // welcome
         &__welcome {
             margin-bottom: var(--spacer-2xl);
@@ -294,7 +298,7 @@
 
         &__services {
             margin-bottom: var(--spacer-md);
-            gap: var(--spacer-ml);
+            gap: var(--spacer-md);
         }
     }
 

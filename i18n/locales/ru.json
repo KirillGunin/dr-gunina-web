@@ -169,6 +169,19 @@
             "action": "Записаться",
             "gender-male": "Мужской",
             "gender-female": "Женский"
+        },
+        "review": {
+            "header": "Оставьте Ваш отзыв",
+            "label-name": "Ваше имя",
+            "placeholder-name": "Введите Ваше имя",
+            "label-last-name": "Ваша фамилия",
+            "placeholder-last-name": "Введите Вашу фамилию",
+            "label-phone": "Телефон",
+            "label-rating": "Добавьте оценку",
+            "label-text": "Отзыв",
+            "placeholder-text": "Поделитесь Вашим мнением",
+            "privacy": "Согласие на обработку персональных данных",
+            "action": "Отправить"
         }
     },
     "errors": {

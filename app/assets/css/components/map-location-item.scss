@@ -64,8 +64,12 @@
 
     @media (--screen-xs) {
         &__location {
-            padding: var(--spacer-xs);
+            padding: var(--spacer-xs) var(--spacer-sm);
             gap: var(--spacer-2xs);
+
+            &:last-of-type {
+                padding-bottom: var(--spacer-sm);
+            }
         }
 
         & .pi {

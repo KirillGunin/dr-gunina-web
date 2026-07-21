@@ -1,7 +1,7 @@
 @use 'primeicons/primeicons.css';
 @use "./reset.scss";
 
-//PrimeVue
+// PrimeVue
 @use "./primevue/p-popover";
 @use "./primevue/p-card";
 @use "./primevue/p-accordion";
@@ -10,11 +10,12 @@
 @use "./primevue/p-dialog";
 @use "./primevue/p-toast";
 
-//Pages
+// Pages
 @use "./pages/page-home";
 @use "./pages/page-privacy";
+@use "./pages/page-service";
 
-//Components
+// Components
 @use "./components/header";
 @use "./components/card-service";
 @use "./components/tag";
@@ -29,14 +30,22 @@
 @use "./components/input";
 @use "./components/select";
 @use "./components/modal";
+@use "./components/review-card";
+@use "./components/reviews-carousel";
 
-//Forms
+// Skeletons
+@use "components/skeletons/skeleton-card-service";
+@use "components/skeletons/skeleton-card-review";
+@use "components/skeletons/page-skeleton-service";
+
+// Forms
 @use "./components/forms/form-appointment";
+@use "./components/forms/form-review";
 
 // Popover
 @use "./components/popover-locale.scss";
 
-//Modals
+// Modals
 @use "./components/modals/modal-service";
 @use "./components/modals/modal-cookie";
 
@@ -223,6 +232,16 @@ body {
 
     // text color
     --notice-color: #757575;
+
+    // skeleton
+    --skeleton-bg: var(--p-neutral-50);
+    --skeleton-shimmer: rgba(255, 255, 255, 0.6);
+
+    // background
+    --bg-service-card: var(--p-brown-50);
+
+    // opacity
+    --opacity: 1;
 }
 
 :root[class="dark-mode"] {
@@ -265,6 +284,16 @@ body {
     --notice-color: #403f3f;
 
     --base-red: #ff4c4c;
+
+    // skeleton
+    --skeleton-bg: var(--p-surface-800);
+    --skeleton-shimmer: rgba(255, 255, 255, 0.15);
+
+    // background
+    --bg-service-card: var(--p-surface-700);
+
+    // opacity
+    --opacity: 0.7;
 }
 
 // media

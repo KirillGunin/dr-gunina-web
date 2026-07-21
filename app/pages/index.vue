@@ -16,7 +16,7 @@
                                 severity="success"
                                 rounded
                                 size="large"
-                                @click="infoService && openModalService(infoService)"
+                                @click="modalAppointment = true"
                             />
                         </div>
                     </div>
@@ -72,22 +72,22 @@
             </section>
 
             <section class="page-home__services" id="section-services">
-                <AppCardService
-                    v-for="service in services"
-                    :key="service.img"
-                    :service="service"
-                    @open:info-modal="openModalService(service)"
-                />
-            </section>
-        </div>
+                <template v-if="loading">
+                    <AppSkeletonCardService v-for="n in 6" :key="n" />
+                </template>
 
-        <LazyModalsModalService
-            v-if="selectedService"
-            :visible="modalService"
-            :service="selectedService"
-            @close:visible="modalService = false"
-            @select:action="selectAction"
-        />
+                <template v-else>
+                    <AppCardService
+                        v-for="service in services"
+                        :key="service.service"
+                        :service="service"
+                        @open:info-modal="openModalService(service)"
+                    />
+                </template>
+            </section>
+
+            <AppReviews class="page-home__reviews" />
+        </div>
 
         <Transition :duration="300">
             <LazyModalsModalAppointment
@@ -100,15 +100,20 @@
     </div>
 </template>
 <script setup lang="ts">
+import { ref } from 'vue';
 const { t } = useI18n();
 import { useSeoHome } from '~/composables/seo-index-ru';
+import { fetchServices } from '~/api/services';
 import { useCookieAgreement } from '~/composables/useCookieAgreement';
-import type { AxiosResponse } from 'axios';
 import type { Service } from '@/types/service';
+import type { AxiosResponse } from 'axios';
+
+import AppReviews from '@/components/AppReviews.vue';
+import AppSkeletonCardService from '@/components/skeletons/AppSkeletonCardService.vue';
 
 useSeoHome();
 const toast = useToast();
-
+const localePath = useLocalePath();
 const $img = useImage();
 const heroImageSizes = $img.getSizes('/images/main.png', {
     modifiers: { format: 'webp', width: 1000, height: 1000, quality: $img.options.quality },
@@ -128,22 +133,22 @@ useHead({
     ],
 });
 
-const modalService = ref<boolean>(false);
-const modalAppointment = ref<boolean>(false);
 const selectedService = ref<Service | null>(null);
+const services = ref<Service[]>([]);
+const loading = ref<boolean>(true);
+const modalAppointment = ref<boolean>(false);
 
-const infoService = computed(
-    () => services.find((service: Service) => service.key === 'info_service') ?? null
-);
+fetchServices()
+    .then((response) => (services.value = response.data.data))
+    .catch((error) => {})
+    .finally(() => (loading.value = false));
 
-const selectAction = (service: Service) => {
-    modalService.value = false;
-    service.command();
-};
-
-const openModalService = (service: Service) => {
+const openModalService = async (service: Service) => {
     selectedService.value = service;
-    modalService.value = true;
+
+    await navigateTo(
+        localePath({ name: 'services-service', params: { service: service.service } })
+    );
 };
 
 const successAppointment = (response: AxiosResponse) => {
@@ -161,208 +166,5 @@ const facts = [
     { title: t('pages.facts.practice'), link: '' },
     { title: t('pages.facts.diagnosis'), link: '' },
     // { title: t('pages.facts.certificate'), link: '' },
-];
-
-const services: Service[] = [
-    {
-        img: '/images/services/consultation.png',
-        title: t('services.info_service.title'),
-        content: t('services.info_service.content'),
-        price: '4000',
-        actionTitle: t('services.info_service.actionTitle'),
-        details: [
-            t('services.info_service.details.detail_1'),
-            t('services.info_service.details.detail_2'),
-            t('services.info_service.details.detail_3'),
-        ],
-        attachment: null,
-        modalActionButton: t('services.info_service.modalActionButton'),
-        payLink: '#',
-        key: 'info_service',
-        tags: [
-            { name: t('tag.online'), color: 'rose' },
-            { name: t('tag.one-time'), color: 'green' },
-            { name: t('tag.feedback'), color: 'gray' },
-        ],
-        command: () => (modalAppointment.value = true),
-    },
-    {
-        img: '/images/services/lure.png',
-        title: t('services.lure.title'),
-        content: t('services.lure.content'),
-        price: '4000',
-        actionTitle: t('services.lure.actionTitle'),
-        details: [
-            t('services.lure.details.detail_1'),
-            t('services.lure.details.detail_2'),
-            t('services.lure.details.detail_3'),
-            t('services.lure.details.detail_4'),
-        ],
-        attachment: {
-            title: t('services.lure.attachment.title'),
-            link: '#',
-        },
-        modalActionButton: t('services.lure.modalActionButton'),
-        payLink: '#',
-        key: 'lure',
-        tags: [
-            { name: t('tag.video'), color: 'rose' },
-            { name: t('tag.pdf'), color: 'green' },
-            { name: t('tag.feedback'), color: 'gray' },
-        ],
-        command: () => {
-            window.open(
-                'https://self.payanyway.ru/16756515092850',
-                '_blank',
-                'noopener, noreferrer'
-            );
-        },
-    },
-    {
-        img: '/images/services/chat-group.png',
-        title: t('services.group_chat.title'),
-        content: t('services.group_chat.content'),
-        price: '5000',
-        actionTitle: t('services.group_chat.actionTitle'),
-        details: [
-            t('services.group_chat.details.detail_1'),
-            t('services.group_chat.details.detail_2'),
-            t('services.group_chat.details.detail_3'),
-            t('services.group_chat.details.detail_4'),
-            t('services.group_chat.details.detail_5'),
-            t('services.group_chat.details.detail_6'),
-        ],
-        attachment: null,
-        modalActionButton: t('services.group_chat.modalActionButton'),
-        payLink: '#',
-        key: 'group_chat',
-        tags: [
-            { name: t('tag.up-to'), color: 'green' },
-            { name: t('tag.quickly'), color: 'rose' },
-            { name: t('tag.month'), color: 'yellow' },
-            { name: t('tag.renewal'), color: 'gray' },
-        ],
-        command: () => {
-            window.open(
-                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
-                '_blank',
-                'noopener, noreferrer'
-            );
-        },
-    },
-    {
-        img: '/images/services/individual_chat.png',
-        title: t('services.individual_chat.title'),
-        content: t('services.individual_chat.content'),
-        price: '10000',
-        actionTitle: t('services.individual_chat.actionTitle'),
-        details: [
-            t('services.individual_chat.details.detail_1'),
-            t('services.individual_chat.details.detail_2'),
-        ],
-        attachment: null,
-        modalActionButton: t('services.individual_chat.modalActionButton'),
-        payLink: '#',
-        key: 'individual_chat',
-        tags: [
-            { name: t('tag.personal'), color: 'green' },
-            { name: t('tag.month'), color: 'yellow' },
-            { name: t('tag.renewal'), color: 'gray' },
-        ],
-        command: () => {
-            window.open(
-                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
-                '_blank',
-                'noopener, noreferrer'
-            );
-        },
-    },
-    // {
-    //     img: '/images/services/first-aid-kit.png',
-    //     title: t('services.no_panic.title'),
-    //     content: t('services.no_panic.content'),
-    //     price: '5000',
-    //     actionTitle: t('services.no_panic.actionTitle'),
-    //     details: [
-    //         t('services.no_panic.details.detail_1'),
-    //         t('services.no_panic.details.detail_2'),
-    //         t('services.no_panic.details.detail_3'),
-    //         t('services.no_panic.details.detail_4'),
-    //         t('services.no_panic.details.detail_5'),
-    //         t('services.no_panic.details.detail_6'),
-    //         t('services.no_panic.details.detail_7'),
-    //         t('services.no_panic.details.detail_8'),
-    //         t('services.no_panic.details.detail_9'),
-    //         t('services.no_panic.details.detail_10'),
-    //     ],
-    //     attachment: {
-    //         title: t('services.no_panic.attachment.title'),
-    //         link: '#',
-    //     },
-    //     modalActionButton: t('services.no_panic.modalActionButton'),
-    //     payLink: '#',
-    //     key: 'no_panic',
-    //     command: () => {
-    //         window.open(
-    //             'https://self.payanyway.ru/1672467575731',
-    //             '_blank',
-    //             'noopener, noreferrer'
-    //         );
-    //     },
-    // },
-    {
-        img: '/images/services/vaccination.png',
-        title: t('services.vaccination.title'),
-        content: t('services.vaccination.content'),
-        price: '4000',
-        actionTitle: t('services.vaccination.actionTitle'),
-        details: [
-            t('services.vaccination.details.detail_1'),
-            t('services.vaccination.details.detail_2'),
-            t('services.vaccination.details.detail_3'),
-        ],
-        attachment: {
-            title: t('services.vaccination.attachment.title'),
-            link: '/files/Профилактика кори.pdf',
-        },
-        tags: [
-            { name: t('tag.personal'), color: 'green' },
-            { name: t('tag.pdf'), color: 'rose' },
-            { name: t('tag.feedback'), color: 'gray' },
-        ],
-        modalActionButton: t('services.vaccination.modalActionButton'),
-        payLink: '#',
-        key: 'vaccination',
-        command: () => {
-            window.open(
-                'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
-                '_blank',
-                'noopener, noreferrer'
-            );
-        },
-    },
-    // {
-    //     img: '/images/services/mentoring.png',
-    //     title: t('services.mentoring.title'),
-    //     content: t('services.mentoring.content'),
-    //     price: '4000',
-    //     actionTitle: t('services.mentoring.actionTitle'),
-    //     details: [
-    //         t('services.mentoring.details.detail_1'),
-    //         t('services.mentoring.details.detail_2'),
-    //         t('services.mentoring.details.detail_3'),
-    //     ],
-    //     attachment: null,
-    //     modalActionButton: t('services.mentoring.modalActionButton'),
-    //     payLink: '#',
-    //     key: 'mentoring',
-    //     command: () => {
-    //         window.open(
-    //             'https://api.whatsapp.com/message/YNKZRPC7U7HAH1?autoload=1&app_absent=0',
-    //             '_blank',
-    //             'noopener, noreferrer'
-    //         );
-    //     },
-    // },
 ];
 </script>

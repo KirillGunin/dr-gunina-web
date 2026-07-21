@@ -45,13 +45,23 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     >
-                        <AppButton rounded raised variant="outlined" :aria-label="$t('header.email-link')">
+                        <AppButton
+                            rounded
+                            raised
+                            variant="outlined"
+                            :aria-label="$t('header.email-link')"
+                        >
                             <SvgIcon name="mail" />
                         </AppButton>
                     </a>
 
                     <a href="https://t.me/dr_ksgunina" target="_blank" rel="noopener noreferrer">
-                        <AppButton rounded raised variant="outlined" :aria-label="$t('header.telegram-link')">
+                        <AppButton
+                            rounded
+                            raised
+                            variant="outlined"
+                            :aria-label="$t('header.telegram-link')"
+                        >
                             <SvgIcon name="telegram" />
                         </AppButton>
                     </a>
@@ -62,7 +72,11 @@
                         rounded
                         raised
                         variant="outlined"
-                        :aria-label="isDarkMode ? $t('header.theme-toggle-light') : $t('header.theme-toggle-dark')"
+                        :aria-label="
+                            isDarkMode
+                                ? $t('header.theme-toggle-light')
+                                : $t('header.theme-toggle-dark')
+                        "
                         @click="toggleMode"
                     >
                         <SvgIcon :name="isDarkMode ? 'lamp-on' : 'lamp-off'" />

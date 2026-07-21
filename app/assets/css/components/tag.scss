@@ -6,6 +6,10 @@
     white-space: nowrap;
     width: fit-content;
 
+    &--raised {
+        box-shadow: var(--shadow-soft);
+    }
+
     &--xs {
         padding: 4px 8px;
         font-size: 13px;
