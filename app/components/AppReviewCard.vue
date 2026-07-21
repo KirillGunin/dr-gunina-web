@@ -36,16 +36,55 @@
                     },
                 }"
             />
-            <span class="review-card__info-text">{{ review.text }}</span>
+            <div class="review-card__info-text-wrap">
+                <span
+                    ref="textRef"
+                    class="review-card__info-text"
+                    :class="{ 'review-card__info-text--expanded': isExpanded }"
+                >
+                    {{ review.text }}
+                </span>
+
+                <button
+                    v-if="hasOverflow && !isExpanded"
+                    type="button"
+                    class="review-card__info-more"
+                    @click="isExpanded = true"
+                >
+                    ещё
+                </button>
+            </div>
+
+            <button
+                v-if="hasOverflow && isExpanded"
+                type="button"
+                class="review-card__info-collapse"
+                @click="isExpanded = false"
+            >
+                свернуть
+            </button>
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
+import { ref, onMounted, nextTick } from 'vue';
 import { formatDate } from '~/utils/formatTime';
 import type { Review } from '~/types/reviews';
 
 defineProps<{
     review: Review;
 }>();
+
+const textRef = ref<HTMLElement | null>(null);
+const hasOverflow = ref(false);
+const isExpanded = ref(false);
+
+onMounted(async () => {
+    await nextTick();
+
+    if (textRef.value) {
+        hasOverflow.value = textRef.value.scrollHeight > textRef.value.clientHeight;
+    }
+});
 </script>

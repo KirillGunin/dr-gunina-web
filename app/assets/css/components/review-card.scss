@@ -51,9 +51,48 @@
         display: inline-flex;
     }
 
+    &__info-text-wrap {
+        position: relative;
+    }
+
     &__info-text {
+        display: -webkit-box;
         font-size: 15px;
         font-weight: 400;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+        &--expanded {
+            display: block;
+            -webkit-line-clamp: unset;
+            overflow: visible;
+        }
+    }
+
+    &__info-more {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        padding: 0 0 0 var(--spacer-xl);
+        background: linear-gradient(to right, transparent, var(--p-card-background) 40%);
+        border: none;
+        color: var(--link-color);
+        font-size: 15px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    &__info-collapse {
+        display: block;
+        margin-top: var(--spacer-2xs);
+        padding: 0;
+        background: none;
+        border: none;
+        color: var(--link-color);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
     }
 
     @media (--screen-xs) {
