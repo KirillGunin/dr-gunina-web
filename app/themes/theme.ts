@@ -75,7 +75,7 @@ const CustomPreset = definePreset(Aura, {
             600: '#4C271D',
         },
         brown: {
-            50: '#F3ECE5',
+            50: '#fffaf4',
             100: '#E7DACC',
             200: '#AB7E4C',
             300: '#874800',
@@ -85,6 +85,9 @@ const CustomPreset = definePreset(Aura, {
         },
         blue: {
             600: '#2b344e',
+        },
+        gold: {
+            300: '#ffd200',
         },
     },
     semantic: {
