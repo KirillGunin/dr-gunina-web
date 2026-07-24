@@ -292,6 +292,32 @@ const CustomPreset = definePreset(Aura, {
                 },
             },
         },
+        inputtext: {
+            colorScheme: {
+                light: {
+                    root: {
+                        borderColor: '{salmon.300}',
+                        hoverBorderColor: '{salmon.200}',
+                        focusBorderColor: '{salmon.300}',
+                        invalidBorderColor: 'var(--base-red)',
+                        invalidPlaceholderColor: 'var(--placeholder-color)',
+                        color: '{surface.950}',
+                        placeholderColor: 'var(--placeholder-color)',
+                        shadow: 'var(--shadow-soft)',
+                        focusRing: {
+                            shadow: 'var(--shadow-soft)',
+                        },
+                    },
+                },
+                dark: {
+                    root: {
+                        background: 'transparent',
+                        color: '{rose.50}',
+                        invalidBorderColor: 'var(--base-red)',
+                    },
+                },
+            },
+        },
         textarea: {
             colorScheme: {
                 light: {

@@ -40,6 +40,10 @@
 
                 <!-- Соц сети -->
                 <div class="header__socials">
+                    <AppButton rounded raised variant="outlined" @click="moToProfile">
+                        <i :class="!user ? 'pi pi-sign-in' : 'pi pi-user'"></i>
+                    </AppButton>
+
                     <a
                         href="mailto:dr.kseniagunina@yandex.ru?subject=Письмо с сайта&body=Здравствуйте, Ксения Александровна!%0D%0A%0D%0AХочу уточнить по поводу "
                         target="_blank"
@@ -89,6 +93,8 @@
                 </div>
             </div>
         </div>
+
+        <ModalLogin :visible="modalLogin" @close:visible="modalLogin = false" />
     </header>
 </template>
 <script setup lang="ts">
@@ -96,6 +102,9 @@ import { ref } from 'vue';
 import { useRoute } from '#vue-router';
 import { useTheme } from '~/composables/useTheme';
 import { useBreakpoints } from '~/composables/useBreakpoins';
+
+import ModalLogin from '~/components/modals/ModalLogin.vue';
+import { useAuth } from '~/stores/auth';
 
 const route = useRoute();
 const localePath = useLocalePath();
@@ -105,8 +114,10 @@ const { isDarkMode, toggleMode } = useTheme();
 const activeSection = ref<string>('section-about');
 const header = ref<HTMLElement | null>(null);
 let scrollCleanup: (() => void) | null = null;
+const modalLogin = ref<boolean>(false);
 
 const isHomePage = computed(() => route.path === localePath('/'));
+const user = computed(() => useAuth().user);
 
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -115,6 +126,15 @@ const scrollToSection = (sectionId: string) => {
     const offset = (header.value?.offsetHeight ?? 100) + 20;
     const top = element.getBoundingClientRect().top + window.scrollY - offset;
     window.scrollTo({ top, behavior: 'smooth' });
+};
+
+const moToProfile = () => {
+    if (!user.value) {
+        modalLogin.value = true;
+        return;
+    }
+
+    navigateTo('/admin');
 };
 
 const navigationItems = [

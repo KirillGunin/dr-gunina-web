@@ -40,7 +40,7 @@ const emit = defineEmits<{
     'update:modelValue': [payload: FormState];
     beforeSend: [payload: FormState];
     success: [payload: AxiosResponse];
-    error: [payload: Record<string, unknown>];
+    error: [payload: unknown];
     validationFailed: [payload: object];
 }>();
 
@@ -48,7 +48,7 @@ const state = reactive<FormState>({});
 
 const formData = reactive({
     sending: false,
-    backendErrors: [] as string[],
+    backendErrors: {} as Record<string, string[]>,
     message: '',
 });
 
@@ -83,7 +83,7 @@ async function submit() {
 
     if (isFormCorrect) {
         formData.sending = true;
-        formData.backendErrors = [];
+        formData.backendErrors = {};
         formData.message = '';
 
         try {
@@ -91,11 +91,11 @@ async function submit() {
             emit('success', response as AxiosResponse);
         } catch (error: unknown) {
             const axiosError = error as {
-                response?: { data?: { errors?: string[]; message?: string } };
+                response?: { data?: { errors?: Record<string, string[]>; message?: string } };
             };
             const errorResponseData = axiosError?.response?.data ?? {};
 
-            formData.backendErrors = errorResponseData.errors ?? [];
+            formData.backendErrors = errorResponseData.errors ?? {};
             formData.message = errorResponseData.message ?? 'Unexpected error';
 
             emit('error', errorResponseData);

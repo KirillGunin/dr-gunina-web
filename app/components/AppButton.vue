@@ -10,6 +10,7 @@
         :icon="icon"
         :size="size"
         :loading="loading"
+        :pt="pt"
     >
         <slot />
     </Button>
@@ -25,6 +26,7 @@ type ButtonProps = {
     raised?: boolean;
     icon?: string | undefined;
     loading?: boolean;
+    pt?: object;
 };
 
 withDefaults(defineProps<ButtonProps>(), {

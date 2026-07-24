@@ -9,11 +9,13 @@
 @use "./primevue/p-textarea";
 @use "./primevue/p-dialog";
 @use "./primevue/p-toast";
+@use "./primevue/p-password";
 
 // Pages
 @use "./pages/page-home";
 @use "./pages/page-privacy";
 @use "./pages/page-service";
+@use "./pages/page-admin";
 
 // Components
 @use "./components/header";
@@ -41,6 +43,7 @@
 // Forms
 @use "./components/forms/form-appointment";
 @use "./components/forms/form-review";
+@use "./components/forms/form-login";
 
 // Popover
 @use "./components/popover-locale.scss";

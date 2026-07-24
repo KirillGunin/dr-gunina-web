@@ -182,6 +182,14 @@
             "placeholder-text": "Поделитесь Вашим мнением",
             "privacy": "Согласие на обработку персональных данных",
             "action": "Отправить"
+        },
+        "login": {
+            "header": "Вход в учетную запись",
+            "label-email": "Ваш email",
+            "placeholder-email": "Введите Ваш email",
+            "label-password": "Ваш пароль",
+            "placeholder-password": "Введите Ваш пароль",
+            "action": "Войти"
         }
     },
     "errors": {
