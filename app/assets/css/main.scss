@@ -11,6 +11,9 @@
 @use "./primevue/p-toast";
 @use "./primevue/p-password";
 
+// Layouts
+@use "./layouts/layout-admin";
+
 // Pages
 @use "./pages/page-home";
 @use "./pages/page-privacy";

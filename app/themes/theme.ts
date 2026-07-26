@@ -1,6 +1,7 @@
 // themes/mytheme.js
 import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
+import type { StyleOptions } from '@primeuix/styled';
 
 const CustomPreset = definePreset(Aura, {
     primitive: {
@@ -394,6 +395,46 @@ const CustomPreset = definePreset(Aura, {
                         borderColor: 'transparent',
                         background: '{surface.800}',
                         shadow: 'var(--shadow-soft)',
+                    },
+                },
+            },
+        },
+        datatable: {
+            colorScheme: {
+                light: {
+                    root: {
+                        borderColor: '{content.border.color}',
+                    },
+                },
+            },
+            css: ({ dt }: StyleOptions) => `
+                .p-datatable-flex-scrollable {
+                    min-height: 0;
+                }
+
+                .p-datatable-flex-scrollable > .p-datatable-table-container {
+                    border: 1px solid ${dt('datatable.border.color')};
+                    border-top: none;
+                    border-radius: 0 0 20px 20px;
+                }
+            `,
+        },
+        tabs: {
+            colorScheme: {
+                light: {
+                    tablist: {
+                        background: '{gray.50}',
+                    },
+                    tab: {
+                        activeBackground: '{gray.100}',
+                    },
+                },
+                dark: {
+                    tablist: {
+                        background: '{surface.700}',
+                    },
+                    tab: {
+                        activeBackground: '{gray.500}',
                     },
                 },
             },

@@ -5,6 +5,8 @@
         "contacts": "Контакты",
         "menu-toggle": "Открыть меню",
         "email-link": "Написать письмо",
+        "email-subject": "Письмо с сайта",
+        "email-body": "Здравствуйте, Ксения Александровна!\n\nХочу уточнить по поводу ",
         "telegram-link": "Открыть Telegram",
         "theme-toggle-dark": "Включить тёмную тему",
         "theme-toggle-light": "Включить светлую тему",
@@ -34,6 +36,10 @@
             "confidential-title": "Конфиденциальность",
             "conspiracy-title": "Персональные данные",
             "offer-title": "Договор оферты"
+        },
+        "admin": {
+            "welcome": "С возвращением, {name}",
+            "logout": "Выйти"
         }
     },
     "services": {
@@ -223,6 +229,20 @@
         "month": "1 месяц",
         "quickly": "Быстрые ответы",
         "up-to": "До 30 человек"
+    },
+    "tabs": {
+        "dashboard": "Дашборд",
+        "reviews-pending": "Отзывы на модерации",
+        "reviews-all": "Все отзывы"
+    },
+    "reviews-table": {
+        "column-user": "Пользователь",
+        "column-phone": "Телефон",
+        "column-created-at": "Дата создания",
+        "column-rating": "Рейтинг",
+        "column-actions": "Действия",
+        "review-text-title": "Текст отзыва:",
+        "empty-pending": "Нет отзывов ожидающих модерации"
     },
     "others": {
         "details": "Подробнее",

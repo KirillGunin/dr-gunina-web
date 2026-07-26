@@ -59,3 +59,27 @@ export const rejectPendingReviews = async (id: string) => {
         .then((response) => Promise.resolve(response))
         .catch((error) => Promise.reject(error));
 };
+
+/**
+ * Отправляет запрос на получение одобренных отзывов в админке
+ */
+export const fetchApprovedReviews = async () => {
+    const { $axios } = useNuxtApp();
+
+    return $axios
+        .get(`/reviews/approved`)
+        .then((response) => Promise.resolve(response))
+        .catch((error) => Promise.reject(error));
+};
+
+/**
+ * Отправляет запрос на удаление отзыва в админке
+ */
+export const deleteReview = async (id: string) => {
+    const { $axios } = useNuxtApp();
+
+    return $axios
+        .delete(`/reviews/${id}`)
+        .then((response) => Promise.resolve(response))
+        .catch((error) => Promise.reject(error));
+};

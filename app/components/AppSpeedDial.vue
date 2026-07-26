@@ -30,6 +30,7 @@
 import { ref } from 'vue';
 import { useI18n } from '#imports';
 import { useTheme } from '~/composables/useTheme';
+import { buildMailto } from '~/utils/buildMailto';
 import type { SpeedDialItem } from '~/types/speedDialItem';
 
 const { t, setLocale } = useI18n();
@@ -43,7 +44,11 @@ const items = computed<SpeedDialItem[]>(() => [
         label: t('header.email-link'),
         command: () => {
             window.open(
-                'mailto:dr.kseniagunina@yandex.ru?subject=Письмо с сайта&body=Здравствуйте, Ксения Александровна!%0D%0A%0D%0AХочу уточнить по поводу ',
+                buildMailto(
+                    'dr.kseniagunina@yandex.ru',
+                    t('header.email-subject'),
+                    t('header.email-body')
+                ),
                 '_blank',
                 'noopener noreferrer'
             );

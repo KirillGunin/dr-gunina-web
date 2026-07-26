@@ -29,7 +29,7 @@
 
                 <div class="form-login__fields">
                     <AppField
-                        :label="$t('forms.review.label-name')"
+                        :label="$t('forms.login.label-password')"
                         :frontend-errors="frontendErrors?.password?.$errors"
                         :backend-errors="backendErrors?.password"
                         v-slot="{ invalid }"
@@ -37,7 +37,7 @@
                         <AppInputPassword
                             v-model="fields.password"
                             autocomplete="current-password"
-                            :placeholder="$t('forms.review.placeholder-name')"
+                            :placeholder="$t('forms.login.placeholder-password')"
                             :invalid="invalid"
                         />
                     </AppField>

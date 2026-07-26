@@ -44,11 +44,7 @@
                         <i :class="!user ? 'pi pi-sign-in' : 'pi pi-user'"></i>
                     </AppButton>
 
-                    <a
-                        href="mailto:dr.kseniagunina@yandex.ru?subject=Письмо с сайта&body=Здравствуйте, Ксения Александровна!%0D%0A%0D%0AХочу уточнить по поводу "
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a :href="mailtoHref" target="_blank" rel="noopener noreferrer">
                         <AppButton
                             rounded
                             raised
@@ -100,14 +96,17 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRoute } from '#vue-router';
+import { useI18n } from '#imports';
 import { useTheme } from '~/composables/useTheme';
 import { useBreakpoints } from '~/composables/useBreakpoins';
+import { buildMailto } from '~/utils/buildMailto';
 
 import ModalLogin from '~/components/modals/ModalLogin.vue';
 import { useAuth } from '~/stores/auth';
 
 const route = useRoute();
 const localePath = useLocalePath();
+const { t } = useI18n();
 const { isMobile } = useBreakpoints();
 const { isDarkMode, toggleMode } = useTheme();
 
@@ -118,6 +117,9 @@ const modalLogin = ref<boolean>(false);
 
 const isHomePage = computed(() => route.path === localePath('/'));
 const user = computed(() => useAuth().user);
+const mailtoHref = computed(() =>
+    buildMailto('dr.kseniagunina@yandex.ru', t('header.email-subject'), t('header.email-body'))
+);
 
 const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

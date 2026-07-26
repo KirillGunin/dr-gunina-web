@@ -1,0 +1,22 @@
+.layout-admin {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+
+    &__container {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        min-height: 0;
+        max-width: 92rem;
+        width: 100%;
+        padding: 0 28px;
+        margin: 0 auto;
+    }
+
+    @media (--screen-xs) {
+        &__container {
+            padding: 0 var(--spacer-md);
+        }
+    }
+}

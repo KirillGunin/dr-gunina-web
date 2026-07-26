@@ -5,6 +5,8 @@
         "contacts": "Contacts",
         "menu-toggle": "Open menu",
         "email-link": "Send an email",
+        "email-subject": "Message from the website",
+        "email-body": "Hello, Ksenia Aleksandrovna!\n\nI'd like to ask about ",
         "telegram-link": "Open Telegram",
         "theme-toggle-dark": "Switch to dark theme",
         "theme-toggle-light": "Switch to light theme",
@@ -34,6 +36,10 @@
             "confidential-title": "Privacy Policy",
             "conspiracy-title": "Personal Data",
             "offer-title": "Terms of Offer"
+        },
+        "admin": {
+            "welcome": "Welcome back, {name}",
+            "logout": "Log out"
         }
     },
     "services": {
@@ -91,7 +97,8 @@
                 "detail_7": "Critical conditions with ARVI and intestinal infections;",
                 "detail_8": "First aid checklist for emergencies;",
                 "detail_9": "\"Home medicine cabinet\" checklist;",
-                "detail_10": "Feedback;"
+                "detail_10": "Feedback;",
+                "detail_11": "\"Home medicine cabinet\" checklist.pdf"
             },
             "attachment": {
                 "title": "\"Home medicine cabinet\" checklist.pdf"
@@ -168,6 +175,27 @@
             "action": "Book now",
             "gender-male": "Male",
             "gender-female": "Female"
+        },
+        "review": {
+            "header": "Leave your review",
+            "label-name": "Your name",
+            "placeholder-name": "Enter your name",
+            "label-last-name": "Your last name",
+            "placeholder-last-name": "Enter your last name",
+            "label-phone": "Phone number",
+            "label-rating": "Add a rating",
+            "label-text": "Review",
+            "placeholder-text": "Share your opinion",
+            "privacy": "Consent to personal data processing",
+            "action": "Submit"
+        },
+        "login": {
+            "header": "Sign in to your account",
+            "label-email": "Your email",
+            "placeholder-email": "Enter your email",
+            "label-password": "Your password",
+            "placeholder-password": "Enter your password",
+            "action": "Sign in"
         }
     },
     "errors": {
@@ -201,6 +229,20 @@
         "month": "1 month",
         "quickly": "Quick replies",
         "up-to": "Up to 30 people"
+    },
+    "tabs": {
+        "dashboard": "Dashboard",
+        "reviews-pending": "Pending reviews",
+        "reviews-all": "All reviews"
+    },
+    "reviews-table": {
+        "column-user": "User",
+        "column-phone": "Phone",
+        "column-created-at": "Created at",
+        "column-rating": "Rating",
+        "column-actions": "Actions",
+        "review-text-title": "Review text:",
+        "empty-pending": "No reviews pending moderation"
     },
     "others": {
         "details": "Details",

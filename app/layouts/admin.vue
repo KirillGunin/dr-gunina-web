@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="layout-admin">
         <AppHeader />
 
-        <div class="container">
+        <div class="layout-admin__container">
             <slot />
         </div>
     </div>
