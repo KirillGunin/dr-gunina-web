@@ -73,7 +73,7 @@ export default defineNuxtConfig({
                     'consultation',
                     'lure',
                     'chat-group',
-                    'individual_chat',
+                    'individual-chat',
                     'vaccination',
                 ].flatMap((name) => [
                     `/_ipx/f_webp&q_80&s_360x471/images/services/${name}.png`,
