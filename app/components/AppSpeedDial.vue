@@ -40,28 +40,6 @@ const isMenuOpen = ref<boolean>(false);
 
 const items = computed<SpeedDialItem[]>(() => [
     {
-        icon: 'mail',
-        label: t('header.email-link'),
-        command: () => {
-            window.open(
-                buildMailto(
-                    'dr.kseniagunina@yandex.ru',
-                    t('header.email-subject'),
-                    t('header.email-body')
-                ),
-                '_blank',
-                'noopener noreferrer'
-            );
-        },
-    },
-    {
-        icon: 'telegram',
-        label: t('header.telegram-link'),
-        command: () => {
-            window.open('https://t.me/dr_ksgunina', '_blank', 'noopener noreferrer');
-        },
-    },
-    {
         icon: isDarkMode.value ? 'lamp-on' : 'lamp-off',
         label: isDarkMode.value ? t('header.theme-toggle-light') : t('header.theme-toggle-dark'),
         command: () => {

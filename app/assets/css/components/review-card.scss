@@ -124,7 +124,8 @@
 
         &__info-text {
             font-size: 13px;
-            line-height: 1;
+            line-height: 1.1;
+            margin-top: var(--spacer-2xs);
         }
     }
 }

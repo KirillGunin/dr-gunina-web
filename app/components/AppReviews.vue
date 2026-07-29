@@ -3,7 +3,7 @@
         <div class="reviews-carousel__header">
             <span>Отзывы</span>
 
-            <AppButton variant="text" rounded @click="modalReview = true">
+            <AppButton variant="outlined" raised size="small" rounded @click="modalReview = true">
                 <SvgIcon name="home" style="stroke-width: 2.5" />
                 Добавить отзыв
             </AppButton>

@@ -10,6 +10,7 @@
 @use "./primevue/p-dialog";
 @use "./primevue/p-toast";
 @use "./primevue/p-password";
+@use "./primevue/p-drawer";
 
 // Layouts
 @use "./layouts/layout-admin";
@@ -186,7 +187,7 @@ body {
     margin: 0 auto;
 
     @media (--screen-xs) {
-        padding: 0 var(--spacer-md);
+        padding: 0 var(--spacer-sm);
     }
 }
 

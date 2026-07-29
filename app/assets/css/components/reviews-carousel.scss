@@ -33,13 +33,13 @@
     @media (--screen-xs) {
         &__header {
             font-size: 20px;
-            margin-bottom: var(--spacer-xs);
+            margin-bottom: var(--spacer-md);
         }
 
         &__content {
             margin-left: calc(var(--spacer-md) * -1);
             margin-right: calc(var(--spacer-md) * -1);
-            padding: var(--spacer-xs) var(--spacer-md);
+            padding: var(--spacer-sm) var(--spacer-md);
             mask-image: unset;
         }
     }
