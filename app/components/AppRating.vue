@@ -1,5 +1,5 @@
 <template>
-    <div class="rating">
+    <div class="rating" style="display: flex">
         <Rating
             :model-value="modelValue"
             allow-half

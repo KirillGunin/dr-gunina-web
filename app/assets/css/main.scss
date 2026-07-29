@@ -9,11 +9,17 @@
 @use "./primevue/p-textarea";
 @use "./primevue/p-dialog";
 @use "./primevue/p-toast";
+@use "./primevue/p-password";
+@use "./primevue/p-drawer";
+
+// Layouts
+@use "./layouts/layout-admin";
 
 // Pages
 @use "./pages/page-home";
 @use "./pages/page-privacy";
 @use "./pages/page-service";
+@use "./pages/page-admin";
 
 // Components
 @use "./components/header";
@@ -41,6 +47,7 @@
 // Forms
 @use "./components/forms/form-appointment";
 @use "./components/forms/form-review";
+@use "./components/forms/form-login";
 
 // Popover
 @use "./components/popover-locale.scss";
@@ -180,7 +187,7 @@ body {
     margin: 0 auto;
 
     @media (--screen-xs) {
-        padding: 0 var(--spacer-md);
+        padding: 0 var(--spacer-sm);
     }
 }
 
