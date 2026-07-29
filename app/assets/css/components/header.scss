@@ -6,10 +6,6 @@
     padding-top: var(--spacer-ml);
     margin-bottom: var(--spacer-ml);
 
-    &__burger {
-        display: none;
-    }
-
     &::after {
         content: '';
         position: absolute;
@@ -22,7 +18,7 @@
 
     &__container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 200px 1fr;
         width: 100%;
         max-width: 92rem;
         justify-content: space-between;
@@ -31,10 +27,20 @@
 
     &__menu {
         display: flex;
-        gap: 8px;
+        flex-direction: column;
+    }
+
+    &__navigation {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__navigation-item {
+        width: 100%;
 
         & .button {
-            height: 40px;
+            width: 100%;
+            justify-content: flex-start
         }
     }
 
@@ -52,32 +58,12 @@
         }
     }
 
-    &__socials {
-        display: flex;
-        justify-content: flex-end;
-        gap: 8px;
-
-        & .button {
-            width: 40px;
-            height: 40px;
-            padding: 8px;
-
-            & svg {
-                color: var(--header-color);
-                stroke-width: 2.5;
-            }
-        }
-    }
-
     @media (--screen-xs) {
         padding-top: var(--spacer-md);
 
         &__container {
+            grid-template-columns: 1fr 1fr 1fr;
             padding-bottom: var(--spacer-2xs);
-        }
-
-        &__socials {
-            display: none;
         }
 
         &__burger {

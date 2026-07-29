@@ -1,6 +1,7 @@
 // themes/mytheme.js
 import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
+import type { StyleOptions } from '@primeuix/styled';
 
 const CustomPreset = definePreset(Aura, {
     primitive: {
@@ -75,7 +76,7 @@ const CustomPreset = definePreset(Aura, {
             600: '#4C271D',
         },
         brown: {
-            50: '#F3ECE5',
+            50: '#fffaf4',
             100: '#E7DACC',
             200: '#AB7E4C',
             300: '#874800',
@@ -85,6 +86,9 @@ const CustomPreset = definePreset(Aura, {
         },
         blue: {
             600: '#2b344e',
+        },
+        gold: {
+            300: '#ffd200',
         },
     },
     semantic: {
@@ -289,6 +293,32 @@ const CustomPreset = definePreset(Aura, {
                 },
             },
         },
+        inputtext: {
+            colorScheme: {
+                light: {
+                    root: {
+                        borderColor: '{salmon.300}',
+                        hoverBorderColor: '{salmon.200}',
+                        focusBorderColor: '{salmon.300}',
+                        invalidBorderColor: 'var(--base-red)',
+                        invalidPlaceholderColor: 'var(--placeholder-color)',
+                        color: '{surface.950}',
+                        placeholderColor: 'var(--placeholder-color)',
+                        shadow: 'var(--shadow-soft)',
+                        focusRing: {
+                            shadow: 'var(--shadow-soft)',
+                        },
+                    },
+                },
+                dark: {
+                    root: {
+                        background: 'transparent',
+                        color: '{rose.50}',
+                        invalidBorderColor: 'var(--base-red)',
+                    },
+                },
+            },
+        },
         textarea: {
             colorScheme: {
                 light: {
@@ -365,6 +395,46 @@ const CustomPreset = definePreset(Aura, {
                         borderColor: 'transparent',
                         background: '{surface.800}',
                         shadow: 'var(--shadow-soft)',
+                    },
+                },
+            },
+        },
+        datatable: {
+            colorScheme: {
+                light: {
+                    root: {
+                        borderColor: '{content.border.color}',
+                    },
+                },
+            },
+            css: ({ dt }: StyleOptions) => `
+                .p-datatable-flex-scrollable {
+                    min-height: 0;
+                }
+
+                .p-datatable-flex-scrollable > .p-datatable-table-container {
+                    border: 1px solid ${dt('datatable.border.color')};
+                    border-top: none;
+                    border-radius: 0 0 20px 20px;
+                }
+            `,
+        },
+        tabs: {
+            colorScheme: {
+                light: {
+                    tablist: {
+                        background: '{gray.50}',
+                    },
+                    tab: {
+                        activeBackground: '{gray.100}',
+                    },
+                },
+                dark: {
+                    tablist: {
+                        background: '{surface.700}',
+                    },
+                    tab: {
+                        activeBackground: '{gray.500}',
                     },
                 },
             },

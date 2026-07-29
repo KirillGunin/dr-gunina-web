@@ -1,0 +1,14 @@
+.form-login {
+    &__fields {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacer-xs);
+        margin-bottom: var(--spacer-md);
+        width: 100%;
+    }
+
+    &__control {
+        width: 100%;
+        margin: 0 auto;
+    }
+}

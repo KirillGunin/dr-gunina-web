@@ -5,6 +5,8 @@
         "contacts": "Contactos",
         "menu-toggle": "Abrir menú",
         "email-link": "Enviar un correo",
+        "email-subject": "Mensaje desde el sitio web",
+        "email-body": "¡Hola, Ksenia Aleksandrovna!\n\nMe gustaría preguntar sobre ",
         "telegram-link": "Abrir Telegram",
         "theme-toggle-dark": "Cambiar a tema oscuro",
         "theme-toggle-light": "Cambiar a tema claro",
@@ -34,6 +36,10 @@
             "confidential-title": "Política de privacidad",
             "conspiracy-title": "Datos personales",
             "offer-title": "Contrato de oferta"
+        },
+        "admin": {
+            "welcome": "Bienvenida de nuevo, {name}",
+            "logout": "Cerrar sesión"
         }
     },
     "services": {
@@ -169,6 +175,27 @@
             "action": "Reservar",
             "gender-male": "Masculino",
             "gender-female": "Femenino"
+        },
+        "review": {
+            "header": "Deja tu reseña",
+            "label-name": "Tu nombre",
+            "placeholder-name": "Ingresa tu nombre",
+            "label-last-name": "Tu apellido",
+            "placeholder-last-name": "Ingresa tu apellido",
+            "label-phone": "Número de teléfono",
+            "label-rating": "Agrega una calificación",
+            "label-text": "Reseña",
+            "placeholder-text": "Comparte tu opinión",
+            "privacy": "Consentimiento para el tratamiento de datos personales",
+            "action": "Enviar"
+        },
+        "login": {
+            "header": "Iniciar sesión en tu cuenta",
+            "label-email": "Tu correo electrónico",
+            "placeholder-email": "Ingresa tu correo electrónico",
+            "label-password": "Tu contraseña",
+            "placeholder-password": "Ingresa tu contraseña",
+            "action": "Iniciar sesión"
         }
     },
     "errors": {
@@ -202,6 +229,20 @@
         "month": "1 mes",
         "quickly": "Respuestas rápidas",
         "up-to": "Hasta 30 personas"
+    },
+    "tabs": {
+        "dashboard": "Panel",
+        "reviews-pending": "Reseñas pendientes",
+        "reviews-all": "Todas las reseñas"
+    },
+    "reviews-table": {
+        "column-user": "Usuario",
+        "column-phone": "Teléfono",
+        "column-created-at": "Fecha de creación",
+        "column-rating": "Calificación",
+        "column-actions": "Acciones",
+        "review-text-title": "Texto de la reseña:",
+        "empty-pending": "No hay reseñas pendientes de moderación"
     },
     "others": {
         "details": "Detalles",

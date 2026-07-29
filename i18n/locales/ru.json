@@ -5,6 +5,8 @@
         "contacts": "Контакты",
         "menu-toggle": "Открыть меню",
         "email-link": "Написать письмо",
+        "email-subject": "Письмо с сайта",
+        "email-body": "Здравствуйте, Ксения Александровна!\n\nХочу уточнить по поводу ",
         "telegram-link": "Открыть Telegram",
         "theme-toggle-dark": "Включить тёмную тему",
         "theme-toggle-light": "Включить светлую тему",
@@ -34,6 +36,10 @@
             "confidential-title": "Конфиденциальность",
             "conspiracy-title": "Персональные данные",
             "offer-title": "Договор оферты"
+        },
+        "admin": {
+            "welcome": "С возвращением, {name}",
+            "logout": "Выйти"
         }
     },
     "services": {
@@ -169,6 +175,27 @@
             "action": "Записаться",
             "gender-male": "Мужской",
             "gender-female": "Женский"
+        },
+        "review": {
+            "header": "Оставьте Ваш отзыв",
+            "label-name": "Ваше имя",
+            "placeholder-name": "Введите Ваше имя",
+            "label-last-name": "Ваша фамилия",
+            "placeholder-last-name": "Введите Вашу фамилию",
+            "label-phone": "Телефон",
+            "label-rating": "Добавьте оценку",
+            "label-text": "Отзыв",
+            "placeholder-text": "Поделитесь Вашим мнением",
+            "privacy": "Согласие на обработку персональных данных",
+            "action": "Отправить"
+        },
+        "login": {
+            "header": "Вход в учетную запись",
+            "label-email": "Ваш email",
+            "placeholder-email": "Введите Ваш email",
+            "label-password": "Ваш пароль",
+            "placeholder-password": "Введите Ваш пароль",
+            "action": "Войти"
         }
     },
     "errors": {
@@ -203,11 +230,25 @@
         "quickly": "Быстрые ответы",
         "up-to": "До 30 человек"
     },
+    "tabs": {
+        "dashboard": "Дашборд",
+        "reviews-pending": "Отзывы на модерации",
+        "reviews-all": "Все отзывы"
+    },
+    "reviews-table": {
+        "column-user": "Пользователь",
+        "column-phone": "Телефон",
+        "column-created-at": "Дата создания",
+        "column-rating": "Рейтинг",
+        "column-actions": "Действия",
+        "review-text-title": "Текст отзыва:",
+        "empty-pending": "Нет отзывов ожидающих модерации"
+    },
     "others": {
         "details": "Подробнее",
         "name": "Гунина Ксения Александровна",
         "legal": "Правовые документы",
-        "home": "Домой",
+        "home": "На Главную",
         "inn": "ИНН"
     }
 }

@@ -61,7 +61,7 @@
                     raised
                     severity="success"
                     variant="outlined"
-                    :label="service.modalActionButton"
+                    label="123"
                     @click="emits('select:action', service)"
                 />
             </div>

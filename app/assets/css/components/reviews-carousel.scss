@@ -1,0 +1,46 @@
+.reviews-carousel {
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--spacer-sm);
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        margin: calc(var(--spacer-sm) * -1) calc(var(--spacer-xs) * -1);
+        padding: var(--spacer-sm) var(--spacer-xs);
+        gap: var(--spacer-md);
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        touch-action: pan-x;
+        mask-image: linear-gradient(to right, transparent, black var(--spacer-lg), black calc(100% - var(--spacer-lg)), transparent);
+        -webkit-mask-image: linear-gradient(to right, transparent, black var(--spacer-lg), black calc(100% - var(--spacer-lg)), transparent);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    @media (--screen-xs) {
+        &__header {
+            font-size: 20px;
+            margin-bottom: var(--spacer-md);
+        }
+
+        &__content {
+            margin-left: calc(var(--spacer-md) * -1);
+            margin-right: calc(var(--spacer-md) * -1);
+            padding: var(--spacer-sm) var(--spacer-md);
+            mask-image: unset;
+        }
+    }
+}

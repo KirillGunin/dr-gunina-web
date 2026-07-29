@@ -6,16 +6,14 @@ type ServiceAttachment = {
 };
 
 export type Service = {
+    service: string;
     actionTitle: string;
     attachment: ServiceAttachment | null;
     content: string;
     details: string[];
     img: string;
-    key: string;
-    modalActionButton: string;
-    payLink: string;
     price: string;
     title: string;
     tags: Tag[];
-    command: () => void;
+    actionUrl: string | null;
 };

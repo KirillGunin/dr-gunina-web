@@ -1,4 +1,6 @@
 .page-home {
+    margin-bottom: var(--spacer-xl);
+
     //welcome
     &__welcome {
         position: relative;
@@ -186,6 +188,8 @@
     }
 
     @media (--screen-xs) {
+        margin-bottom: var(--spacer-ml);
+
         // welcome
         &__welcome {
             margin-bottom: var(--spacer-2xl);
@@ -223,6 +227,7 @@
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
+                object-position: top;
                 border-radius: 8px;
             }
         }
@@ -237,7 +242,7 @@
         }
 
         &__welcome-hook-title {
-            font-size: 36px;
+            font-size: 30px;
             text-align: end;
         }
 
@@ -283,18 +288,31 @@
         &__services {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: var(--spacer-xl);
-            margin-bottom: var(--spacer-xl);
+            margin-bottom: var(--spacer-md);
+            gap: var(--spacer-sm);
         }
 
         &__welcome,
         &__about {
             margin-bottom: var(--spacer-md);
         }
+    }
 
-        &__services {
-            margin-bottom: var(--spacer-md);
-            gap: var(--spacer-ml);
+    @media only screen and (min-width: 550px) and (max-width: 767px) {
+        &__welcome-hook {
+            height: 350px;
+        }
+
+        &__welcome-hook-title {
+            margin-left: 100px;
+        }
+
+        &__welcome-image {
+            height: 330px;
+
+            & img {
+                object-position: center calc(50% + 100px);
+            }
         }
     }
 

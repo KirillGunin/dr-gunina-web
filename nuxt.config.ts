@@ -4,6 +4,12 @@ import { resolve } from 'path';
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
+    experimental: {
+        // Без этого composable-вызовы (navigateTo, useRequestEvent и т.п.),
+        // выполняющиеся после await реального сетевого запроса (axios),
+        // теряют Nuxt SSR-контекст — unctx не использует AsyncLocalStorage.
+        asyncContext: true,
+    },
     vite: {
         resolve: {
             alias: {
@@ -42,10 +48,17 @@ export default defineNuxtConfig({
         '@vueuse/nuxt',
         '@nuxtjs/sitemap',
         '@nuxt/image',
+        '@pinia/nuxt',
     ],
     image: {
         format: ['webp'],
         quality: 80,
+        domains: [new URL(process.env.NUXT_PUBLIC_API_BASE_URL ?? 'http://127.0.0.1:8000').host],
+    },
+    routeRules: {
+        '/api/**': {
+            proxy: `${process.env.NUXT_PUBLIC_API_BASE_URL}/api/**`,
+        },
     },
     nitro: {
         prerender: {
