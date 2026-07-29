@@ -176,7 +176,7 @@ export function useSeoHome() {
                                                 'Если для Вас важно, чтоб вопрос обсуждался в рамках врача и пациента.' +
                                                 'Приватное общение с врачом в индивидуальном чате. ' +
                                                 'Быстрые ответы на вопросы в формате врач–пациент.',
-                                            url: 'https://dr-gunina.ru/images/services/individual_chat.png',
+                                            url: 'https://dr-gunina.ru/images/services/individual-chat.png',
                                         },
                                     },
                                     {
