@@ -51,7 +51,7 @@
                     class="review-card__info-more"
                     @click="isExpanded = true"
                 >
-                    ещё
+                    {{ $t('others.more') }}
                 </button>
             </div>
 
@@ -61,7 +61,7 @@
                 class="review-card__info-collapse"
                 @click="isExpanded = false"
             >
-                свернуть
+                {{ $t('others.collapse') }}
             </button>
         </div>
     </div>

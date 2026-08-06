@@ -1,63 +1,67 @@
 @use 'primeicons/primeicons.css';
-@use "./reset.scss";
+@use './reset.scss';
 
 // PrimeVue
-@use "./primevue/p-popover";
-@use "./primevue/p-card";
-@use "./primevue/p-accordion";
-@use "./primevue/p-speeddial";
-@use "./primevue/p-textarea";
-@use "./primevue/p-dialog";
-@use "./primevue/p-toast";
-@use "./primevue/p-password";
-@use "./primevue/p-drawer";
+@use './primevue/p-popover';
+@use './primevue/p-card';
+@use './primevue/p-accordion';
+@use './primevue/p-speeddial';
+@use './primevue/p-textarea';
+@use './primevue/p-dialog';
+@use './primevue/p-toast';
+@use './primevue/p-password';
+@use './primevue/p-drawer';
 
 // Layouts
-@use "./layouts/layout-admin";
+@use './layouts/layout-admin';
 
 // Pages
-@use "./pages/page-home";
-@use "./pages/page-privacy";
-@use "./pages/page-service";
-@use "./pages/page-admin";
+@use './pages/page-home';
+@use './pages/page-privacy';
+@use './pages/page-service';
+@use './pages/page-admin';
+@use './pages/page-pollen';
 
 // Components
-@use "./components/header";
-@use "./components/card-service";
-@use "./components/tag";
-@use "./components/footer";
-@use "./components/yandex-map";
-@use "./components/map-location-item";
-@use "./components/contacts-map-section";
-@use "./components/folders-block";
-@use "./components/accordion";
-@use "./components/speed-dial";
-@use "./components/field";
-@use "./components/input";
-@use "./components/select";
-@use "./components/modal";
-@use "./components/review-card";
-@use "./components/reviews-carousel";
+@use './components/header';
+@use './components/card-service';
+@use './components/tag';
+@use './components/pollen-scale';
+@use './components/pollen-plant-card';
+@use './components/footer';
+@use './components/yandex-map';
+@use './components/map-location-item';
+@use './components/contacts-map-section';
+@use './components/folders-block';
+@use './components/accordion';
+@use './components/speed-dial';
+@use './components/field';
+@use './components/input';
+@use './components/select';
+@use './components/modal';
+@use './components/review-card';
+@use './components/reviews-carousel';
 
 // Skeletons
-@use "components/skeletons/skeleton-card-service";
-@use "components/skeletons/skeleton-card-review";
-@use "components/skeletons/page-skeleton-service";
+@use 'components/skeletons/skeleton-card-service';
+@use 'components/skeletons/skeleton-card-review';
+@use 'components/skeletons/page-skeleton-service';
+@use 'components/skeletons/skeleton-pollen-forecast';
 
 // Forms
-@use "./components/forms/form-appointment";
-@use "./components/forms/form-review";
-@use "./components/forms/form-login";
+@use './components/forms/form-appointment';
+@use './components/forms/form-review';
+@use './components/forms/form-login';
 
 // Popover
-@use "./components/popover-locale.scss";
+@use './components/popover-locale.scss';
 
 // Modals
-@use "./components/modals/modal-service";
-@use "./components/modals/modal-cookie";
+@use './components/modals/modal-service';
+@use './components/modals/modal-cookie';
 
 // Animations
-@use "./animations/pulse";
+@use './animations/pulse';
 
 /* primeicons.css ships with font-display: block, which blocks icon
    rendering while the font loads. Redeclare with font-display: swap
@@ -65,7 +69,8 @@
 @font-face {
     font-family: 'primeicons';
     font-display: swap;
-    src: url('primeicons/fonts/primeicons.woff2') format('woff2'),
+    src:
+        url('primeicons/fonts/primeicons.woff2') format('woff2'),
         url('primeicons/fonts/primeicons.woff') format('woff'),
         url('primeicons/fonts/primeicons.ttf') format('truetype');
     font-weight: normal;
@@ -76,8 +81,8 @@
 @font-face {
     font-family: 'Inter';
     src:
-            url('/fonts/Inter-ExtraLight.woff2') format('woff2'),
-            url('/fonts/Inter-ExtraLight.woff') format('woff');
+        url('/fonts/Inter-ExtraLight.woff2') format('woff2'),
+        url('/fonts/Inter-ExtraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
     font-display: swap;
@@ -87,8 +92,8 @@
 @font-face {
     font-family: 'Inter';
     src:
-            url('/fonts/Inter-Light.woff2') format('woff2'),
-            url('/fonts/Inter-Light.woff') format('woff');
+        url('/fonts/Inter-Light.woff2') format('woff2'),
+        url('/fonts/Inter-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
     font-display: swap;
@@ -98,8 +103,8 @@
 @font-face {
     font-family: 'Inter';
     src:
-            url('/fonts/Inter-Regular.woff2') format('woff2'),
-            url('/fonts/Inter-Regular.woff') format('woff');
+        url('/fonts/Inter-Regular.woff2') format('woff2'),
+        url('/fonts/Inter-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -109,8 +114,8 @@
 @font-face {
     font-family: 'Inter';
     src:
-            url('/fonts/Inter-Medium.woff2') format('woff2'),
-            url('/fonts/Inter-Medium.woff') format('woff');
+        url('/fonts/Inter-Medium.woff2') format('woff2'),
+        url('/fonts/Inter-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -120,8 +125,8 @@
 @font-face {
     font-family: 'Inter';
     src:
-            url('/fonts/Inter-SemiBold.woff2') format('woff2'),
-            url('/fonts/Inter-SemiBold.woff') format('woff');
+        url('/fonts/Inter-SemiBold.woff2') format('woff2'),
+        url('/fonts/Inter-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -131,8 +136,8 @@
 @font-face {
     font-family: 'Inter';
     src:
-            url('/fonts/Inter-Bold.woff2') format('woff2'),
-            url('/fonts/Inter-Bold.woff') format('woff');
+        url('/fonts/Inter-Bold.woff2') format('woff2'),
+        url('/fonts/Inter-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -140,15 +145,19 @@
 
 /* Banner font */
 @font-face {
-    font-family: "Glina";
-    src: url("/fonts/Glina.otf") format("opentype");
+    font-family: 'Glina';
+    src: url('/fonts/Glina.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 body {
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family:
+        'Inter',
+        system-ui,
+        -apple-system,
+        sans-serif;
     background-color: var(--body-bg);
     color: var(--text-color);
 
@@ -209,26 +218,22 @@ body {
 
     //shadow
     --shadow-strong:
-        0 3px 1px -2px rgba(0, 0, 0, 0.2),
-        0 2px 2px 0 rgba(0, 0, 0, 0.14),
+        0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
         0 1px 5px 0 rgba(0, 0, 0, 0.12);
     --shadow-soft:
-        0 4px 6px -2px rgba(134, 133, 131, 0.3),
-        0 2px 4px 0 rgba(134, 133, 131, 0.2),
+        0 4px 6px -2px rgba(134, 133, 131, 0.3), 0 2px 4px 0 rgba(134, 133, 131, 0.2),
         0 1px 8px 0 rgba(134, 133, 131, 0.15);
     --shadow-soft-no-bottom:
-        -6px -2px 10px -3px rgba(0,0,0,0.3),
-        6px -2px 10px -3px rgba(0,0,0,0.3);
-    --shadow-inner-top:
-            inset 0px 29px 13px -28px rgb(173 173 173 / 60%);
+        -6px -2px 10px -3px rgba(0, 0, 0, 0.3), 6px -2px 10px -3px rgba(0, 0, 0, 0.3);
+    --shadow-inner-top: inset 0px 29px 13px -28px rgb(173 173 173 / 60%);
 
     // folders
-    --folder-green: #CCF085;
-    --folder-peach: #FAEEE7;
-    --folder-gray: #E8E8E8;
-    --folder-blue: #CAF0FD;
+    --folder-green: #ccf085;
+    --folder-peach: #faeee7;
+    --folder-gray: #e8e8e8;
+    --folder-blue: #caf0fd;
 
-    --folder-green-heading: #174C17;
+    --folder-green-heading: #174c17;
     --folder-peach-heading: #684835;
     --folder-gray-heading: #737171;
     --folder-blue-heading: #205f84;
@@ -251,7 +256,7 @@ body {
     --opacity: 1;
 }
 
-:root[class="dark-mode"] {
+:root[class='dark-mode'] {
     --body-bg: #262727;
 
     //text
@@ -262,30 +267,27 @@ body {
     --header-color: var(--p-rose-50);
     --header-outline-color: var(--p-amber-50);
     --header-shadow:
-        0 3px 1px -2px rgb(212 212 212 / 0.2),
-        0 2px 2px 0  rgb(212 212 212 / 0.14),
-        0 1px 5px 0  rgb(212 212 212 / 0.12);
+        0 3px 1px -2px rgb(212 212 212 / 0.2), 0 2px 2px 0 rgb(212 212 212 / 0.14),
+        0 1px 5px 0 rgb(212 212 212 / 0.12);
 
     //footer
     --footer-bg: var(--p-surface-700);
 
     // shadow
     --shadow-strong:
-        0 3px 1px -2px rgba(134, 133, 131, 0.2),
-        0 2px 2px 0 rgba(134, 133, 131, 0.14),
+        0 3px 1px -2px rgba(134, 133, 131, 0.2), 0 2px 2px 0 rgba(134, 133, 131, 0.14),
         0 1px 5px 0 rgba(134, 133, 131, 0.12);
 
-    --shadow-inner-top:
-            inset 0px 29px 13px -28px rgb(0 0 0 / 60%);
+    --shadow-inner-top: inset 0px 29px 13px -28px rgb(0 0 0 / 60%);
 
     // folders
-    --folder-peach: #A59E9A;
-    --folder-gray: #9A9B9B;
-    --folder-blue: #88A0A7;
+    --folder-peach: #a59e9a;
+    --folder-gray: #9a9b9b;
+    --folder-blue: #88a0a7;
 
-    --folder-peach-heading: #4E3B2F;
+    --folder-peach-heading: #4e3b2f;
     --folder-gray-heading: #545353;
-    --folder-blue-heading: #22495F;
+    --folder-blue-heading: #22495f;
 
     // text color
     --notice-color: #403f3f;
