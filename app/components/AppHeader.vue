@@ -5,7 +5,7 @@
                 <div>
                     <AppButton rounded raised variant="outlined" @click="sidebarVisible = true">
                         <i class="pi pi-bars"></i>
-                        Меню
+                        {{ t('header.menu') }}
                     </AppButton>
                 </div>
 
@@ -34,7 +34,7 @@
                     >
                         <AppButton variant="text" @click="scrollToSection(item.link)">
                             <i :class="item.icon"></i>
-                            {{ $t(item.title) }}
+                            {{ t(item.title) }}
                         </AppButton>
                     </li>
                 </ul>
@@ -43,7 +43,15 @@
                     <AppButton variant="text">
                         <i class="pi pi-home" />
 
-                        {{ $t('others.home') }}
+                        {{ t('others.home') }}
+                    </AppButton>
+                </NuxtLink>
+
+                <NuxtLink to="/pollen" class="header__navigation-item">
+                    <AppButton variant="text">
+                        <i class="pi pi-asterisk" />
+
+                        {{ t('header.pollen') }}
                     </AppButton>
                 </NuxtLink>
 
@@ -53,9 +61,9 @@
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <AppButton variant="text" :aria-label="$t('header.email-link')">
+                    <AppButton variant="text" :aria-label="t('header.email-link')">
                         <i class="pi pi-envelope" />
-                        Написать на почту
+                        {{ t('header.email-link') }}
                     </AppButton>
                 </a>
 
@@ -65,9 +73,9 @@
                     target="_blank"
                     rel="noopener noreferrer"
                 >
-                    <AppButton variant="text" :aria-label="$t('header.telegram-link')">
+                    <AppButton variant="text" :aria-label="t('header.telegram-link')">
                         <i class="pi pi-send" />
-                        Написать в телеграм
+                        {{ t('header.telegram-link') }}
                     </AppButton>
                 </a>
             </nav>
@@ -75,7 +83,7 @@
             <div class="header__navigation-item">
                 <AppButton variant="text" @click="moToProfile">
                     <i :class="!user ? 'pi pi-sign-in' : 'pi pi-user'"></i>
-                    Учетная запись
+                    {{ t('header.account') }}
                 </AppButton>
             </div>
         </Drawer>

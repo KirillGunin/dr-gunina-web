@@ -1,8 +1,11 @@
 {
     "header": {
+        "menu": "Menú",
+        "account": "Cuenta",
         "about": "Sobre",
         "services": "Servicios",
         "contacts": "Contactos",
+        "pollen": "Polen",
         "menu-toggle": "Abrir menú",
         "email-link": "Enviar un correo",
         "email-subject": "Mensaje desde el sitio web",
@@ -10,9 +13,9 @@
         "telegram-link": "Abrir Telegram",
         "theme-toggle-dark": "Cambiar a tema oscuro",
         "theme-toggle-light": "Cambiar a tema claro",
-        "ru": "Сambiar to russian",
-        "en": "Сambiar to english",
-        "es": "Сambiar to spanish"
+        "ru": "Cambiar a ruso",
+        "en": "Cambiar a inglés",
+        "es": "Cambiar a español"
     },
     "footer": {
         "map-action": "Ver en el mapa"
@@ -22,6 +25,25 @@
             "hook-text": "¿Buscando respuestas sobre la salud de tu niño?",
             "hook-action": "Resolverlo juntos",
             "about": "Sobre"
+        },
+        "pollen": {
+            "title": "Pronóstico de polen",
+            "map-hint-step-1": "Toca la zona que te interese en el mapa (el pronóstico cubre un área de aproximadamente 1×1 km durante un máximo de 5 días).",
+            "map-hint-step-2": "Al elegir una zona, verás los niveles de polen de árboles, pastos y malezas, las temporadas de floración, las plantas concretas de la zona y recomendaciones de salud.",
+            "map-hint-step-3": "Los datos pueden no estar disponibles en algunas zonas — en ese caso, prueba a elegir la zona disponible más cercana.",
+            "pollen-types-title": "Niveles de polen",
+            "plants-title": "Plantas en temporada",
+            "not-in-season": "Fuera de temporada",
+            "no-data": "Sin datos",
+            "uncategorized-title": "Sin categoría",
+            "recommendations-title": "Recomendaciones",
+            "family": "Familia",
+            "season": "Temporada de floración",
+            "cross-reaction": "Reacciones cruzadas",
+            "forecast": "Pronóstico para",
+            "plant": "Planta",
+            "in-season": "En temporada",
+            "pollen-index": "Índice de polen"
         },
         "facts": {
             "me": "Me llamo Ksenia Aleksandrovna Gunina",
@@ -249,6 +271,8 @@
         "name": "Gunina Ksenia Aleksandrovna",
         "legal": "Documentos legales",
         "home": "Inicio",
-        "inn": "TIN"
+        "inn": "TIN",
+        "more": "más",
+        "collapse": "colapsar"
     }
 }

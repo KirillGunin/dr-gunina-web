@@ -20,6 +20,12 @@
         height: 100%;
     }
 
+    & .p-card-subtitle {
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--p-amber-500);
+    }
+
     & .p-card-content {
         display: grid;
         grid-template-columns: 1fr;
@@ -50,8 +56,13 @@
 
         & .p-card-title {
             font-size: 14px;
-            font-weight: 400;
+            font-weight: 500;
             margin-right: var(--spacer-2xl);
+        }
+
+        & .p-card-subtitle {
+            font-size: 13px;
+            font-weight: 500;
         }
 
         & .p-card-content {
