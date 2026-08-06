@@ -1,4 +1,5 @@
-import type { YMap, YMapDefaultSchemeLayer } from '@yandex/ymaps3-types';
+import type { YMap, YMapDefaultSchemeLayer, YMapMarker } from '@yandex/ymaps3-types';
+import type { LngLat } from '@yandex/ymaps3-types/common/types';
 
 let ymapsScriptPromise: Promise<void> | null = null;
 
@@ -24,23 +25,25 @@ const loadYmapsScript = (): Promise<void> => {
 
 let mapInstance: YMap | null = null;
 let schemeLayerInstance: YMapDefaultSchemeLayer | null = null;
+const pointMarkers = new WeakMap<YMap, YMapMarker>();
 
 export const useYandexMap = () => {
     const initMap = async (
-        containerId: string,
+        container: HTMLElement,
         center: [number, number],
         zoom: number,
-        markers?: Array<{ coordinates: [number, number]; title?: string; onClick?: () => void }>
+        markers?: Array<{ coordinates: [number, number]; title?: string; onClick?: () => void }>,
+        onMapClick?: (coordinates: LngLat) => void
     ) => {
         await loadYmapsScript();
         await window.ymaps3.ready;
 
-        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker } =
+        const { YMap, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer, YMapMarker, YMapListener } =
             window.ymaps3;
 
         const theme = useCookie('theme').value === 'dark' ? 'dark' : 'light';
 
-        const map = new YMap(document.getElementById(containerId)!, {
+        const map = new YMap(container, {
             location: { center, zoom },
             theme: theme,
         });
@@ -52,6 +55,13 @@ export const useYandexMap = () => {
 
         map.addChild(schemeLayer);
         map.addChild(new YMapDefaultFeaturesLayer({}));
+
+        if (onMapClick) {
+            const listener = new YMapListener({
+                onClick: (_object, event) => onMapClick(event.coordinates),
+            });
+            map.addChild(listener);
+        }
 
         if (markers && markers.length > 0) {
             markers.forEach((markerData) => {
@@ -77,6 +87,24 @@ export const useYandexMap = () => {
         return map;
     };
 
+    const setPointMarker = (map: YMap, coordinates: LngLat) => {
+        const { YMapMarker } = window.ymaps3;
+
+        const existingMarker = pointMarkers.get(map);
+
+        if (existingMarker) {
+            map.removeChild(existingMarker);
+        }
+
+        const markerElement = document.createElement('div');
+        markerElement.className = 'yandex-marker';
+
+        const marker = new YMapMarker({ coordinates, draggable: false }, markerElement);
+
+        map.addChild(marker);
+        pointMarkers.set(map, marker);
+    };
+
     const setTheme = (theme: 'light' | 'dark') => {
         if (!mapInstance || !schemeLayerInstance) {
             return;
@@ -89,5 +117,5 @@ export const useYandexMap = () => {
         mapInstance.addChild(schemeLayerInstance, 0);
     };
 
-    return { initMap, setTheme };
+    return { initMap, setTheme, setPointMarker };
 };

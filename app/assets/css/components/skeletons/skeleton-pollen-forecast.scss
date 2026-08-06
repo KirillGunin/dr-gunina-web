@@ -1,0 +1,98 @@
+.skeleton-pollen-forecast {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacer-sm);
+
+    &__card {
+        box-shadow: var(--shadow-soft);
+        border-radius: 24px;
+        padding: var(--spacer-ml);
+    }
+
+    &__title {
+        width: 40%;
+        height: 20px;
+        border-radius: 6px;
+        margin-bottom: var(--spacer-2xs);
+    }
+
+    &__subtitle {
+        width: 30%;
+        height: 16px;
+        border-radius: 6px;
+        margin-bottom: var(--spacer-ml);
+    }
+
+    &__recommendation {
+        width: 90%;
+        height: 14px;
+        border-radius: 6px;
+        margin-bottom: var(--spacer-2xs);
+
+        &:last-of-type {
+            margin-bottom: var(--spacer-ml);
+        }
+    }
+
+    &__plant {
+        display: flex;
+        gap: var(--spacer-xl);
+        padding: var(--spacer-sm) 0;
+        border-top: 1px solid var(--p-surface-200);
+    }
+
+    &__plant-picture {
+        width: 100%;
+        max-width: 350px;
+        height: 350px;
+        border-radius: 12px;
+        flex-shrink: 0;
+    }
+
+    &__plant-content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    &__plant-name {
+        width: 50%;
+        height: 18px;
+        border-radius: 6px;
+        margin: 0 0 var(--spacer-ml) var(--spacer-sm);
+    }
+
+    &__plant-scale {
+        width: calc(100% - var(--spacer-sm) * 2);
+        height: 8px;
+        border-radius: 999px;
+        margin: 0 var(--spacer-sm) var(--spacer-xl);
+    }
+
+    &__plant-line {
+        width: 60%;
+        height: 14px;
+        border-radius: 6px;
+        margin: 0 0 var(--spacer-xs) var(--spacer-sm);
+    }
+
+    @media (--screen-xs) {
+        &__plant {
+            flex-direction: column-reverse;
+            gap: var(--spacer-sm);
+        }
+
+        &__plant-picture {
+            max-width: 100%;
+            height: 280px;
+        }
+
+        &__plant-name {
+            margin: 0 0 var(--spacer-sm) 0;
+        }
+
+        &__plant-line {
+            margin: 0 0 var(--spacer-xs) 0;
+        }
+    }
+}
