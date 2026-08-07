@@ -6,6 +6,7 @@
             leaveClass: 'zoom-out',
             threshold: 0,
         }"
+        @click="emits('open:service', service)"
     >
         <template #header>
             <NuxtImg
@@ -17,10 +18,6 @@
                 height="471"
                 sizes="767:100vw 768:360px"
             />
-
-            <span class="card-service__icon card-service__icon--details">
-                <i class="pi pi-ellipsis-v" @click="emits('open:info-modal', service)"></i>
-            </span>
         </template>
 
         <template v-if="service.title" #title>
@@ -42,10 +39,6 @@
 
             <p class="card-service__price">
                 {{ formatPrice(service.price) }}
-
-                <span class="card-service__icon">
-                    <i class="pi pi-shopping-bag"></i>
-                </span>
             </p>
         </template>
 
@@ -56,7 +49,7 @@
                     size="small"
                     severity="success"
                     raised
-                    @click="emits('open:info-modal', service)"
+                    @click.stop="emits('open:service', service)"
                 />
 
                 <AppButton
@@ -65,7 +58,7 @@
                     variant="outlined"
                     raised
                     :label="service.actionTitle"
-                    @click=""
+                    @click.stop="emits('purchase:service', service)"
                 />
             </div>
         </template>
@@ -74,13 +67,14 @@
 
 <script setup lang="ts">
 import type { Service } from '@/types/service';
+import { formatPrice } from '~/utils/formatPrice';
 
 defineProps<{
     service: Service;
 }>();
 
 const emits = defineEmits<{
-    (event: 'open:info-modal', service: Service): void;
-    (event: 'purchase', service: Service): void;
+    (event: 'open:service', service: Service): void;
+    (event: 'purchase:service', service: Service): void;
 }>();
 </script>

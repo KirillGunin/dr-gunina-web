@@ -29,8 +29,7 @@
         "pollen": {
             "title": "Pollen forecast",
             "map-hint-step-1": "Tap the area you're interested in on the map (the forecast covers roughly a 1×1 km area for up to 5 days ahead).",
-            "map-hint-step-2": "Once you pick an area, you'll see pollen levels for trees, grass and weeds, flowering seasons, specific plants in the area, and health recommendations.",
-            "map-hint-step-3": "Data may be unavailable for some areas — in that case, try picking the nearest available area instead.",
+            "map-hint-step-2": "Data may be unavailable for some areas — in that case, try picking the nearest available area instead.",
             "pollen-types-title": "Pollen levels",
             "plants-title": "Plants in season",
             "not-in-season": "Out of season",

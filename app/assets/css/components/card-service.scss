@@ -1,6 +1,7 @@
 .card-service {
     width: 22.5rem;
     min-width: 22.5rem;
+    cursor: pointer;
 
     //анимация
     opacity: 0;
@@ -40,10 +41,6 @@
         color: var(--p-lime-200);
     }
 
-    &__icon {
-        display: none;
-    }
-
     //анимация
     &.zoom-in {
         opacity: 1;
@@ -67,27 +64,6 @@
         &__price {
             margin: var(--spacer-xs) 0 0;
             font-weight: 600;
-        }
-
-        &__icon {
-            position: absolute;
-            bottom: var(--spacer-xs);
-            right: var(--spacer-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 30px;
-            height: 30px;
-            background: var(--p-neutral-50);
-            border-radius: 50%;
-            box-shadow: var(--shadow-soft);
-            color: var(--p-neutral-950);
-
-            &--details {
-                position: absolute;
-                top: 12px;
-                left: 12px;
-            }
         }
 
         &__controls {
