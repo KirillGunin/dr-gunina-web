@@ -61,6 +61,10 @@
         "admin": {
             "welcome": "Welcome back, {name}",
             "logout": "Log out"
+        },
+        "error": {
+            "title-404": "Page not found",
+            "description-404": "This page may have been removed, or the link is outdated."
         }
     },
     "services": {
@@ -164,6 +168,9 @@
                 "title": ""
             },
             "modalActionButton": "I want mentoring"
+        },
+        "errors": {
+            "service-not-found": "Service not found"
         }
     },
     "addresses": {

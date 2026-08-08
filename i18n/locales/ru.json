@@ -61,6 +61,10 @@
         "admin": {
             "welcome": "С возвращением, {name}",
             "logout": "Выйти"
+        },
+        "error": {
+            "title-404": "Страница не найдена",
+            "description-404": "Возможно, страница была удалена или ссылка устарела."
         }
     },
     "services": {
@@ -164,6 +168,9 @@
                 "title": ""
             },
             "modalActionButton": "Хочу менторство"
+        },
+        "errors": {
+            "service-not-found": "Сервис не найден"
         }
     },
     "addresses": {

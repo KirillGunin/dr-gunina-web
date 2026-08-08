@@ -61,6 +61,10 @@
         "admin": {
             "welcome": "Bienvenida de nuevo, {name}",
             "logout": "Cerrar sesión"
+        },
+        "error": {
+            "title-404": "Página no encontrada",
+            "description-404": "Puede que el página haya sido eliminado o el enlace esté desactualizado."
         }
     },
     "services": {
@@ -164,6 +168,9 @@
                 "title": ""
             },
             "modalActionButton": "Quiero mentoría"
+        },
+        "errors": {
+            "service-not-found": "Servicio no encontrado"
         }
     },
     "addresses": {
