@@ -3,7 +3,7 @@
         <div class="container">
             <PageSkeletonService v-if="loading" />
 
-            <div v-if="service && !loading" class="page-service__content">
+            <div v-else-if="service" class="page-service__content">
                 <NuxtImg
                     :src="service.img"
                     :alt="service.title"
@@ -71,28 +71,43 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { useRoute } from 'vue-router';
 import { formatPrice } from '@/utils/formatPrice';
 import { fetchService } from '~/api/services';
+import { useSeoService } from '~/composables/seo-service';
+import { useCookieAgreement } from '~/composables/useCookieAgreement';
 import type { Service } from '@/types/service';
 import type { AxiosResponse } from 'axios';
-import { useCookieAgreement } from '~/composables/useCookieAgreement';
 
 import PageSkeletonService from '@/components/skeletons/PageSkeletonService.vue';
 import AppReviews from '~/components/AppReviews.vue';
 
 const route = useRoute();
 const toast = useToast();
+const nuxtApp = useNuxtApp();
+const { locale, t } = useI18n();
 
-const service = ref<Service | null>(null);
-const loading = ref<boolean>(true);
 const modalAppointment = ref<boolean>(false);
 
-fetchService(route.params.service as string)
-    .then((response) => (service.value = response.data.data))
-    .catch((error) => {})
-    .finally(() => (loading.value = false));
+const { data: service, pending: loading } = await useAsyncData<Service | null>(
+    `page-service-${route.params.service}`,
+    () =>
+        fetchService(route.params.service as string)
+            .then((response) => response.data.data as Service)
+            .catch(() => null),
+    { watch: [() => route.params.service, locale] }
+);
+
+if (service.value === null) {
+    nuxtApp.runWithContext(() => {
+        throw createError({
+            statusCode: 404,
+            message: t('services.errors.service-not-found'),
+            fatal: true,
+        });
+    });
+}
+
+useSeoService(service);
 
 const selectAction = () => {
     if (service.value?.service === 'info-service') {

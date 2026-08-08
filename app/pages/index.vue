@@ -81,7 +81,8 @@
                         v-for="service in services"
                         :key="service.service"
                         :service="service"
-                        @open:info-modal="openModalService(service)"
+                        @open:service="openModalService(service)"
+                        @purchase:service="purchaseService(service)"
                     />
                 </template>
             </section>
@@ -149,6 +150,16 @@ const openModalService = async (service: Service) => {
     await navigateTo(
         localePath({ name: 'services-service', params: { service: service.service } })
     );
+};
+
+const purchaseService = (service: Service) => {
+    if (service.service === 'info-service') {
+        modalAppointment.value = true;
+    } else {
+        if (service.actionUrl) {
+            window.open(service.actionUrl, '_blank', 'noopener, noreferrer');
+        }
+    }
 };
 
 const successAppointment = (response: AxiosResponse) => {

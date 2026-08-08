@@ -24,10 +24,6 @@
                                 <span>2</span>
                                 {{ t('pages.pollen.map-hint-step-2') }}
                             </li>
-                            <li>
-                                <span>3</span>
-                                {{ t('pages.pollen.map-hint-step-3') }}
-                            </li>
                         </ul>
                     </div>
                 </section>
