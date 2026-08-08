@@ -29,8 +29,7 @@
         "pollen": {
             "title": "Pronóstico de polen",
             "map-hint-step-1": "Toca la zona que te interese en el mapa (el pronóstico cubre un área de aproximadamente 1×1 km durante un máximo de 5 días).",
-            "map-hint-step-2": "Al elegir una zona, verás los niveles de polen de árboles, pastos y malezas, las temporadas de floración, las plantas concretas de la zona y recomendaciones de salud.",
-            "map-hint-step-3": "Los datos pueden no estar disponibles en algunas zonas — en ese caso, prueba a elegir la zona disponible más cercana.",
+            "map-hint-step-2": "Los datos pueden no estar disponibles en algunas zonas — en ese caso, prueba a elegir la zona disponible más cercana.",
             "pollen-types-title": "Niveles de polen",
             "plants-title": "Plantas en temporada",
             "not-in-season": "Fuera de temporada",
@@ -62,6 +61,10 @@
         "admin": {
             "welcome": "Bienvenida de nuevo, {name}",
             "logout": "Cerrar sesión"
+        },
+        "error": {
+            "title-404": "Página no encontrada",
+            "description-404": "Puede que el página haya sido eliminado o el enlace esté desactualizado."
         }
     },
     "services": {
@@ -165,6 +168,9 @@
                 "title": ""
             },
             "modalActionButton": "Quiero mentoría"
+        },
+        "errors": {
+            "service-not-found": "Servicio no encontrado"
         }
     },
     "addresses": {
