@@ -31,7 +31,7 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
     });
 
     useSeoMeta({
-        title: () => service.value?.title ?? 'Услуга не найдена',
+        title: () => service.value?.title,
         description: () => service.value?.content,
         ogTitle: () => service.value?.title,
         ogDescription: () => service.value?.content,
