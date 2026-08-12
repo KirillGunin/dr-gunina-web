@@ -69,6 +69,14 @@ export function useSeoHome() {
                                 'Онлайн-консультации для родителей по всему миру на русском, ' +
                                 'испанском и английском языках. Очный приём в Гатчине.',
                             knowsLanguage: ['ru', 'en', 'es'],
+                            image: 'https://dr-gunina.ru/images/main.png',
+                            telephone: [
+                                '+7 (81371) 3-23-15',
+                                '+7 (81371) 2-26-50',
+                                '+7 (812) 460-04-29',
+                                '+7 (965) 067-79-77',
+                            ],
+                            priceRange: '₽₽',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Гатчина',
@@ -76,8 +84,6 @@ export function useSeoHome() {
                                 addressCountry: 'RU',
                                 postalCode: '188300',
                                 streetAddress: ['ул. Хохлова, 9', 'ул. Хохлова, 8'],
-                                telephone: '',
-                                priceRange: '₽₽',
                             },
                             areaServed: [
                                 { '@type': 'Country', name: 'Russia' },

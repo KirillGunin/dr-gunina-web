@@ -113,6 +113,7 @@ import AppReviews from '@/components/AppReviews.vue';
 import AppSkeletonCardService from '@/components/skeletons/AppSkeletonCardService.vue';
 
 useSeoHome();
+const { locale } = useI18n();
 const toast = useToast();
 const localePath = useLocalePath();
 const $img = useImage();
@@ -135,14 +136,16 @@ useHead({
 });
 
 const selectedService = ref<Service | null>(null);
-const services = ref<Service[]>([]);
-const loading = ref<boolean>(true);
 const modalAppointment = ref<boolean>(false);
 
-fetchServices()
-    .then((response) => (services.value = response.data.data))
-    .catch((error) => {})
-    .finally(() => (loading.value = false));
+const { data: services, pending: loading } = await useAsyncData<Service[]>(
+    'all-services',
+    () =>
+        fetchServices()
+            .then((response) => response.data.data)
+            .catch(() => {}),
+    { watch: [() => locale] }
+);
 
 const openModalService = async (service: Service) => {
     selectedService.value = service;
