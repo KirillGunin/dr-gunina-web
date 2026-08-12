@@ -81,7 +81,6 @@
                         v-for="service in services"
                         :key="service.service"
                         :service="service"
-                        @open:service="openModalService(service)"
                         @purchase:service="purchaseService(service)"
                     />
                 </template>
@@ -115,7 +114,6 @@ import AppSkeletonCardService from '@/components/skeletons/AppSkeletonCardServic
 useSeoHome();
 const { locale } = useI18n();
 const toast = useToast();
-const localePath = useLocalePath();
 const $img = useImage();
 const heroImageSizes = $img.getSizes('/images/main.png', {
     modifiers: { format: 'webp', width: 1000, height: 1000, quality: $img.options.quality },
@@ -135,7 +133,6 @@ useHead({
     ],
 });
 
-const selectedService = ref<Service | null>(null);
 const modalAppointment = ref<boolean>(false);
 
 const { data: services, pending: loading } = await useAsyncData<Service[]>(
@@ -146,14 +143,6 @@ const { data: services, pending: loading } = await useAsyncData<Service[]>(
             .catch(() => {}),
     { watch: [() => locale] }
 );
-
-const openModalService = async (service: Service) => {
-    selectedService.value = service;
-
-    await navigateTo(
-        localePath({ name: 'services-service', params: { service: service.service } })
-    );
-};
 
 const purchaseService = (service: Service) => {
     if (service.service === 'info-service') {
