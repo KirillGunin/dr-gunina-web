@@ -1,16 +1,16 @@
 <template>
     <section class="reviews-carousel">
         <div class="reviews-carousel__header">
-            <span>Отзывы</span>
+            <span>{{ $t('review.reviews') }}</span>
 
             <AppButton variant="outlined" raised size="small" rounded @click="modalReview = true">
-                <SvgIcon name="home" style="stroke-width: 2.5" />
-                Добавить отзыв
+                <i class="pi pi-pencil" />
+                {{ $t('review.add-review') }}
             </AppButton>
         </div>
 
         <div class="reviews-carousel__content">
-            <template v-if="reviewsLoading">
+            <template v-if="pending">
                 <AppSkeletonCardReview v-for="n in 6" :key="n" />
             </template>
 
@@ -30,22 +30,27 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { fetchReviews } from '~/api/reviews';
+import { useSeoReviews } from '~/composables/seo-reviews';
 import type { Review } from '~/types/reviews';
 import type { AxiosResponse } from 'axios';
 
 import AppSkeletonCardReview from '~/components/skeletons/AppSkeletonCardReview.vue';
 import AppReviewCard from '~/components/AppReviewCard.vue';
 
+const { locale } = useI18n();
 const toast = useToast();
-
-const reviews = ref<Review[]>([]);
-const reviewsLoading = ref<boolean>(true);
 const modalReview = ref<boolean>(false);
 
-fetchReviews()
-    .then((response) => (reviews.value = response.data.data))
-    .catch((error) => {})
-    .finally(() => (reviewsLoading.value = false));
+const { data: reviews, pending } = useAsyncData<Review[]>(
+    'all-reviews',
+    () =>
+        fetchReviews()
+            .then((response) => response.data.data)
+            .catch(() => {}),
+    { watch: [() => locale] }
+);
+
+useSeoReviews(reviews);
 
 const successReview = (response: AxiosResponse) => {
     const message = response.data.message;

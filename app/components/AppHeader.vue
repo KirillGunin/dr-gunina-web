@@ -11,9 +11,9 @@
 
                 <!-- Логотип -->
                 <div class="header__logo">
-                    <a href="/" class="header__logo-link" aria-label="Home">
+                    <NuxtLink to="/" class="header__logo-link" aria-label="Home">
                         <SvgIcon name="logo" />
-                    </a>
+                    </NuxtLink>
                 </div>
 
                 <!-- Бургер -->
@@ -95,8 +95,6 @@
 import { ref } from 'vue';
 import { useRoute } from '#vue-router';
 import { useI18n } from '#imports';
-import { useTheme } from '~/composables/useTheme';
-import { useBreakpoints } from '~/composables/useBreakpoins';
 import { buildMailto } from '~/utils/buildMailto';
 
 import ModalLogin from '~/components/modals/ModalLogin.vue';
@@ -105,8 +103,6 @@ import { useAuth } from '~/stores/auth';
 const route = useRoute();
 const localePath = useLocalePath();
 const { t } = useI18n();
-const { isMobile } = useBreakpoints();
-const { isDarkMode, toggleMode } = useTheme();
 
 const header = ref<HTMLElement | null>(null);
 let scrollCleanup: (() => void) | null = null;

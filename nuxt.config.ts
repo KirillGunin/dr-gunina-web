@@ -55,10 +55,14 @@ export default defineNuxtConfig({
         quality: 80,
         domains: [new URL(process.env.NUXT_PUBLIC_API_BASE_URL ?? 'http://127.0.0.1:8000').host],
     },
+    sitemap: {
+        sources: ['/sitemap-urls/services'],
+        exclude: ['/admin', '/admin/**'],
+    },
     routeRules: {
-        '/api/**': {
-            proxy: `${process.env.NUXT_PUBLIC_API_BASE_URL}/api/**`,
-        },
+        '/api/**': { proxy: `${process.env.NUXT_PUBLIC_API_BASE_URL}/api/**` },
+        '/admin': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } },
+        '/admin/**': { headers: { 'X-Robots-Tag': 'noindex, nofollow' } },
     },
     nitro: {
         prerender: {
@@ -69,18 +73,14 @@ export default defineNuxtConfig({
                 '/_ipx/f_webp&q_80&s_1534x1534/images/main.png',
                 '/_ipx/f_webp&q_80&s_600x600/images/about.png',
                 '/_ipx/f_webp&q_80&s_1200x1200/images/about.png',
-                ...[
-                    'consultation',
-                    'lure',
-                    'chat-group',
-                    'individual-chat',
-                    'vaccination',
-                ].flatMap((name) => [
-                    `/_ipx/f_webp&q_80&s_360x471/images/services/${name}.png`,
-                    `/_ipx/f_webp&q_80&s_720x942/images/services/${name}.png`,
-                    `/_ipx/f_webp&q_80&s_767x1003/images/services/${name}.png`,
-                    `/_ipx/f_webp&q_80&s_1534x2006/images/services/${name}.png`,
-                ]),
+                ...['consultation', 'lure', 'chat-group', 'individual-chat', 'vaccination'].flatMap(
+                    (name) => [
+                        `/_ipx/f_webp&q_80&s_360x471/images/services/${name}.png`,
+                        `/_ipx/f_webp&q_80&s_720x942/images/services/${name}.png`,
+                        `/_ipx/f_webp&q_80&s_767x1003/images/services/${name}.png`,
+                        `/_ipx/f_webp&q_80&s_1534x2006/images/services/${name}.png`,
+                    ]
+                ),
             ],
         },
     },

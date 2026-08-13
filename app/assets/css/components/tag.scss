@@ -5,6 +5,7 @@
     font-weight: 700;
     white-space: nowrap;
     width: fit-content;
+    user-select: none;
 
     &--raised {
         box-shadow: var(--shadow-soft);

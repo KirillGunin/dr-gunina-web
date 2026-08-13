@@ -1,27 +1,21 @@
 <template>
-    <Card
-        class="card-service"
-        v-animateonscroll="{
-            enterClass: 'zoom-in',
-            leaveClass: 'zoom-out',
-            threshold: 0,
-        }"
-        @click="emits('open:service', service)"
-    >
+    <Card class="card-service">
         <template #header>
-            <NuxtImg
-                :src="service.img"
-                :alt="service.title"
-                format="webp"
-                loading="lazy"
-                width="360"
-                height="471"
-                sizes="767:100vw 768:360px"
-            />
+            <NuxtLink :to="navigateToPath">
+                <NuxtImg
+                    :src="service.img"
+                    :alt="service.title"
+                    format="webp"
+                    loading="lazy"
+                    width="360"
+                    height="471"
+                    sizes="767:100vw 768:360px"
+                />
+            </NuxtLink>
         </template>
 
         <template v-if="service.title" #title>
-            {{ service.title }}
+            <NuxtLink :to="navigateToPath">{{ service.title }}</NuxtLink>
         </template>
 
         <template v-if="service.content" #content>
@@ -44,12 +38,12 @@
 
         <template #footer>
             <div class="card-service__controls">
-                <AppButton
+                <AppButtonLink
                     :label="$t('others.details')"
                     size="small"
                     severity="success"
                     raised
-                    @click.stop="emits('open:service', service)"
+                    :to="navigateToPath"
                 />
 
                 <AppButton
@@ -66,15 +60,20 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import type { Service } from '@/types/service';
 import { formatPrice } from '~/utils/formatPrice';
 
-defineProps<{
+const props = defineProps<{
     service: Service;
 }>();
 
 const emits = defineEmits<{
-    (event: 'open:service', service: Service): void;
     (event: 'purchase:service', service: Service): void;
 }>();
+
+const localePath = useLocalePath();
+const navigateToPath = computed(() =>
+    localePath({ name: 'services-service', params: { service: props.service.service } })
+);
 </script>

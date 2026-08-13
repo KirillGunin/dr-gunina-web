@@ -263,6 +263,10 @@
         "reviews-pending": "Pending reviews",
         "reviews-all": "All reviews"
     },
+    "review": {
+        "reviews": "Reviews",
+        "add-review": "Add review"
+    },
     "reviews-table": {
         "column-user": "User",
         "column-phone": "Phone",

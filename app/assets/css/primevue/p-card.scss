@@ -20,6 +20,10 @@
         height: 100%;
     }
 
+    & .p-card-title a {
+        color: var(--text-color);
+    }
+
     & .p-card-subtitle {
         font-size: 14px;
         font-weight: 500;

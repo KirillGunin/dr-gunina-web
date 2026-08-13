@@ -42,7 +42,7 @@ const locations = computed<Location[]>(() => [
         id: '1',
         phones: ['+7 (81371) 3-23-15', '+7 (81371) 2-26-50', '+7 (812) 460-04-29'],
         title: t('addresses.kmb.title'),
-        website: 'gatchina-clinic.ru',
+        website: 'https://gatchina-clinic.ru',
     },
     {
         address: t('addresses.medicom.address'),

@@ -21,7 +21,7 @@ export function useSeoHome() {
             'Гунина Ксения Александровна — педиатр, аллерголог, дерматолог, онлайн-консультация',
         twitterDescription:
             'Онлайн-консультация детского врача. Курсы, вакцинация, очный приём в Гатчине.',
-        robots: 'index, follow',
+        robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     });
 
     useHead({
@@ -69,6 +69,21 @@ export function useSeoHome() {
                                 'Онлайн-консультации для родителей по всему миру на русском, ' +
                                 'испанском и английском языках. Очный приём в Гатчине.',
                             knowsLanguage: ['ru', 'en', 'es'],
+                            image: 'https://dr-gunina.ru/images/main.png',
+                            sameAs: [
+                                'https://medicom-plus.ru/people/GatchinaKHokhlova8/1532/',
+                                'https://prodoctorov.ru/gatchina/vrach/426918-gunina/',
+                                'https://napopravku.ru/spb/doctor-profile/gunina-ksenia-aleksandrovna/',
+                                'https://vk.ru/drgunina',
+                                'https://zoon.ru/spb/p-doctor/kseniya_aleksandrovna_gunina/',
+                            ],
+                            telephone: [
+                                '+7 (81371) 3-23-15',
+                                '+7 (81371) 2-26-50',
+                                '+7 (812) 460-04-29',
+                                '+7 (965) 067-79-77',
+                            ],
+                            priceRange: '₽₽',
                             address: {
                                 '@type': 'PostalAddress',
                                 addressLocality: 'Гатчина',
@@ -76,8 +91,6 @@ export function useSeoHome() {
                                 addressCountry: 'RU',
                                 postalCode: '188300',
                                 streetAddress: ['ул. Хохлова, 9', 'ул. Хохлова, 8'],
-                                telephone: '',
-                                priceRange: '₽₽',
                             },
                             areaServed: [
                                 { '@type': 'Country', name: 'Russia' },
@@ -219,6 +232,7 @@ export function useSeoHome() {
                             '@type': 'MedicalBusiness',
                             '@id': 'practice1',
                             name: 'Приём врача Гуниной К.А. Гатчинская КМБ',
+                            image: 'https://dr-gunina.ru/images/main.png',
                             priceRange: '₽₽',
                             telephone: [
                                 '+7 (81371) 3-23-15',
@@ -254,6 +268,7 @@ export function useSeoHome() {
                             '@type': 'MedicalBusiness',
                             '@id': 'practice-2',
                             name: 'Приём врача Гуниной К.А. Медиком',
+                            image: 'https://medicom-plus.ru/upload/resize_cache/iblock/6de/230_350_1/x75h4gnpzktsc3a4kwkqwhdatejc2nv0.png',
                             priceRange: '₽₽',
                             telephone: '+7 (965) 067-79-77',
 

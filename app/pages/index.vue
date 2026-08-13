@@ -72,7 +72,7 @@
             </section>
 
             <section class="page-home__services" id="section-services">
-                <template v-if="loading">
+                <template v-if="pending">
                     <AppSkeletonCardService v-for="n in 6" :key="n" />
                 </template>
 
@@ -81,7 +81,6 @@
                         v-for="service in services"
                         :key="service.service"
                         :service="service"
-                        @open:service="openModalService(service)"
                         @purchase:service="purchaseService(service)"
                     />
                 </template>
@@ -113,8 +112,8 @@ import AppReviews from '@/components/AppReviews.vue';
 import AppSkeletonCardService from '@/components/skeletons/AppSkeletonCardService.vue';
 
 useSeoHome();
+const { locale } = useI18n();
 const toast = useToast();
-const localePath = useLocalePath();
 const $img = useImage();
 const heroImageSizes = $img.getSizes('/images/main.png', {
     modifiers: { format: 'webp', width: 1000, height: 1000, quality: $img.options.quality },
@@ -134,23 +133,16 @@ useHead({
     ],
 });
 
-const selectedService = ref<Service | null>(null);
-const services = ref<Service[]>([]);
-const loading = ref<boolean>(true);
 const modalAppointment = ref<boolean>(false);
 
-fetchServices()
-    .then((response) => (services.value = response.data.data))
-    .catch((error) => {})
-    .finally(() => (loading.value = false));
-
-const openModalService = async (service: Service) => {
-    selectedService.value = service;
-
-    await navigateTo(
-        localePath({ name: 'services-service', params: { service: service.service } })
-    );
-};
+const { data: services, pending } = useAsyncData<Service[]>(
+    'all-services',
+    () =>
+        fetchServices()
+            .then((response) => response.data.data)
+            .catch(() => {}),
+    { watch: [() => locale] }
+);
 
 const purchaseService = (service: Service) => {
     if (service.service === 'info-service') {

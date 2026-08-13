@@ -263,6 +263,10 @@
         "reviews-pending": "Reseñas pendientes",
         "reviews-all": "Todas las reseñas"
     },
+    "review": {
+        "reviews": "Reseñas",
+        "add-review": "Añadir reseña"
+    },
     "reviews-table": {
         "column-user": "Usuario",
         "column-phone": "Teléfono",
