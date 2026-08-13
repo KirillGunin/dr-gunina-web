@@ -263,6 +263,10 @@
         "reviews-pending": "Отзывы на модерации",
         "reviews-all": "Все отзывы"
     },
+    "review": {
+        "reviews": "Отзывы",
+        "add-review": "Добавить отзыв"
+    },
     "reviews-table": {
         "column-user": "Пользователь",
         "column-phone": "Телефон",

@@ -1,2 +1,3 @@
 User-Agent: *
 Disallow:
+Sitemap: https://dr-gunina.ru/sitemap.xml

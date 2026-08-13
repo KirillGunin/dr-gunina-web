@@ -31,7 +31,7 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
     });
 
     useSeoMeta({
-        title: () => service.value?.title ?? 'Услуга не найдена',
+        title: () => service.value?.title,
         description: () => service.value?.content,
         ogTitle: () => service.value?.title,
         ogDescription: () => service.value?.content,
@@ -42,7 +42,10 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
         twitterCard: 'summary_large_image',
         twitterTitle: () => service.value?.title,
         twitterDescription: () => service.value?.content,
-        robots: () => (service.value ? 'index, follow' : 'noindex, nofollow'),
+        robots: () =>
+            service.value
+                ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+                : 'noindex, nofollow',
     });
 
     useHead({

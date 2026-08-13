@@ -1,12 +1,6 @@
 .card-service {
     width: 22.5rem;
     min-width: 22.5rem;
-    cursor: pointer;
-
-    //анимация
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.7s ease;
 
     &__controls {
         display: flex;
@@ -20,6 +14,7 @@
         overflow: hidden;
         margin: var(--spacer-2xs) 0 var(--spacer-xs);
         color: var(--p-neutral-300);
+        user-select: none;
     }
 
     &__tags {
