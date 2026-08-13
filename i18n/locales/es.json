@@ -22,9 +22,11 @@
     },
     "pages": {
         "home": {
+            "hook-title": "Consulta online con pediatra, alergóloga y dermatóloga",
             "hook-text": "¿Buscando respuestas sobre la salud de tu niño?",
             "hook-action": "Resolverlo juntos",
-            "about": "Sobre"
+            "about": "Sobre",
+            "services-title": "Servicios"
         },
         "pollen": {
             "title": "Pronóstico de polen",

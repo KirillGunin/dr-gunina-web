@@ -55,6 +55,10 @@ export default defineNuxtConfig({
         quality: 80,
         domains: [new URL(process.env.NUXT_PUBLIC_API_BASE_URL ?? 'http://127.0.0.1:8000').host],
     },
+    site: {
+        url: 'https://dr-gunina.ru',
+        name: 'Гунина Ксения Александровна — педиатр, аллерголог-имунолог, дерматолог',
+    },
     sitemap: {
         sources: ['/sitemap-urls/services'],
         exclude: ['/admin', '/admin/**'],
@@ -86,6 +90,7 @@ export default defineNuxtConfig({
     },
     i18n: {
         defaultLocale: 'ru',
+        detectBrowserLanguage: false,
         locales: [
             { code: 'ru', name: 'Русский', file: 'ru.json' },
             { code: 'es', name: 'Español', file: 'es.json' },
@@ -139,12 +144,20 @@ export default defineNuxtConfig({
                     crossorigin: 'anonymous',
                 },
             ],
+            noscript: process.env.NUXT_PUBLIC_YANDEX_METRIKA_ID
+                ? [
+                      {
+                          innerHTML: `<div><img src="https://mc.yandex.ru/watch/${process.env.NUXT_PUBLIC_YANDEX_METRIKA_ID}" style="position:absolute; left:-9999px;" alt="" /></div>`,
+                      },
+                  ]
+                : [],
         },
     },
     runtimeConfig: {
         public: {
             apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
             yandexMapsApiKey: process.env.NUXT_PUBLIC_YANDEX_MAPS_API_KEY,
+            yandexMetrikaId: process.env.NUXT_PUBLIC_YANDEX_METRIKA_ID,
         },
     },
 });

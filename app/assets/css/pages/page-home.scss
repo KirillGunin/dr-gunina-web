@@ -41,10 +41,19 @@
     &__welcome-hook-title {
         display: flex;
         flex-direction: column;
+        margin: 0;
+        color: var(--p-blue-600);
+    }
+
+    &__welcome-hook-kicker {
+        font-size: 0;
+    }
+
+    &__welcome-hook-question {
+        display: block;
         font-family: "Glina", system-ui, -apple-system, sans-serif;
         font-size: 80px;
         line-height: 0.9;
-        color: var(--p-blue-600);
     }
 
     &__welcome-hook-action {
@@ -169,7 +178,7 @@
             gap: 50px;
         }
 
-        &__welcome-hook-title {
+        &__welcome-hook-question {
             font-size: 50px;
         }
 
@@ -242,8 +251,11 @@
         }
 
         &__welcome-hook-title {
-            font-size: 30px;
             text-align: end;
+        }
+
+        &__welcome-hook-question {
+            font-size: 30px;
         }
 
         &__welcome-hook-action {

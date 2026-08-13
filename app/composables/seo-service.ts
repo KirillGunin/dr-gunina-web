@@ -72,7 +72,6 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
                         description: service.value.content,
                         url: canonicalUrl.value,
                         image: imageUrl.value,
-                        inLanguage: locale.value,
                         provider: {
                             '@type': 'Physician',
                             '@id': `${SITE_URL}/#physician`,

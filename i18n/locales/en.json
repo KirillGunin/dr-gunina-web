@@ -22,9 +22,11 @@
     },
     "pages": {
         "home": {
+            "hook-title": "Online consultation with a pediatrician, allergist and dermatologist",
             "hook-text": "Still looking for answers about your child's health?",
             "hook-action": "Let's figure it out",
-            "about": "About me"
+            "about": "About me",
+            "services-title": "Services"
         },
         "pollen": {
             "title": "Pollen forecast",
