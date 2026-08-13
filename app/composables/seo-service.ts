@@ -42,7 +42,10 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
         twitterCard: 'summary_large_image',
         twitterTitle: () => service.value?.title,
         twitterDescription: () => service.value?.content,
-        robots: () => (service.value ? 'index, follow' : 'noindex, nofollow'),
+        robots: () =>
+            service.value
+                ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
+                : 'noindex, nofollow',
     });
 
     useHead({
