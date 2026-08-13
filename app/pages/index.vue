@@ -5,9 +5,15 @@
                 <div class="page-home__welcome-content">
                     <div class="page-home__welcome-hook">
                         <div class="page-home__welcome-hook-content">
-                            <span class="page-home__welcome-hook-title">
-                                {{ $t('pages.home.hook-text') }}
-                            </span>
+                            <h1 class="page-home__welcome-hook-title">
+                                <span class="page-home__welcome-hook-kicker">
+                                    {{ $t('pages.home.hook-title') }}
+                                </span>
+
+                                <span class="page-home__welcome-hook-question">
+                                    {{ $t('pages.home.hook-text') }}
+                                </span>
+                            </h1>
 
                             <AppButton
                                 class="page-home__welcome-hook-action"
@@ -49,7 +55,7 @@
                 </div>
 
                 <div class="page-home__about-content">
-                    <h4 class="page-home__about-title">{{ $t('pages.home.about') }}</h4>
+                    <h2 class="page-home__about-title">{{ $t('pages.home.about') }}</h2>
 
                     <ul class="page-home__about-facts">
                         <li class="page-home__about-fact" v-for="fact in facts" :key="fact.title">

@@ -11,6 +11,12 @@
         font-weight: 500;
     }
 
+    &__title {
+        margin: 0;
+        font-size: inherit;
+        font-weight: inherit;
+    }
+
     &__content {
         position: relative;
         display: flex;

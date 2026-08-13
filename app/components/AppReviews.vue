@@ -1,7 +1,7 @@
 <template>
     <section class="reviews-carousel">
         <div class="reviews-carousel__header">
-            <span>{{ $t('review.reviews') }}</span>
+            <h2 class="reviews-carousel__title">{{ $t('review.reviews') }}</h2>
 
             <AppButton variant="outlined" raised size="small" rounded @click="modalReview = true">
                 <i class="pi pi-pencil" />
