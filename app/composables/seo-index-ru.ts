@@ -3,12 +3,13 @@ import { useHead, useSeoMeta } from '#imports';
 
 export function useSeoHome() {
     useSeoMeta({
-        title: 'Гунина Ксения Александровна — педиатр, аллерголог, дерматолог',
+        title: 'Онлайн-консультация педиатра, аллерголог-иммунолога, дерматолога Гунина Ксения Александровна',
         description:
             'Онлайн-консультация детского врача — педиатра, аллерголога и дерматолога. ' +
             'Очный приём в Гатчине. Курсы для родителей, догоняющий график вакцинации. ',
 
-        ogTitle: 'Гунина Ксения Александровна — детский врач',
+        ogTitle:
+            'Онлайн-консультация педиатра, аллерголог-иммунолога, дерматолога Гунина Ксения Александровна',
         ogDescription:
             'Педиатр, аллерголог и дерматолог. Онлайн-консультации, курсы для родителей, ' +
             'догоняющий график вакцинации. Очный приём в Гатчине.',
@@ -18,7 +19,7 @@ export function useSeoHome() {
         ogImage: 'https://dr-gunina.ru/images/main.png',
         twitterCard: 'summary_large_image',
         twitterTitle:
-            'Гунина Ксения Александровна — педиатр, аллерголог, дерматолог, онлайн-консультация',
+            'Онлайн-консультация педиатра, аллерголог-иммунолога, дерматолога Гунина Ксения Александровна',
         twitterDescription:
             'Онлайн-консультация детского врача. Курсы, вакцинация, очный приём в Гатчине.',
         robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
@@ -97,6 +98,7 @@ export function useSeoHome() {
                                 { '@type': 'Country', name: 'Spain' },
                                 { '@type': 'Country', name: 'Argentina' },
                             ],
+                            worksFor: [{ '@id': 'practice1' }, { '@id': 'practice-2' }],
                             hasOfferCatalog: {
                                 '@type': 'OfferCatalog',
                                 name: 'Услуги',
@@ -116,7 +118,8 @@ export function useSeoHome() {
                                                 'Обсуждение диагноза' +
                                                 'Поддержание связи до улучшения.' +
                                                 'Узнать второе мнение врача.',
-                                            url: 'https://dr-gunina.ru/images/services/consultation.png',
+                                            url: 'https://dr-gunina.ru/services/info-service',
+                                            image: 'https://api.dr-gunina.ru/storage/services/consultation.png',
                                         },
                                     },
                                     {
@@ -132,11 +135,12 @@ export function useSeoHome() {
                                             description:
                                                 'Базовые правила введения прикорма основанные на современных рекомендациях' +
                                                 'Готовая схема введения, первая помощь при аллергических реакциях.',
-                                            url: 'https://dr-gunina.ru/images/services/lure.png',
+                                            url: 'https://dr-gunina.ru/services/lure',
+                                            image: 'https://api.dr-gunina.ru/storage/services/lure.png',
                                             provider: {
                                                 '@type': 'Person',
                                                 name: 'Гунина Ксения Александровна',
-                                                '@id': 'https://ВАШ_ДОМЕН/#physician',
+                                                '@id': 'https://dr-gunina.ru/#physician',
                                             },
                                             inLanguage: 'ru',
                                             courseMode: 'online',
@@ -151,30 +155,38 @@ export function useSeoHome() {
                                         },
                                         itemOffered: {
                                             '@type': 'Service',
-                                            name: 'Групповой чат поддержки для родителей с пидеатром, детским психологом и консультантом по сну',
+                                            name: 'Групповой чат поддержки для родителей с педиатром, детским психологом и консультантом по сну',
                                             description:
                                                 'Задавайте неограниченное количество вопросов в общем чате' +
                                                 'консультации психолога и специалиста по сну, ',
-                                            url: 'https://dr-gunina.ru/images/services/chat-group.png',
+                                            url: 'https://dr-gunina.ru/services/chat-group',
+                                            image: 'https://api.dr-gunina.ru/storage/services/chat-group.png',
                                         },
                                     },
-                                    {
-                                        '@type': 'Offer',
-                                        itemOffered: {
-                                            '@type': 'Course',
-                                            name: 'Курс "Без паники"',
-                                            description:
-                                                'Все, что необходимо знать родителям о первой помощи и безопасности ребенка.',
-                                            //url: 'https://ВАШ_ДОМЕН/ru/vakcinaciya',
-                                            provider: {
-                                                '@type': 'Person',
-                                                name: 'Гунина Ксения Александровна',
-                                                '@id': 'https://ВАШ_ДОМЕН/#physician',
-                                            },
-                                            inLanguage: 'ru',
-                                            courseMode: 'online',
-                                        },
-                                    },
+                                    // {
+                                    //     '@type': 'Offer',
+                                    //     priceSpecification: {
+                                    //         '@type': 'PriceSpecification',
+                                    //         price: '',
+                                    //         priceCurrency: 'RUB',
+                                    //     },
+                                    //     itemOffered: {
+                                    //         '@type': 'Course',
+                                    //         name: 'Курс "Без паники"',
+                                    //         description:
+                                    //             'Все, что необходимо знать родителям о первой помощи и безопасности ребенка.',
+                                    //         provider: {
+                                    //             '@type': 'Person',
+                                    //             name: 'Гунина Ксения Александровна',
+                                    //             '@id': 'https://dr-gunina.ru/#physician',
+                                    //         },
+                                    //         inLanguage: 'ru',
+                                    //         courseMode: 'online',
+                                    //         url: 'https://dr-gunina.ru/services/no-panic',
+                                    //         image: 'https://api.dr-gunina.ru/storage/services/no-panic.png',
+                                    //
+                                    //     },
+                                    // },
                                     {
                                         '@type': 'Offer',
                                         priceSpecification: {
@@ -189,7 +201,8 @@ export function useSeoHome() {
                                                 'Если для Вас важно, чтоб вопрос обсуждался в рамках врача и пациента.' +
                                                 'Приватное общение с врачом в индивидуальном чате. ' +
                                                 'Быстрые ответы на вопросы в формате врач–пациент.',
-                                            url: 'https://dr-gunina.ru/images/services/individual-chat.png',
+                                            url: 'https://dr-gunina.ru/services/individual-chat',
+                                            image: 'https://api.dr-gunina.ru/storage/services/individual-chat.png',
                                         },
                                     },
                                     {
@@ -205,7 +218,8 @@ export function useSeoHome() {
                                             description:
                                                 'Составление персонального догоняющего графика прививок.' +
                                                 'Консультация по вакцинации.',
-                                            url: 'https://dr-gunina.ru/images/services/vaccination.png',
+                                            url: 'https://dr-gunina.ru/services/vaccination',
+                                            image: 'https://api.dr-gunina.ru/storage/services/vaccination.png',
                                         },
                                     },
                                     {
@@ -232,6 +246,7 @@ export function useSeoHome() {
                             '@type': 'MedicalBusiness',
                             '@id': 'practice1',
                             name: 'Приём врача Гуниной К.А. Гатчинская КМБ',
+                            employee: { '@id': 'https://dr-gunina.ru/#physician' },
                             image: 'https://dr-gunina.ru/images/main.png',
                             priceRange: '₽₽',
                             telephone: [
@@ -268,6 +283,7 @@ export function useSeoHome() {
                             '@type': 'MedicalBusiness',
                             '@id': 'practice-2',
                             name: 'Приём врача Гуниной К.А. Медиком',
+                            employee: { '@id': 'https://dr-gunina.ru/#physician' },
                             image: 'https://medicom-plus.ru/upload/resize_cache/iblock/6de/230_350_1/x75h4gnpzktsc3a4kwkqwhdatejc2nv0.png',
                             priceRange: '₽₽',
                             telephone: '+7 (965) 067-79-77',
@@ -298,11 +314,11 @@ export function useSeoHome() {
                         },
                         {
                             '@type': 'WebSite',
-                            '@id': 'https://ВАШ_ДОМЕН/#website',
-                            url: 'https://ВАШ_ДОМЕН/',
-                            name: 'Гунина Ксения Александровна — детский врач',
+                            '@id': 'https://dr-gunina.ru/#website',
+                            url: 'https://dr-gunina.ru/',
+                            name: 'Гунина Ксения Александровна - педиатр, аллерголог-имунолог, дерматолог',
                             inLanguage: ['ru', 'en', 'es'],
-                            publisher: { '@id': 'https://ВАШ_ДОМЕН/#physician' },
+                            publisher: { '@id': 'https://dr-gunina.ru/#physician' },
                         },
                     ],
                 }),
