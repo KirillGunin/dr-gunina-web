@@ -4,13 +4,13 @@
             <span>{{ $t('review.reviews') }}</span>
 
             <AppButton variant="outlined" raised size="small" rounded @click="modalReview = true">
-                <SvgIcon name="home" style="stroke-width: 2.5" />
+                <i class="pi pi-pencil" />
                 {{ $t('review.add-review') }}
             </AppButton>
         </div>
 
         <div class="reviews-carousel__content">
-            <template v-if="reviewsLoading">
+            <template v-if="pending">
                 <AppSkeletonCardReview v-for="n in 6" :key="n" />
             </template>
 
@@ -41,7 +41,7 @@ const { locale } = useI18n();
 const toast = useToast();
 const modalReview = ref<boolean>(false);
 
-const { data: reviews, pending: reviewsLoading } = await useAsyncData<Review[]>(
+const { data: reviews, pending } = useAsyncData<Review[]>(
     'all-reviews',
     () =>
         fetchReviews()

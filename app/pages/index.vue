@@ -72,7 +72,7 @@
             </section>
 
             <section class="page-home__services" id="section-services">
-                <template v-if="loading">
+                <template v-if="pending">
                     <AppSkeletonCardService v-for="n in 6" :key="n" />
                 </template>
 
@@ -135,7 +135,7 @@ useHead({
 
 const modalAppointment = ref<boolean>(false);
 
-const { data: services, pending: loading } = await useAsyncData<Service[]>(
+const { data: services, pending } = useAsyncData<Service[]>(
     'all-services',
     () =>
         fetchServices()

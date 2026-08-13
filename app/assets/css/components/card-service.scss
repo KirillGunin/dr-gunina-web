@@ -2,11 +2,6 @@
     width: 22.5rem;
     min-width: 22.5rem;
 
-    //анимация
-    opacity: 0;
-    transform: scale(0.9);
-    transition: all 0.7s ease;
-
     &__controls {
         display: flex;
         gap: 8px;

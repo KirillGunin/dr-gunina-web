@@ -1,12 +1,5 @@
 <template>
-    <Card
-        class="card-service"
-        v-animateonscroll="{
-            enterClass: 'zoom-in',
-            leaveClass: 'zoom-out',
-            threshold: 0,
-        }"
-    >
+    <Card class="card-service">
         <template #header>
             <NuxtLink :to="navigateToPath">
                 <NuxtImg
