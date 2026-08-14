@@ -1,32 +1,42 @@
-// SEO: Главная страница /ru/
-import { useHead, useSeoMeta } from '#imports';
+// SEO: Главная страница /
+import { computed, useHead, useI18n, useSeoMeta } from '#imports';
+
+const SITE_URL = 'https://dr-gunina.ru';
+
+const OG_LOCALE_BY_LANG: Record<string, string> = {
+    ru: 'ru_RU',
+    en: 'en_US',
+    es: 'es_ES',
+};
 
 export function useSeoHome() {
-    useSeoMeta({
-        title: 'Онлайн-консультация педиатра, аллерголог-иммунолога, дерматолога Гунина Ксения Александровна',
-        description:
-            'Онлайн-консультация детского врача — педиатра, аллерголога и дерматолога. ' +
-            'Очный приём в Гатчине. Курсы для родителей, догоняющий график вакцинации. ',
+    const { locale, t } = useI18n();
 
-        ogTitle:
-            'Онлайн-консультация педиатра, аллерголог-иммунолога, дерматолога Гунина Ксения Александровна',
-        ogDescription:
-            'Педиатр, аллерголог и дерматолог. Онлайн-консультации, курсы для родителей, ' +
-            'догоняющий график вакцинации. Очный приём в Гатчине.',
+    const localePrefix = computed(() => (locale.value === 'ru' ? '' : `/${locale.value}`));
+    const canonicalUrl = computed(() => `${SITE_URL}${localePrefix.value}/`);
+
+    useSeoMeta({
+        title: () => t('pages.home.seo-title'),
+        description: () => t('pages.home.seo-description'),
+
+        ogTitle: () => t('pages.home.seo-title'),
+        ogDescription: () => t('pages.home.seo-description'),
         ogType: 'website',
-        ogLocale: 'ru_RU',
-        ogLocaleAlternate: ['en_US', 'es_ES'],
+        ogUrl: canonicalUrl,
+        ogLocale: () => OG_LOCALE_BY_LANG[locale.value] ?? 'ru_RU',
+        ogLocaleAlternate: () =>
+            Object.entries(OG_LOCALE_BY_LANG)
+                .filter(([lang]) => lang !== locale.value)
+                .map(([, ogLocale]) => ogLocale),
         ogImage: 'https://dr-gunina.ru/images/main.png',
         twitterCard: 'summary_large_image',
-        twitterTitle:
-            'Онлайн-консультация педиатра, аллерголог-иммунолога, дерматолога Гунина Ксения Александровна',
-        twitterDescription:
-            'Онлайн-консультация детского врача. Курсы, вакцинация, очный приём в Гатчине.',
+        twitterTitle: () => t('pages.home.seo-title'),
+        twitterDescription: () => t('pages.home.seo-description'),
         robots: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     });
 
     useHead({
-        htmlAttrs: { lang: 'ru' },
+        htmlAttrs: { lang: () => locale.value },
 
         meta: [
             { name: 'yandex-verification', content: '49c29ec5e711fd97' },
@@ -37,7 +47,7 @@ export function useSeoHome() {
         ],
 
         link: [
-            { rel: 'canonical', href: 'https://dr-gunina.ru' },
+            { rel: 'canonical', href: canonicalUrl },
             { rel: 'alternate', hreflang: 'ru', href: 'https://dr-gunina.ru/' },
             { rel: 'alternate', hreflang: 'en', href: 'https://dr-gunina.ru/en/' },
             { rel: 'alternate', hreflang: 'es', href: 'https://dr-gunina.ru/es/' },

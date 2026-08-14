@@ -22,11 +22,13 @@
     },
     "pages": {
         "home": {
-            "hook-title": "Consulta online con pediatra, alergóloga y dermatóloga",
+            "hook-title": "Pediatra Kseniia Gunina: consultas online desde cualquier país, consulta presencial en Gátchina",
             "hook-text": "¿Buscando respuestas sobre la salud de tu niño?",
             "hook-action": "Resolverlo juntos",
             "about": "Sobre",
-            "services-title": "Servicios"
+            "services-title": "Servicios",
+            "seo-title": "Kseniia Gunina — Pediatra: Alergóloga-Inmunóloga y Dermatóloga infantil",
+            "seo-description": "Consultas online con pediatra, alergóloga-inmunóloga y dermatóloga infantil. Análisis clínicos, alimentación complementaria, dermatitis atópica, calendario de vacunación personalizado. Consulta presencial en Gátchina, Rusia."
         },
         "pollen": {
             "title": "Pronóstico de polen",
@@ -47,7 +49,6 @@
             "pollen-index": "Índice de polen"
         },
         "facts": {
-            "me": "Me llamo Ksenia Aleksandrovna Gunina",
             "education": "Me gradué de la Universidad Estatal Pediátrica de San Petersburgo en 2015 y completé allí la residencia en pediatría en 2016.",
             "additional": "En 2019 completé cursos de reconversión profesional en alergología e inmunología en la Universidad Estatal de Medicina del Noroeste I. I. Méchnikov.",
             "member": "Miembro de EAACI, WAO, la Unión de Pediatras de Rusia y RAAKI; asistente al Congreso Mundial de Alergia WAO 2022 y a las conferencias de EAACI.",
@@ -67,112 +68,6 @@
         "error": {
             "title-404": "Página no encontrada",
             "description-404": "Puede que el página haya sido eliminado o el enlace esté desactualizado."
-        }
-    },
-    "services": {
-        "lure": {
-            "title": "Curso \"Alimentación complementaria\"",
-            "content": "Reglas básicas para introducir la alimentación complementaria basadas en recomendaciones modernas",
-            "actionTitle": "Quiero el curso",
-            "details": {
-                "detail_1": "Grupo cerrado en el canal de Telegram con cómodos videos cortos;",
-                "detail_2": "La información más reciente sobre la alimentación complementaria;",
-                "detail_3": "Esquema de introducción listo;",
-                "detail_4": "Primeros auxilios ante reacciones alérgicas."
-            },
-            "attachment": {
-                "title": "Brevemente sobre la alimentación complementaria.pdf"
-            },
-            "modalActionButton": "Comprar el curso \"Sobre la alimentación complementaria\""
-        },
-        "group_chat": {
-            "title": "Chat grupal de apoyo",
-            "content": "Haz preguntas ilimitadas en el chat general.",
-            "actionTitle": "Unirse al chat de apoyo",
-            "details": {
-                "detail_1": "Grupo cerrado en el canal de Telegram con formato de preguntas y respuestas, con opción de prórroga;;",
-                "detail_2": "Posibilidad de obtener respuestas a las preguntas de otros participantes;",
-                "detail_3": "Consulta con psicólogo dos veces al mes;",
-                "detail_4": "Consulta con especialista en sueño dos veces al mes;",
-                "detail_5": "Entrenamientos en casa de un entrenador de fitness grabados;",
-                "detail_6": "Cuentos terapéuticos grabados."
-            },
-            "modalActionButton": "Unirse al chat de apoyo"
-        },
-        "info_service": {
-            "title": "Servicio de información",
-            "content": "Obtén respuestas urgentes a tus preguntas sin perder tiempo",
-            "actionTitle": "Reservar un servicio",
-            "details": {
-                "detail_1": "Discutir un diagnóstico, opciones de diagnóstico y tratamiento de una enfermedad;",
-                "detail_2": "Mantener contacto hasta la mejoría;",
-                "detail_3": "Obtener otro punto de vista o confirmar el existente."
-            },
-            "modalActionButton": "Reservar un servicio"
-        },
-        "no_panic": {
-            "title": "Curso \"Sin pánico\"",
-            "content": "Todo lo que los padres necesitan saber sobre primeros auxilios y seguridad infantil",
-            "actionTitle": "Obtener el curso",
-            "details": {
-                "detail_1": "Entorno seguro para el niño en casa;",
-                "detail_2": "¿Qué hacer si...?;",
-                "detail_3": "Primeros auxilios médicos en emergencias;",
-                "detail_4": "Seguridad en línea;",
-                "detail_5": "Nota sobre los riesgos en línea para el niño;",
-                "detail_6": "Seguridad sexual;",
-                "detail_7": "Estados críticos con ARVI e infecciones intestinales;",
-                "detail_8": "Lista de verificación de primeros auxilios en situaciones de emergencia;",
-                "detail_9": "Lista de verificación \"Botiquín doméstico\";",
-                "detail_10": "Comentarios;",
-                "detail_11": "Lista de verificación \"Botiquín doméstico\".pdf"
-            },
-            "attachment": {
-                "title": "Brevemente sobre la alimentación complementaria.pdf"
-            },
-            "modalActionButton": "Comprar el curso \"Sin pánico\""
-        },
-        "individual_chat": {
-            "title": "Chat individual",
-            "content": "Si es importante para usted que el problema se discuta en el marco médico-paciente",
-            "actionTitle": "Unirse al chat individual",
-            "details": {
-                "detail_1": "Chat individual por un mes, con opción de prórroga;",
-                "detail_2": "Si es importante para usted que el problema se discuta exclusivamente en una conversación privada y no en un chat general;",
-                "detail_3": "Si desea obtener respuestas a las preguntas más rápidamente."
-            },
-            "modalActionButton": "Unirse al chat individual"
-        },
-        "vaccination": {
-            "title": "Calendario de vacunación",
-            "content": "Calendario de vacunación de recuperación individual.",
-            "actionTitle": "Obtener calendario",
-            "details": {
-                "detail_1": "Si tiene miedo a la vacunación y quiere discutirlo;",
-                "detail_2": "Si desea un calendario de vacunación de recuperación;",
-                "detail_3": "Si está en otro país y quiere saber qué vacunas necesita."
-            },
-            "attachment": {
-                "title": "Prevención del sarampión.pdf"
-            },
-            "modalActionButton": "Obtener calendario de vacunación"
-        },
-        "mentoring": {
-            "title": "Mentoría para médicos",
-            "content": "Mentoría personal para médicos",
-            "actionTitle": "Quiero mentoría",
-            "details": {
-                "detail_1": "Respuestas personales mías a cualquier pregunta 6 días a la semana;",
-                "detail_2": "Una llamada a la semana con análisis de casos de mis consultas y las tuyas;",
-                "detail_3": "Consejos prácticos para buscar información."
-            },
-            "attachment": {
-                "title": ""
-            },
-            "modalActionButton": "Quiero mentoría"
-        },
-        "errors": {
-            "service-not-found": "Servicio no encontrado"
         }
     },
     "addresses": {
@@ -285,6 +180,6 @@
         "home": "Inicio",
         "inn": "TIN",
         "more": "más",
-        "collapse": "colapsar"
+        "collapse": "menos"
     }
 }

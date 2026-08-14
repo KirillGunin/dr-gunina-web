@@ -43,16 +43,8 @@
         flex-direction: column;
         margin: 0;
         color: var(--p-blue-600);
-    }
-
-    &__welcome-hook-kicker {
-        font-size: 0;
-    }
-
-    &__welcome-hook-question {
-        display: block;
         font-family: "Glina", system-ui, -apple-system, sans-serif;
-        font-size: 80px;
+        font-size: 70px;
         line-height: 0.9;
     }
 
@@ -130,7 +122,7 @@
 
     &__about-title {
         display: block;
-        margin: 40px 0;
+        margin: 20px 0 var(--spacer-xs);
         font-size: 40px;
         font-weight: 600;
     }
@@ -145,6 +137,12 @@
         font-weight: 300;
         font-size: 18px;
         line-height: 1.3;
+
+        &--title {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: var(--spacer-xs);
+        }
 
         & .svg-icon {
             fill: var(--text-color);
@@ -164,7 +162,13 @@
     }
 
     //cards
-    &__services {
+    &__services-title {
+        margin-bottom: var(--spacer-sm);
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+    &__services-content {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -178,12 +182,12 @@
             gap: 50px;
         }
 
-        &__welcome-hook-question {
+        &__welcome-hook-title {
             font-size: 50px;
         }
 
         &__about-title {
-            margin: 0 0 var(--spacer-xs);
+            margin: 0;
             font-size: 30px;
         }
 
@@ -252,9 +256,6 @@
 
         &__welcome-hook-title {
             text-align: end;
-        }
-
-        &__welcome-hook-question {
             font-size: 30px;
         }
 
@@ -297,7 +298,12 @@
         }
 
         // services
-        &__services {
+        &__services-title {
+            font-size: 20px;
+            margin-bottom: var(--spacer-md);
+        }
+
+        &__services-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin-bottom: var(--spacer-md);
