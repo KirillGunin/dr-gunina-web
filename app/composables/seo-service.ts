@@ -32,16 +32,16 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
 
     useSeoMeta({
         title: () => service.value?.title,
-        description: () => service.value?.content,
+        description: () => service.value?.seoDescription,
         ogTitle: () => service.value?.title,
-        ogDescription: () => service.value?.content,
+        ogDescription: () => service.value?.seoDescription,
         ogType: 'website',
         ogUrl: canonicalUrl,
         ogImage: imageUrl,
         ogLocale: () => OG_LOCALE_BY_LANG[locale.value] ?? 'ru_RU',
         twitterCard: 'summary_large_image',
         twitterTitle: () => service.value?.title,
-        twitterDescription: () => service.value?.content,
+        twitterDescription: () => service.value?.seoDescription,
         robots: () =>
             service.value
                 ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -49,6 +49,8 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
     });
 
     useHead({
+        htmlAttrs: { lang: () => locale.value },
+
         link: [
             { rel: 'canonical', href: canonicalUrl },
             { rel: 'alternate', hreflang: 'ru', href: () => `${SITE_URL}${path.value}` },
@@ -69,7 +71,7 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
                         '@context': 'https://schema.org',
                         '@type': 'Service',
                         name: service.value.title,
-                        description: service.value.content,
+                        description: service.value.seoDescription,
                         url: canonicalUrl.value,
                         image: imageUrl.value,
                         provider: {
