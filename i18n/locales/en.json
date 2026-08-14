@@ -31,7 +31,11 @@
             "seo-description": "Online consultations with a pediatrician, allergist-immunologist and dermatologist. Lab result review, weaning support, atopic dermatitis, personalized vaccination schedule. In-person visits in Gatchina, Russia."
         },
         "pollen": {
-            "title": "Pollen forecast",
+            "title": "Pollen Map: 5-Day Allergen Forecast",
+            "subtitle": "Shows the forecast for allergenic plant pollen concentration, along with plant images, pollen index, flowering season, cross-reactions, and recommendations for allergy sufferers.",
+            "instruction": "Quick guide:",
+            "seo-title": "Pollen Map: 5-Day Allergen Forecast — Allergist Kseniia Gunina",
+            "seo-description": "Interactive pollen concentration map with a 5-day forecast. How to prepare an allergic child for pollen season — advice from a pediatric allergist-immunologist.",
             "map-hint-step-1": "Tap the area you're interested in on the map (the forecast covers roughly a 1×1 km area for up to 5 days ahead).",
             "map-hint-step-2": "Data may be unavailable for some areas — in that case, try picking the nearest available area instead.",
             "pollen-types-title": "Pollen levels",

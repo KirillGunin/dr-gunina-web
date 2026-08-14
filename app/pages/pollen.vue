@@ -2,6 +2,9 @@
     <div class="page-pollen">
         <div class="container">
             <div class="page-pollen__content">
+                <h1 class="page-pollen__title">{{ t('pages.pollen.title') }}</h1>
+                <p class="page-pollen__subtitle">{{ t('pages.pollen.subtitle') }}</p>
+
                 <!--Map-->
                 <section class="page-pollen__content-map">
                     <YandexMap
@@ -13,7 +16,7 @@
                     />
 
                     <div class="page-pollen__content-map-hint">
-                        <h3>{{ t('pages.pollen.title') }}</h3>
+                        <h3>{{ t('pages.pollen.instruction') }}</h3>
 
                         <ul>
                             <li>
@@ -60,7 +63,7 @@
                     <AppCard
                         v-for="group in groupedPollenTypes"
                         :key="group.code"
-                        :title="`${t('pages.pollen.forecast')}: ${group.displayName}`"
+                        :title="`${t('pages.pollen.plant')}: ${group.displayName}`"
                         :subtitle="`${group.inSeason ? t('pages.pollen.in-season') : t('pages.pollen.not-in-season')}`"
                     >
                         <span
@@ -109,6 +112,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { fetchPollen } from '~/api/pollen';
+import { useSeoPollen } from '~/composables/seo-pollen';
 import type {
     PollenForecast,
     DailyInfo,
@@ -123,6 +127,8 @@ import type { LngLat } from '@yandex/ymaps3-types/common/types';
 import AppReviews from '~/components/AppReviews.vue';
 
 const { t, locale } = useI18n();
+
+useSeoPollen();
 
 const loading = ref<boolean>(false);
 const error = ref<boolean>(false);

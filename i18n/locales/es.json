@@ -31,7 +31,11 @@
             "seo-description": "Consultas online con pediatra, alergóloga-inmunóloga y dermatóloga infantil. Análisis clínicos, alimentación complementaria, dermatitis atópica, calendario de vacunación personalizado. Consulta presencial en Gátchina, Rusia."
         },
         "pollen": {
-            "title": "Pronóstico de polen",
+            "title": "Mapa de polen: pronóstico de alérgenos a 5 días",
+            "subtitle": "Muestra el pronóstico de concentración de polen de plantas alergénicas, junto con imágenes de las plantas, índice de polen, temporada de floración, reacciones cruzadas y recomendaciones para alérgicos.",
+            "instruction": "Guía rápida:",
+            "seo-title": "Mapa de polen: pronóstico de alérgenos a 5 días — Alergóloga Kseniia Gunina",
+            "seo-description": "Mapa interactivo de concentración de polen con pronóstico a 5 días. Cómo preparar a un niño alérgico para la temporada de polen — consejos de una alergóloga-inmunóloga pediátrica.",
             "map-hint-step-1": "Toca la zona que te interese en el mapa (el pronóstico cubre un área de aproximadamente 1×1 km durante un máximo de 5 días).",
             "map-hint-step-2": "Los datos pueden no estar disponibles en algunas zonas — en ese caso, prueba a elegir la zona disponible más cercana.",
             "pollen-types-title": "Niveles de polen",
