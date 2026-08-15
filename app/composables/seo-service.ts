@@ -49,8 +49,6 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
     });
 
     useHead({
-        htmlAttrs: { lang: () => locale.value },
-
         link: [
             { rel: 'canonical', href: canonicalUrl },
             { rel: 'alternate', hreflang: 'ru', href: () => `${SITE_URL}${path.value}` },

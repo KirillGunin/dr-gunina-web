@@ -36,8 +36,6 @@ export function useSeoHome() {
     });
 
     useHead({
-        htmlAttrs: { lang: () => locale.value },
-
         meta: [
             { name: 'yandex-verification', content: '49c29ec5e711fd97' },
             {

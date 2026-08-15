@@ -35,8 +35,6 @@ export function useSeoPollen() {
     });
 
     useHead({
-        htmlAttrs: { lang: () => locale.value },
-
         link: [
             { rel: 'canonical', href: canonicalUrl },
             { rel: 'alternate', hreflang: 'ru', href: `${SITE_URL}/pollen` },
