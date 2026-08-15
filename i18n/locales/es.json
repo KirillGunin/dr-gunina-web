@@ -6,6 +6,7 @@
         "services": "Servicios",
         "contacts": "Contactos",
         "pollen": "Polen",
+        "blog": "Blog",
         "menu-toggle": "Abrir menú",
         "email-link": "Enviar un correo",
         "email-subject": "Mensaje desde el sitio web",
@@ -28,7 +29,34 @@
             "about": "Sobre",
             "services-title": "Servicios",
             "seo-title": "Kseniia Gunina — Pediatra: Alergóloga-Inmunóloga y Dermatóloga infantil",
-            "seo-description": "Consultas online con pediatra, alergóloga-inmunóloga y dermatóloga infantil. Análisis clínicos, alimentación complementaria, dermatitis atópica, calendario de vacunación personalizado. Consulta presencial en Gátchina, Rusia."
+            "seo-description": "Consultas online con pediatra, alergóloga-inmunóloga y dermatóloga infantil. Análisis clínicos, alimentación complementaria, dermatitis atópica, calendario de vacunación personalizado. Consulta presencial en Gátchina, Rusia.",
+            "faq-title": "Preguntas frecuentes",
+            "faq": {
+                "duration": {
+                    "question": "¿Qué incluye una consulta online y cuánto dura?",
+                    "answer": "Una videoconsulta o audioconsulta de 30 a 60 minutos: revisión de síntomas y análisis, plan de acción y respuestas a tus preguntas. Después de la consulta, dos semanas de seguimiento por chat."
+                },
+                "countries": {
+                    "question": "¿Cómo puedo reservar una consulta?",
+                    "answer": "Para reservar una consulta online, usa el formulario disponible en el botón «Reservar una consulta» del banner de la página principal, o en la página del servicio «Consulta online con pediatra y alergóloga-inmunóloga». Para reservar una consulta presencial en Gátchina, llama a los teléfonos indicados en los bloques de contacto junto al mapa."
+                },
+                "second-opinion": {
+                    "question": "¿Puedo pedir una segunda opinión sobre un diagnóstico?",
+                    "answer": "Sí, es uno de los motivos más frecuentes de consulta: revisamos el diagnóstico y el tratamiento indicado, y si hace falta propongo un plan de estudios alternativo."
+                },
+                "in-person": {
+                    "question": "¿Cómo es la consulta presencial en Gátchina?",
+                    "answer": "Con cita previa, en ul. Khokhlova 9 o ul. Khokhlova 8 (Gatchinskaya KMB y \"Medikom\") — los días y horarios de atención figuran en las tarjetas de dirección del sitio."
+                },
+                "dermatitis": {
+                    "question": "¿Atiende a niños con dermatitis atópica y alergias?",
+                    "answer": "Sí, la dermatitis, las alergias alimentarias y otros tipos de alergia forman parte de la práctica principal junto con la pediatría, tanto presencial como online."
+                },
+                "lure": {
+                    "question": "¿Por dónde empezar con la alimentación complementaria?",
+                    "answer": "Los tiempos, el orden de los alimentos y las señales de que el bebé está listo son claves — los errores al inicio suelen derivar en rechazo a la comida o alergias. El plan mes a mes y los errores más frecuentes están en el videocurso «Alimentación complementaria»."
+                }
+            }
         },
         "pollen": {
             "title": "Mapa de polen: pronóstico de alérgenos a 5 días",

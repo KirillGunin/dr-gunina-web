@@ -55,6 +55,14 @@
                     </AppButton>
                 </NuxtLink>
 
+                <NuxtLink to="/blog" class="header__navigation-item">
+                    <AppButton variant="text">
+                        <i class="pi pi-book" />
+
+                        {{ t('header.blog') }}
+                    </AppButton>
+                </NuxtLink>
+
                 <a
                     class="header__navigation-item"
                     :href="mailtoHref"

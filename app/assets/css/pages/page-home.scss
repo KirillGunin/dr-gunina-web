@@ -177,6 +177,24 @@
         margin-bottom: var(--spacer-xl);
     }
 
+    //faq
+    &__faq {
+        margin: var(--spacer-xl) 0;
+    }
+
+    &__faq-title {
+        margin-bottom: var(--spacer-sm);
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+    &__faq-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: var(--spacer-2xl);
+        align-items: start;
+    }
+
     @media (--screen-md) {
         &__welcome-hook-content {
             gap: 50px;
@@ -314,6 +332,15 @@
         &__welcome,
         &__about {
             margin-bottom: var(--spacer-md);
+        }
+
+        &__faq-title {
+            font-size: 20px;
+        }
+
+        &__faq-content {
+            display: grid;
+            grid-template-columns: 1fr;
         }
     }
 

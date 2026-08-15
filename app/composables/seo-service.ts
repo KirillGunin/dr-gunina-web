@@ -67,22 +67,29 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
 
                     return JSON.stringify({
                         '@context': 'https://schema.org',
-                        '@type': 'Service',
+                        '@type': 'MedicalWebPage',
                         name: service.value.title,
                         description: service.value.seoDescription,
                         url: canonicalUrl.value,
                         image: imageUrl.value,
-                        provider: {
-                            '@type': 'Physician',
-                            '@id': `${SITE_URL}/#physician`,
-                            name: physicianName,
-                        },
-                        offers: {
-                            '@type': 'Offer',
-                            price: service.value.price,
-                            priceCurrency: 'RUB',
-                            availability: 'https://schema.org/InStock',
+                        mainEntity: {
+                            '@type': 'Service',
+                            name: service.value.title,
+                            description: service.value.seoDescription,
                             url: canonicalUrl.value,
+                            image: imageUrl.value,
+                            provider: {
+                                '@type': 'Physician',
+                                '@id': `${SITE_URL}/#physician`,
+                                name: physicianName,
+                            },
+                            offers: {
+                                '@type': 'Offer',
+                                price: service.value.price,
+                                priceCurrency: 'RUB',
+                                availability: 'https://schema.org/InStock',
+                                url: canonicalUrl.value,
+                            },
                         },
                     });
                 },

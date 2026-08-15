@@ -6,6 +6,7 @@
         "services": "Services",
         "contacts": "Contacts",
         "pollen": "Pollen",
+        "blog": "Blog",
         "menu-toggle": "Open menu",
         "email-link": "Send an email",
         "email-subject": "Message from the website",
@@ -28,7 +29,34 @@
             "about": "About me",
             "services-title": "Services",
             "seo-title": "Kseniia Gunina — Pediatrician, Allergist-Immunologist and Dermatologist for Children",
-            "seo-description": "Online consultations with a pediatrician, allergist-immunologist and dermatologist. Lab result review, weaning support, atopic dermatitis, personalized vaccination schedule. In-person visits in Gatchina, Russia."
+            "seo-description": "Online consultations with a pediatrician, allergist-immunologist and dermatologist. Lab result review, weaning support, atopic dermatitis, personalized vaccination schedule. In-person visits in Gatchina, Russia.",
+            "faq-title": "Frequently Asked Questions",
+            "faq": {
+                "duration": {
+                    "question": "What's included in an online consultation and how long does it take?",
+                    "answer": "A 30–60 minute video or audio consultation: reviewing your concerns and lab results, planning next steps, and answering your questions. After the appointment, you get two weeks of chat follow-up."
+                },
+                "countries": {
+                    "question": "How can I book a consultation?",
+                    "answer": "To book an online consultation, use the form available via the \"Book a consultation\" button in the banner on the homepage, or on the \"Online consultation with a pediatrician and allergist-immunologist\" service page. To book an in-person visit in Gatchina, call the phone numbers listed in the contact blocks next to the map."
+                },
+                "second-opinion": {
+                    "question": "Can I get a second opinion on a diagnosis?",
+                    "answer": "Yes, this is one of the most common reasons people reach out: we review the existing diagnosis and treatment plan, and I can suggest an alternative examination plan if needed."
+                },
+                "in-person": {
+                    "question": "How does an in-person visit in Gatchina work?",
+                    "answer": "Book in advance for a visit at ul. Khokhlova 9 or ul. Khokhlova 8 (Gatchinskaya KMB and \"Medikom\") — opening days and hours are listed in the address cards on the site."
+                },
+                "dermatitis": {
+                    "question": "Do you treat children with atopic dermatitis and allergies?",
+                    "answer": "Yes, dermatitis, food allergies, and other types of allergies are part of the core practice alongside pediatrics, both in-person and online."
+                },
+                "lure": {
+                    "question": "Where do I start with introducing solids to my baby?",
+                    "answer": "Timing, the order of foods, and readiness signs all matter — mistakes early on often show up later as food refusal or allergies. A step-by-step month-by-month plan and the most common mistakes are covered in the video course \"Intro to Solids\"."
+                }
+            }
         },
         "pollen": {
             "title": "Pollen Map: 5-Day Allergen Forecast",

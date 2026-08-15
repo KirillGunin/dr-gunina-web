@@ -70,7 +70,11 @@
                     </ul>
 
                     <div class="page-home__about-accordion">
-                        <AppAccordion :label="$t('pages.home.about')" :items="factsAccordion" />
+                        <AppAccordion
+                            with-icon
+                            :label="$t('pages.home.about')"
+                            :items="factsAccordion"
+                        />
                     </div>
                 </div>
             </section>
@@ -91,6 +95,19 @@
                             @purchase:service="purchaseService(service)"
                         />
                     </template>
+                </div>
+            </section>
+
+            <section class="page-home__faq">
+                <h2 class="page-home__faq-title">{{ $t('pages.home.faq-title') }}</h2>
+
+                <div class="page-home__faq-content">
+                    <AppAccordion
+                        v-for="question in faq"
+                        :key="question.label"
+                        :label="question.label"
+                        :items="question.content"
+                    />
                 </div>
             </section>
 
@@ -179,4 +196,11 @@ const facts = [
 ];
 
 const factsAccordion = [{ title: t('pages.home.hook-title'), link: '' }, ...facts];
+
+const faqKeys = ['duration', 'countries', 'second-opinion', 'in-person', 'dermatitis', 'lure'];
+
+const faq = faqKeys.map((key) => ({
+    label: t(`pages.home.faq.${key}.question`),
+    content: [{ title: t(`pages.home.faq.${key}.answer`) }],
+}));
 </script>

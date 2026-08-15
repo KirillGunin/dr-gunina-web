@@ -9,6 +9,8 @@ const OG_LOCALE_BY_LANG: Record<string, string> = {
     es: 'es_ES',
 };
 
+const FAQ_KEYS = ['duration', 'countries', 'second-opinion', 'in-person', 'dermatitis', 'lure'];
+
 export function useSeoHome() {
     const { locale, t } = useI18n();
 
@@ -79,6 +81,11 @@ export function useSeoHome() {
                                 'испанском и английском языках. Очный приём в Гатчине.',
                             knowsLanguage: ['ru', 'en', 'es'],
                             image: 'https://dr-gunina.ru/images/main.png',
+                            additionalProperty: {
+                                '@type': 'PropertyValue',
+                                name: 'yearsOfExperience',
+                                value: 10,
+                            },
                             sameAs: [
                                 'https://medicom-plus.ru/people/GatchinaKHokhlova8/1532/',
                                 'https://prodoctorov.ru/gatchina/vrach/426918-gunina/',
@@ -327,6 +334,17 @@ export function useSeoHome() {
                             name: 'Гунина Ксения Александровна - педиатр, аллерголог-имунолог, дерматолог',
                             inLanguage: ['ru', 'en', 'es'],
                             publisher: { '@id': 'https://dr-gunina.ru/#physician' },
+                        },
+                        {
+                            '@type': 'FAQPage',
+                            mainEntity: FAQ_KEYS.map((key) => ({
+                                '@type': 'Question',
+                                name: t(`pages.home.faq.${key}.question`),
+                                acceptedAnswer: {
+                                    '@type': 'Answer',
+                                    text: t(`pages.home.faq.${key}.answer`),
+                                },
+                            })),
                         },
                     ],
                 }),
