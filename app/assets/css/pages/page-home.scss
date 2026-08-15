@@ -260,9 +260,10 @@
         }
 
         &__welcome-hook-action {
-            margin-left: 10px;
-            margin-right: 10px;
+            margin-left: -10px;
+            margin-right: -10px;
             height: 32px;
+            font-size: 16px;
         }
 
         // about
