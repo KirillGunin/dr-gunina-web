@@ -7,6 +7,19 @@
         margin-bottom: var(--spacer-xl);
     }
 
+    &__title {
+        font-size: 26px;
+        font-weight: 500;
+        margin-bottom: var(--spacer-xs);
+    }
+
+    &__subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--notice-color);
+        margin-bottom: var(--spacer-md);
+    }
+
     &__content-map {
         display: flex;
         height: 100%;
@@ -110,6 +123,16 @@
 
         &__content {
             margin-bottom: var(--spacer-md);
+        }
+
+        &__title {
+            font-size: 20px;
+            margin-bottom: var(--spacer-2xs);
+        }
+
+        &__subtitle {
+            font-size: 14px;
+            margin-bottom: var(--spacer-sm);
         }
 
         &__content-map {

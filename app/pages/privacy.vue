@@ -19,6 +19,10 @@ import type { Folder, FolderContent } from '@/types/folder';
 const { t } = useI18n();
 const toast = useToast();
 
+useHead({
+    meta: [{ name: 'robots', content: 'noindex, follow' }],
+});
+
 const privacyContent = ref<FolderContent | null>(null);
 const loading = ref<boolean>(true);
 

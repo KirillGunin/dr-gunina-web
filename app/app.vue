@@ -27,6 +27,7 @@ import ModalCookie from '~/components/modals/ModalCookie.vue';
 
 const { agreement, setAgreement } = useCookieAgreement();
 const modalCookie = ref<boolean>(false);
+const { locale } = useI18n();
 
 const setCookieAgreement = (value: 'accept' | 'decline') => {
     setAgreement(value);
@@ -34,6 +35,8 @@ const setCookieAgreement = (value: 'accept' | 'decline') => {
 };
 
 useHead({
+    htmlAttrs: { lang: () => locale.value },
+
     script: [
         {
             innerHTML: `

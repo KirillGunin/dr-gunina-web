@@ -61,7 +61,7 @@ export default defineNuxtConfig({
     },
     sitemap: {
         sources: ['/sitemap-urls/services'],
-        exclude: ['/admin', '/admin/**'],
+        exclude: ['/admin', '/admin/**', '/privacy', '/en/privacy', '/es/privacy'],
     },
     routeRules: {
         '/api/**': { proxy: `${process.env.NUXT_PUBLIC_API_BASE_URL}/api/**` },

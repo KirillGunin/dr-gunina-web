@@ -5,15 +5,9 @@
                 <div class="page-home__welcome-content">
                     <div class="page-home__welcome-hook">
                         <div class="page-home__welcome-hook-content">
-                            <h1 class="page-home__welcome-hook-title">
-                                <span class="page-home__welcome-hook-kicker">
-                                    {{ $t('pages.home.hook-title') }}
-                                </span>
-
-                                <span class="page-home__welcome-hook-question">
-                                    {{ $t('pages.home.hook-text') }}
-                                </span>
-                            </h1>
+                            <span class="page-home__welcome-hook-title">
+                                {{ $t('pages.home.hook-text') }}
+                            </span>
 
                             <AppButton
                                 class="page-home__welcome-hook-action"
@@ -30,7 +24,7 @@
                     <div class="page-home__welcome-image">
                         <NuxtImg
                             src="/images/main.png"
-                            :alt="$t('pages.facts.me')"
+                            :alt="$t('pages.home.hook-title')"
                             width="1000"
                             height="1000"
                             format="webp"
@@ -58,6 +52,10 @@
                     <h2 class="page-home__about-title">{{ $t('pages.home.about') }}</h2>
 
                     <ul class="page-home__about-facts">
+                        <li class="page-home__about-fact page-home__about-fact--title">
+                            <h1>{{ $t('pages.home.hook-title') }}</h1>
+                        </li>
+
                         <li class="page-home__about-fact" v-for="fact in facts" :key="fact.title">
                             <a v-if="fact.link" :href="fact.link" target="_blank">
                                 <SvgIcon name="circle" />
@@ -72,24 +70,45 @@
                     </ul>
 
                     <div class="page-home__about-accordion">
-                        <AppAccordion :label="$t('pages.home.about')" :items="facts" />
+                        <AppAccordion
+                            with-icon
+                            :label="$t('pages.home.about')"
+                            :items="factsAccordion"
+                        />
                     </div>
                 </div>
             </section>
 
             <section class="page-home__services" id="section-services">
-                <template v-if="pending">
-                    <AppSkeletonCardService v-for="n in 6" :key="n" />
-                </template>
+                <h2 class="page-home__services-title">{{ $t('pages.home.services-title') }}</h2>
 
-                <template v-else>
-                    <AppCardService
-                        v-for="service in services"
-                        :key="service.service"
-                        :service="service"
-                        @purchase:service="purchaseService(service)"
+                <div class="page-home__services-content">
+                    <template v-if="pending">
+                        <AppSkeletonCardService v-for="n in 6" :key="n" />
+                    </template>
+
+                    <template v-else>
+                        <AppCardService
+                            v-for="service in services"
+                            :key="service.service"
+                            :service="service"
+                            @purchase:service="purchaseService(service)"
+                        />
+                    </template>
+                </div>
+            </section>
+
+            <section class="page-home__faq">
+                <h2 class="page-home__faq-title">{{ $t('pages.home.faq-title') }}</h2>
+
+                <div class="page-home__faq-content">
+                    <AppAccordion
+                        v-for="question in faq"
+                        :key="question.label"
+                        :label="question.label"
+                        :items="question.content"
                     />
-                </template>
+                </div>
             </section>
 
             <AppReviews class="page-home__reviews" />
@@ -108,7 +127,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 const { t } = useI18n();
-import { useSeoHome } from '~/composables/seo-index-ru';
+import { useSeoHome } from '~/composables/seo-index';
 import { fetchServices } from '~/api/services';
 import { useCookieAgreement } from '~/composables/useCookieAgreement';
 import type { Service } from '@/types/service';
@@ -147,7 +166,7 @@ const { data: services, pending } = useAsyncData<Service[]>(
         fetchServices()
             .then((response) => response.data.data)
             .catch(() => {}),
-    { watch: [() => locale] }
+    { watch: [locale] }
 );
 
 const purchaseService = (service: Service) => {
@@ -168,7 +187,6 @@ const successAppointment = (response: AxiosResponse) => {
 };
 
 const facts = [
-    { title: t('pages.facts.me'), link: '' },
     { title: t('pages.facts.education'), link: '' },
     { title: t('pages.facts.additional'), link: '' },
     { title: t('pages.facts.member'), link: '' },
@@ -176,4 +194,13 @@ const facts = [
     { title: t('pages.facts.diagnosis'), link: '' },
     // { title: t('pages.facts.certificate'), link: '' },
 ];
+
+const factsAccordion = [{ title: t('pages.home.hook-title'), link: '' }, ...facts];
+
+const faqKeys = ['duration', 'countries', 'second-opinion', 'in-person', 'dermatitis', 'lure'];
+
+const faq = faqKeys.map((key) => ({
+    label: t(`pages.home.faq.${key}.question`),
+    content: [{ title: t(`pages.home.faq.${key}.answer`) }],
+}));
 </script>

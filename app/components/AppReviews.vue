@@ -47,7 +47,7 @@ const { data: reviews, pending } = useAsyncData<Review[]>(
         fetchReviews()
             .then((response) => response.data.data)
             .catch(() => {}),
-    { watch: [() => locale] }
+    { watch: [locale] }
 );
 
 useSeoReviews(reviews);

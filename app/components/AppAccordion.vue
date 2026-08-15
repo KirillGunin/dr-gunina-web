@@ -13,11 +13,11 @@
             <div ref="innerRef" class="accordion__inner">
                 <div v-for="item in items" :key="item.title">
                     <a v-if="item.link" :href="item.link" target="_blank" class="accordion__title">
-                        <SvgIcon class="accordion__icon" name="circle" />
+                        <SvgIcon v-if="withIcon" class="accordion__icon" name="circle" />
                         {{ item.title }}
                     </a>
                     <span v-else class="accordion__title">
-                        <SvgIcon class="accordion__icon" name="circle" />
+                        <SvgIcon v-if="withIcon" class="accordion__icon" name="circle" />
                         {{ item.title }}
                     </span>
                 </div>
@@ -37,6 +37,7 @@ type AccordionItem = {
 defineProps<{
     label: string;
     items: AccordionItem[];
+    withIcon?: boolean;
 }>();
 
 const isOpen = ref(false);
