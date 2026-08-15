@@ -166,7 +166,7 @@ const { data: services, pending } = useAsyncData<Service[]>(
         fetchServices()
             .then((response) => response.data.data)
             .catch(() => {}),
-    { watch: [() => locale] }
+    { watch: [locale] }
 );
 
 const purchaseService = (service: Service) => {
