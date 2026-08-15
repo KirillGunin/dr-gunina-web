@@ -10,6 +10,7 @@ export type Service = {
     actionTitle: string;
     attachment: ServiceAttachment | null;
     content: string;
+    seoDescription: string;
     details: string[];
     img: string;
     price: string;

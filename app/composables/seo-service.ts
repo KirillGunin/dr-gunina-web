@@ -32,16 +32,16 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
 
     useSeoMeta({
         title: () => service.value?.title,
-        description: () => service.value?.content,
+        description: () => service.value?.seoDescription,
         ogTitle: () => service.value?.title,
-        ogDescription: () => service.value?.content,
+        ogDescription: () => service.value?.seoDescription,
         ogType: 'website',
         ogUrl: canonicalUrl,
         ogImage: imageUrl,
         ogLocale: () => OG_LOCALE_BY_LANG[locale.value] ?? 'ru_RU',
         twitterCard: 'summary_large_image',
         twitterTitle: () => service.value?.title,
-        twitterDescription: () => service.value?.content,
+        twitterDescription: () => service.value?.seoDescription,
         robots: () =>
             service.value
                 ? 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'
@@ -67,22 +67,29 @@ export function useSeoService(service: Ref<Service | null | undefined>) {
 
                     return JSON.stringify({
                         '@context': 'https://schema.org',
-                        '@type': 'Service',
+                        '@type': 'MedicalWebPage',
                         name: service.value.title,
-                        description: service.value.content,
+                        description: service.value.seoDescription,
                         url: canonicalUrl.value,
                         image: imageUrl.value,
-                        provider: {
-                            '@type': 'Physician',
-                            '@id': `${SITE_URL}/#physician`,
-                            name: physicianName,
-                        },
-                        offers: {
-                            '@type': 'Offer',
-                            price: service.value.price,
-                            priceCurrency: 'RUB',
-                            availability: 'https://schema.org/InStock',
+                        mainEntity: {
+                            '@type': 'Service',
+                            name: service.value.title,
+                            description: service.value.seoDescription,
                             url: canonicalUrl.value,
+                            image: imageUrl.value,
+                            provider: {
+                                '@type': 'Physician',
+                                '@id': `${SITE_URL}/#physician`,
+                                name: physicianName,
+                            },
+                            offers: {
+                                '@type': 'Offer',
+                                price: service.value.price,
+                                priceCurrency: 'RUB',
+                                availability: 'https://schema.org/InStock',
+                                url: canonicalUrl.value,
+                            },
                         },
                     });
                 },

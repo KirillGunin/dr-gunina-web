@@ -4,7 +4,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         cursor: pointer;
         padding: var(--spacer-md) var(--spacer-xs);
         user-select: none;
@@ -20,13 +20,14 @@
         overflow: hidden;
         transition: max-height 0.3s ease;
         max-height: 0;
+        padding: 0 var(--spacer-xs);
     }
 
     &__inner {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        padding-bottom: 1rem;
+        padding-bottom: var(--spacer-sm);
     }
 
     &__title {
@@ -50,8 +51,18 @@
     }
 
     @media (--screen-xs) {
-        font-size: 14px;
-        font-weight: 400;
+        &__header {
+            padding: var(--spacer-sm) var(--spacer-xs);
+        }
+
+        &__header-label {
+            font-size: 16px;
+        }
+
+        &__title {
+            font-size: 13px;
+            font-weight: 400;
+        }
     }
 
     .dark-mode & {
