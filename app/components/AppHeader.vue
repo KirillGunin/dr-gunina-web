@@ -23,9 +23,21 @@
             </div>
         </div>
 
-        <Drawer v-model:visible="sidebarVisible" header="Меню" @click="sidebarVisible = false">
+        <Drawer
+            v-model:visible="sidebarVisible"
+            :header="t('header.menu')"
+            @click="sidebarVisible = false"
+        >
             <!-- Навигация -->
             <nav class="header__menu" aria-label="Main navigation">
+                <NuxtLink to="/" class="header__navigation-item">
+                    <AppButton variant="text">
+                        <i class="pi pi-home" />
+
+                        {{ t('others.home') }}
+                    </AppButton>
+                </NuxtLink>
+
                 <ul v-if="isHomePage" class="header__navigation">
                     <li
                         class="header__navigation-item"
@@ -39,14 +51,6 @@
                     </li>
                 </ul>
 
-                <NuxtLink v-else to="/" class="header__navigation-item">
-                    <AppButton variant="text">
-                        <i class="pi pi-home" />
-
-                        {{ t('others.home') }}
-                    </AppButton>
-                </NuxtLink>
-
                 <NuxtLink to="/pollen" class="header__navigation-item">
                     <AppButton variant="text">
                         <i class="pi pi-asterisk" />
@@ -55,13 +59,13 @@
                     </AppButton>
                 </NuxtLink>
 
-                <!--                <NuxtLink to="/blog" class="header__navigation-item">-->
-                <!--                    <AppButton variant="text">-->
-                <!--                        <i class="pi pi-book" />-->
+                <NuxtLink to="/blog" class="header__navigation-item">
+                    <AppButton variant="text">
+                        <i class="pi pi-book" />
 
-                <!--                        {{ t('header.blog') }}-->
-                <!--                    </AppButton>-->
-                <!--                </NuxtLink>-->
+                        {{ t('header.blog') }}
+                    </AppButton>
+                </NuxtLink>
 
                 <a
                     class="header__navigation-item"

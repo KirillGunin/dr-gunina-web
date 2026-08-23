@@ -1,0 +1,108 @@
+@use '../mixins' as m;
+
+.page-post {
+    @include m.page-wrapper;
+
+    &__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, auto);
+        gap: var(--spacer-xl);
+    }
+
+    &__header,
+    &__appointment {
+        background: var(--bg-service-card);
+        border-radius: 16px;
+        box-shadow: var(--shadow-soft);
+    }
+
+    &__aside {
+        position: sticky;
+        top: 120px;
+        grid-column-start: 3;
+        grid-row: span 4 / span 4;
+        grid-row-start: 1;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacer-xl);
+        align-self: start;
+    }
+
+    // header
+    &__header {
+        grid-column: span 2 / span 2;
+        grid-row: span 3 / span 3;
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacer-lg);
+        padding: var(--spacer-2xl);
+    }
+
+    // post
+    &__post {
+        grid-column: span 2 / span 2;
+
+        &::after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+
+    &__carousel {
+        width: 400px;
+        float: right;
+        margin-left: var(--spacer-lg);
+    }
+
+    &__content-footer {
+        display: flex;
+        align-items: center;
+        margin: var(--spacer-lg) 0 0;
+        gap: var(--spacer-xs);
+    }
+
+    &__content-footer-date {
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--notice-color);
+    }
+
+    @media (--screen-xs) {
+        &__content {
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            gap: var(--spacer-sm);
+        }
+
+        &__header {
+            gap: var(--spacer-lg);
+            padding: var(--spacer-sm);
+        }
+
+        &__carousel {
+            margin: 0 0 var(--spacer-xs) var(--spacer-xs);
+            width: 100%;
+        }
+
+        &__aside {
+            position: unset;
+            top: unset;
+            gap: var(--spacer-xs);
+            order: 3;
+            grid-column: auto;
+            grid-row: auto;
+        }
+
+        &__text {
+            font-size: 14px;
+        }
+
+        &__content-footer-date {
+            font-size: 12px;
+        }
+    }
+}

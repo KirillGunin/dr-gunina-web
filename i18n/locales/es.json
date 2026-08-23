@@ -100,6 +100,22 @@
         "error": {
             "title-404": "Página no encontrada",
             "description-404": "Puede que el página haya sido eliminado o el enlace esté desactualizado."
+        },
+        "blog": {
+            "title": "Blog",
+            "subtitle": "Análisis en lenguaje sencillo y basados en evidencia sobre pediatría, alergología y cuidado de la piel infantil",
+            "search-placeholder": "Buscar publicaciones",
+            "sorting": "Ordenar",
+            "sorting-new": "Más recientes primero",
+            "sorting-old": "Más antiguos primero",
+            "sorting-popular": "Más populares primero",
+            "posts-count": "{count} publicaciones",
+            "popular": "Popular",
+            "questions": "¿Tienes más preguntas?",
+            "questions-description": "Consulta online con pediatra y alergóloga-inmunóloga desde cualquier país.",
+            "questions-cta": "Reservar",
+            "load-more": "Cargar más",
+            "published": "Fecha de publicación"
         }
     },
     "addresses": {
@@ -212,6 +228,7 @@
         "home": "Inicio",
         "inn": "TIN",
         "more": "más",
-        "collapse": "menos"
+        "collapse": "menos",
+        "find-out": "Buscar"
     }
 }

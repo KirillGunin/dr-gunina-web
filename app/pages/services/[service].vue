@@ -1,6 +1,8 @@
 <template>
     <div class="page-service">
         <div class="container">
+            <AppBreadcrumb :breadcrumbs="breadcrumbs" />
+
             <PageSkeletonService v-if="loading" />
 
             <div v-else-if="service" class="page-service__content">
@@ -71,6 +73,7 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue';
 import { formatPrice } from '@/utils/formatPrice';
 import { fetchService } from '~/api/services';
 import { useSeoService } from '~/composables/seo-service';
@@ -80,6 +83,7 @@ import type { AxiosResponse } from 'axios';
 
 import PageSkeletonService from '@/components/skeletons/PageSkeletonService.vue';
 import AppReviews from '~/components/AppReviews.vue';
+import AppBreadcrumb from '~/components/AppBreadcrumb.vue';
 
 const route = useRoute();
 const toast = useToast();
@@ -125,4 +129,9 @@ const successAppointment = (response: AxiosResponse) => {
     useCookieAgreement().setAgreement('accept');
     modalAppointment.value = false;
 };
+
+const breadcrumbs = computed(() => [
+    { label: t('pages.home.services-title') },
+    { label: service?.value?.title },
+]);
 </script>

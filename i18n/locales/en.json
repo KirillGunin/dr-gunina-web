@@ -100,6 +100,22 @@
         "error": {
             "title-404": "Page not found",
             "description-404": "This page may have been removed, or the link is outdated."
+        },
+        "blog": {
+            "title": "Blog",
+            "subtitle": "Plain-language, evidence-based breakdowns on pediatrics, allergology, and children's skin care",
+            "search-placeholder": "Search posts",
+            "sorting": "Sort by",
+            "sorting-new": "Newest first",
+            "sorting-old": "Oldest first",
+            "sorting-popular": "Most popular first",
+            "posts-count": "{count} posts",
+            "popular": "Popular",
+            "questions": "Still have questions?",
+            "questions-description": "Online consultation with a pediatrician and allergist-immunologist from anywhere.",
+            "questions-cta": "Book now",
+            "load-more": "Load more",
+            "published": "Publication date"
         }
     },
     "addresses": {
@@ -212,6 +228,7 @@
         "home": "Home page",
         "inn": "TIN",
         "more": "more",
-        "collapse": "collapse"
+        "collapse": "collapse",
+        "find-out": "Search"
     }
 }

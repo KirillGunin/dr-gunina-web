@@ -2,7 +2,7 @@
     <input
         ref="inputElement"
         class="input"
-        :class="{ invalid: props.invalid }"
+        :class="[{ invalid: props.invalid }, computedClasses]"
         :disabled="disabled"
         :value="modelValue"
         @input="input"
@@ -25,6 +25,8 @@ interface Props {
     unmask?: boolean;
     invalid?: boolean;
     disabled?: boolean;
+    size?: 'xs' | 'sm' | 'lg';
+    rounded?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -33,6 +35,7 @@ const props = withDefaults(defineProps<Props>(), {
     unmask: false,
     invalid: false,
     disabled: false,
+    rounded: false,
 });
 
 const emit = defineEmits<{
@@ -41,6 +44,10 @@ const emit = defineEmits<{
 
 const inputElement = ref<HTMLInputElement | null>(null);
 const inputMask = ref<Inputmask.Instance | null>(null);
+
+const computedClasses = computed(() => {
+    return [props.size && `input--${props.size}`, props.rounded && 'input--rounded'];
+});
 
 const input = (e: Event) => {
     const target = e.target as HTMLInputElement;
