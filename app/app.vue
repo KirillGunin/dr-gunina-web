@@ -2,6 +2,8 @@
     <div>
         <NuxtRouteAnnouncer />
 
+        <NuxtLoadingIndicator color="var(--p-olive-50)" :height="5" />
+
         <NuxtLayout>
             <NuxtPage />
         </NuxtLayout>

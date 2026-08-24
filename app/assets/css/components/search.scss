@@ -1,0 +1,18 @@
+.search {
+    position: relative;
+
+    &__controls {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: var(--spacer-xs);
+        background: var(--body-bg);
+    }
+
+    &__control {
+        &--close {
+            margin: 0 var(--spacer-xs);
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+.post-carousel {
+    &__image {
+        display: block;
+        border-radius: 16px;
+        margin: 0 auto;
+    }
+
+    & .p-carousel-prev-button svg,
+    & .p-carousel-next-button svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    @media (--screen-xs) {
+        & .p-carousel-prev-button,
+        & .p-carousel-next-button {
+            display: none;
+        }
+    }
+}

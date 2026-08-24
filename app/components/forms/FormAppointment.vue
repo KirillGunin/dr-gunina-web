@@ -24,6 +24,7 @@
             v-model="state"
             v-slot="{ fields, frontendErrors, backendErrors, sending }"
             @success="(response) => emits('success:appointment', response)"
+            @validation-failed="validationError"
         >
             <div class="form-appointment__fields">
                 <AppField
@@ -210,6 +211,7 @@ const emits = defineEmits<{
 }>();
 
 const { t } = useI18n();
+const toast = useToast();
 
 const state = ref({
     name: '',
@@ -223,6 +225,15 @@ const state = ref({
 });
 
 const { appointmentRules } = useAppointmentRules(state);
+
+const validationError = () => {
+    toast.add({
+        severity: 'error',
+        summary: t('errors.common.error'),
+        detail: t('errors.appointment.error'),
+        life: 6000,
+    });
+};
 
 const genders = [
     { value: 'male', label: t('forms.appointment.gender-male') },

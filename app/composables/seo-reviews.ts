@@ -1,11 +1,13 @@
 // SEO: Schema.org Review-разметка для отзывов (https://schema.org/Review)
-import { useHead } from '#imports';
+import { useHead, useI18n } from '#imports';
 import type { Ref } from 'vue';
 import type { Review } from '@/types/reviews';
 
 const SITE_URL = 'https://dr-gunina.ru';
 
 export function useSeoReviews(reviews: Ref<Review[] | null | undefined>) {
+    const { t } = useI18n();
+
     useHead({
         script: [
             {
@@ -18,14 +20,31 @@ export function useSeoReviews(reviews: Ref<Review[] | null | undefined>) {
                     const ratingSum = reviews.value.reduce((sum, review) => sum + review.rating, 0);
                     const ratingAverage = ratingSum / reviews.value.length;
 
+                    // Google требует у LocalBusiness (Physician — его подтип) обязательные
+                    // name/image, даже если объект уже описан на другой странице через @id
+                    const itemReviewed = {
+                        '@type': 'Physician',
+                        '@id': `${SITE_URL}/#physician`,
+                        name: t('others.name'),
+                        image: `${SITE_URL}/images/main.png`,
+                        priceRange: '₽₽',
+                        telephone: '+7 (965) 067-79-77',
+                        address: {
+                            '@type': 'PostalAddress',
+                            addressLocality: 'Гатчина',
+                            addressRegion: 'Ленинградская область',
+                            addressCountry: 'RU',
+                            postalCode: '188300',
+                            streetAddress: 'ул. Хохлова, 9',
+                        },
+                    };
+
                     return JSON.stringify({
                         '@context': 'https://schema.org',
                         '@graph': [
                             {
                                 '@type': 'AggregateRating',
-                                itemReviewed: {
-                                    '@id': `${SITE_URL}/#physician`,
-                                },
+                                itemReviewed,
                                 ratingValue: Number(ratingAverage.toFixed(1)),
                                 reviewCount: reviews.value.length,
                                 bestRating: 5,
@@ -45,9 +64,7 @@ export function useSeoReviews(reviews: Ref<Review[] | null | undefined>) {
                                     bestRating: 5,
                                     worstRating: 1,
                                 },
-                                itemReviewed: {
-                                    '@id': `${SITE_URL}/#physician`,
-                                },
+                                itemReviewed,
                             })),
                         ],
                     });
