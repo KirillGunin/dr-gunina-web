@@ -49,6 +49,7 @@
 @use './components/post-preview';
 @use './components/post-popular';
 @use './components/post-carousel';
+@use './components/breadcrumb';
 
 // Skeletons
 @use 'components/skeletons/skeleton-card-service';
@@ -252,7 +253,7 @@ body {
     --base-red: #ff0000;
 
     // text color
-    --notice-color: #757575;
+    --notice-color: var(--p-neutral-300);
 
     // skeleton
     --skeleton-bg: var(--p-neutral-50);

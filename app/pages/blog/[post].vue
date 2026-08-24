@@ -35,7 +35,11 @@
 
                 <!--post-->
                 <div class="page-post__post">
-                    <AppPostCarousel class="page-post__carousel" :posts="post.media" />
+                    <AppPostCarousel
+                        v-if="post.media.length"
+                        class="page-post__carousel"
+                        :posts="post.media"
+                    />
 
                     <div
                         class="page-post__text"

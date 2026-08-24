@@ -183,7 +183,8 @@
         },
         "appointment": {
             "phone-or-telegram": "Indica un número de teléfono o usuario de Telegram",
-            "agreement": "Debes aceptar el tratamiento de datos"
+            "agreement": "Debes aceptar el tratamiento de datos",
+            "error": "Comprueba que los campos estén completados correctamente y que hayas aceptado el tratamiento de datos personales"
         }
     },
     "cookie": {

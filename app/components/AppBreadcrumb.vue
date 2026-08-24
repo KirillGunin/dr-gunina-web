@@ -8,11 +8,13 @@
                     style: {
                         padding: '0 0 var(--spacer-ml)',
                         fontSize: '14px',
+                        background: 'transparent',
                     },
                 },
                 itemLink: {
                     style: {
                         color: 'var(--notice-color)',
+                        whiteSpace: 'nowrap',
                     },
                 },
                 separator: {

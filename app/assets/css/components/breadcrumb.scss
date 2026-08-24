@@ -1,0 +1,12 @@
+.breadcrumb {
+    & .p-breadcrumb-list {
+        gap: var(--spacer-2xs);
+
+        &:last-of-type {
+            cursor: default;
+        }
+    }
+
+    mask-image: linear-gradient(to left, transparent, black var(--spacer-lg));
+    -webkit-mask-image: linear-gradient(to left, transparent, black var(--spacer-lg));
+}

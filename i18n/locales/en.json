@@ -183,7 +183,8 @@
         },
         "appointment": {
             "phone-or-telegram": "Please provide a phone number or Telegram username",
-            "agreement": "You must agree to the data processing"
+            "agreement": "You must agree to the data processing",
+            "error": "Please check that the fields are filled in correctly and that you've agreed to the processing of personal data"
         }
     },
     "cookie": {
