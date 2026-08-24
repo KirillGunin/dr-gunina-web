@@ -104,6 +104,8 @@
         "blog": {
             "title": "Blog",
             "subtitle": "Plain-language, evidence-based breakdowns on pediatrics, allergology, and children's skin care",
+            "seo-title": "Pediatrician's Blog — Dr. Ksenia Gunina on Children's Health",
+            "seo-description": "Plain-language, evidence-based articles on pediatrics, allergology, and children's skin care by pediatrician and allergist-immunologist Dr. Ksenia Gunina.",
             "search-placeholder": "Search posts",
             "sorting": "Sort by",
             "sorting-new": "Newest first",

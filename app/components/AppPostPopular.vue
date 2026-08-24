@@ -1,6 +1,6 @@
 <template>
     <div class="post-popular">
-        <p class="post-popular__title">{{ $t('pages.blog.popular') }}</p>
+        <p class="post-popular__heading">{{ $t('pages.blog.popular') }}</p>
 
         <div class="post-popular__items">
             <NuxtLink
@@ -10,7 +10,11 @@
                 :to="navigateToPath(post)"
             >
                 <span>0{{ i + 1 }}</span>
-                <p>{{ post.title }}</p>
+                <div class="post-popular__item-title">
+                    <p>{{ post.title }}</p>
+
+                    <span>{{ formatDate(post.date) }}</span>
+                </div>
             </NuxtLink>
         </div>
     </div>
@@ -19,6 +23,7 @@
 <script setup lang="ts">
 import { fetchPosts } from '~/api/posts';
 import type { PostQueryParams, Post } from '~/types/posts';
+import { formatDate } from '~/utils/formatTime';
 
 const localePath = useLocalePath();
 

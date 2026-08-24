@@ -78,6 +78,7 @@ import AppHeading from '~/components/AppHeading.vue';
 import AppPostPopular from '~/components/AppPostPopular.vue';
 import AppPostCarousel from '~/components/AppPostCarousel.vue';
 import AppBreadcrumb from '~/components/AppBreadcrumb.vue';
+import { useSeoPost } from '~/composables/seo-post';
 
 const toast = useToast();
 const route = useRoute();
@@ -94,6 +95,8 @@ const { data: post, pending } = await useAsyncData<Post | null>(
             .catch(() => null),
     { watch: [() => route.params.post] }
 );
+
+useSeoPost(post);
 
 if (post.value === null) {
     nuxtApp.runWithContext(() => {

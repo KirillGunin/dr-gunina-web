@@ -5,7 +5,7 @@
     border-radius: 16px;
     box-shadow: var(--shadow-soft);
 
-    &__title {
+    &__heading {
         font-size: 24px;
         font-weight: 500;
         user-select: none;
@@ -33,6 +33,11 @@
             min-width: 30px;
             margin-bottom: auto;
         }
+    }
+
+    &__item-title {
+        display: flex;
+        flex-direction: column;
 
         & p {
             font-size: 15px;
@@ -42,12 +47,19 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
+
+        & span {
+            color: var(--notice-color);
+            font-weight: 400;
+            line-height: 1.5;
+            font-size: 13px;
+        }
     }
 
     @media (--screen-xs) {
         padding: var(--spacer-sm);
 
-        &__title {
+        &__heading {
             font-size: 20px;
         }
 
@@ -59,6 +71,9 @@
         &__item {
             width: 100%;
             gap: var(--spacer-sm);
+        }
+
+        &__item-title {
 
             & p {
                 font-size: 14px;

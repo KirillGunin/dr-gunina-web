@@ -104,6 +104,8 @@
         "blog": {
             "title": "Blog",
             "subtitle": "Análisis en lenguaje sencillo y basados en evidencia sobre pediatría, alergología y cuidado de la piel infantil",
+            "seo-title": "Blog de la pediatra Ksenia Gunina: salud infantil",
+            "seo-description": "Artículos en lenguaje sencillo y basados en evidencia sobre pediatría, alergología y cuidado de la piel infantil, por la pediatra y alergóloga-inmunóloga Ksenia Gunina.",
             "search-placeholder": "Buscar publicaciones",
             "sorting": "Ordenar",
             "sorting-new": "Más recientes primero",

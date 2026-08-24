@@ -111,9 +111,12 @@ import AppReviews from '~/components/AppReviews.vue';
 import AppSkeletonPostPreview from '~/components/skeletons/AppSkeletonPostPreview.vue';
 import AppPostPopular from '~/components/AppPostPopular.vue';
 import AppBreadcrumb from '~/components/AppBreadcrumb.vue';
+import { useSeoBlog } from '~/composables/seo-blog';
 import { computed } from 'vue';
 
 const { t } = useI18n();
+
+useSeoBlog();
 
 const toast = useToast();
 const modalAppointment = ref<boolean>(false);
