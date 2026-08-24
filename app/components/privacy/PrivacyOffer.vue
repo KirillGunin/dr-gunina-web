@@ -5,12 +5,15 @@
             v-if="loading"
             color="var(--folder-blue-heading)"
         />
-        <div v-if="!loading && content" v-html="DOMPurify.sanitize(content)" />
+        <div
+            v-if="!loading && content"
+            v-html="DOMPurify.sanitize(content, { ADD_ATTR: ['target'] })"
+        />
     </div>
 </template>
 
 <script setup lang="ts">
-import DOMPurify from 'dompurify';
+import DOMPurify from 'isomorphic-dompurify';
 
 defineProps<{
     loading: boolean;

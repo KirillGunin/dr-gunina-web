@@ -19,7 +19,7 @@ type Props = {
     placeholder?: string;
     optionLabel: string;
     optionValue: string;
-    invalid: boolean;
+    invalid?: boolean;
 };
 
 withDefaults(defineProps<Props>(), {

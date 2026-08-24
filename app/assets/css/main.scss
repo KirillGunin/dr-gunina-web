@@ -22,6 +22,8 @@
 @use './pages/page-admin';
 @use './pages/page-pollen';
 @use './pages/page-error';
+@use './pages/page-blog';
+@use './pages/page-post';
 
 // Components
 @use './components/header';
@@ -42,12 +44,19 @@
 @use './components/modal';
 @use './components/review-card';
 @use './components/reviews-carousel';
+@use './components/heading';
+@use './components/search';
+@use './components/post-preview';
+@use './components/post-popular';
+@use './components/post-carousel';
+@use './components/breadcrumb';
 
 // Skeletons
 @use 'components/skeletons/skeleton-card-service';
 @use 'components/skeletons/skeleton-card-review';
 @use 'components/skeletons/page-skeleton-service';
 @use 'components/skeletons/skeleton-pollen-forecast';
+@use 'components/skeletons/skeleton-post-preview';
 
 // Forms
 @use './components/forms/form-appointment';
@@ -244,7 +253,7 @@ body {
     --base-red: #ff0000;
 
     // text color
-    --notice-color: #757575;
+    --notice-color: var(--p-neutral-300);
 
     // skeleton
     --skeleton-bg: var(--p-neutral-50);

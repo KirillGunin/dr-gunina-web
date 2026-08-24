@@ -389,10 +389,12 @@ const CustomPreset = definePreset(Aura, {
             },
         },
         dialog: {
+            root: {
+                borderColor: 'none',
+            },
             colorScheme: {
                 dark: {
                     root: {
-                        borderColor: 'transparent',
                         background: '{surface.800}',
                         shadow: 'var(--shadow-soft)',
                     },

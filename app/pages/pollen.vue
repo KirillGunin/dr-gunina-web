@@ -1,6 +1,8 @@
 <template>
     <div class="page-pollen">
         <div class="container">
+            <AppBreadcrumb :breadcrumbs="breadcrumbs" />
+
             <div class="page-pollen__content">
                 <h1 class="page-pollen__title">{{ t('pages.pollen.title') }}</h1>
                 <p class="page-pollen__subtitle">{{ t('pages.pollen.subtitle') }}</p>
@@ -110,7 +112,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { fetchPollen } from '~/api/pollen';
 import { useSeoPollen } from '~/composables/seo-pollen';
 import type {
@@ -125,6 +127,7 @@ import YandexMap from '~/components/YandexMap.vue';
 import AppSkeletonPollenForecast from '~/components/skeletons/AppSkeletonPollenForecast.vue';
 import type { LngLat } from '@yandex/ymaps3-types/common/types';
 import AppReviews from '~/components/AppReviews.vue';
+import AppBreadcrumb from '~/components/AppBreadcrumb.vue';
 
 const { t, locale } = useI18n();
 
@@ -217,4 +220,6 @@ const loadPollen = (coordinates: LngLat) => {
         .catch(() => (error.value = true))
         .finally(() => (loading.value = false));
 };
+
+const breadcrumbs = computed(() => [{ label: t('header.pollen') }]);
 </script>
