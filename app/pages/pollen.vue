@@ -9,16 +9,21 @@
 
                 <!--Map-->
                 <section class="page-pollen__content-map">
-                    <YandexMap
-                        :center="mapCenter"
-                        :zoom="10"
-                        :locations="[]"
-                        pin-on-click
-                        @map:click="(coordinates: LngLat) => loadPollen(coordinates)"
-                    />
+                    <div class="page-pollen__content-yandex-map">
+                        <YandexMap
+                            :center="mapCenter"
+                            :zoom="10"
+                            :locations="[]"
+                            pin-on-click
+                            @map:click="(coordinates: LngLat) => loadPollen(coordinates)"
+                        />
+                    </div>
 
                     <div class="page-pollen__content-map-hint">
-                        <h3>{{ t('pages.pollen.instruction') }}</h3>
+                        <h3>
+                            <i class="pi pi-map" style="font-size: 20px"></i>
+                            {{ t('pages.pollen.instruction') }}
+                        </h3>
 
                         <ul>
                             <li>
@@ -40,7 +45,10 @@
                     v-if="!loading && dates?.length"
                     class="page-pollen__content-info-calendar"
                 >
-                    <h4>{{ t('pages.pollen.forecast') }}:</h4>
+                    <h4>
+                        <i class="pi pi-calendar" style="font-size: 18px"></i>
+                        {{ t('pages.pollen.forecast') }}:
+                    </h4>
 
                     <div class="page-pollen__content-info-calendar-controls">
                         <AppButton
@@ -63,29 +71,39 @@
                     class="page-pollen__content-info-forecast"
                 >
                     <AppCard
+                        class="page-pollen__content-info-forecast-card"
+                        :class="getPlantsClass(group.plants.length)"
                         v-for="group in groupedPollenTypes"
                         :key="group.code"
                         :title="`${t('pages.pollen.plant')}: ${group.displayName}`"
                         :subtitle="`${group.inSeason ? t('pages.pollen.in-season') : t('pages.pollen.not-in-season')}`"
                     >
-                        <span
-                            class="page-pollen__content-info-forecast-recommendation"
-                            v-for="recommendation in group.healthRecommendations"
-                            :key="recommendation"
-                        >
-                            - {{ recommendation }}
-                        </span>
+                        <div class="page-pollen__content-plants">
+                            <PollenPlantCard
+                                v-for="plant in group.plants"
+                                :key="plant.code"
+                                :plant="plant"
+                            />
+                        </div>
 
-                        <PollenPlantCard
-                            v-for="plant in group.plants"
-                            :key="plant.code"
-                            :plant="plant"
-                        />
+                        <div class="page-pollen__content-info-forecast-recommendations">
+                            <p>{{ $t('pages.pollen.recommendations-title') }}</p>
+
+                            <span
+                                class="page-pollen__content-info-forecast-recommendation"
+                                v-for="recommendation in group.healthRecommendations"
+                                :key="recommendation"
+                            >
+                                - {{ recommendation }}
+                            </span>
+                        </div>
                     </AppCard>
 
                     <AppCard
                         v-if="uncategorizedPlants.length"
                         :subtitle="t('pages.pollen.uncategorized-title')"
+                        class="page-pollen__content-info-forecast-card"
+                        :class="getPlantsClass(uncategorizedPlants.length)"
                     >
                         <PollenPlantCard
                             v-for="plant in uncategorizedPlants"
@@ -107,6 +125,11 @@
             </div>
 
             <AppReviews />
+
+            <AppServicesCarousel
+                :heading="$t('pages.home.services-title')"
+                class="page-pollen__services-carousel"
+            />
         </div>
     </div>
 </template>
@@ -128,6 +151,7 @@ import AppSkeletonPollenForecast from '~/components/skeletons/AppSkeletonPollenF
 import type { LngLat } from '@yandex/ymaps3-types/common/types';
 import AppReviews from '~/components/AppReviews.vue';
 import AppBreadcrumb from '~/components/AppBreadcrumb.vue';
+import AppServicesCarousel from '~/components/AppServicesCarousel.vue';
 
 const { t, locale } = useI18n();
 
@@ -222,4 +246,15 @@ const loadPollen = (coordinates: LngLat) => {
 };
 
 const breadcrumbs = computed(() => [{ label: t('header.pollen') }]);
+
+const getPlantsClass = (length: number) => {
+    switch (length) {
+        case 2:
+            return 'page-pollen__content-info-forecast-card--double';
+        case 3:
+            return 'page-pollen__content-info-forecast-card--triple';
+        default:
+            return length > 3 ? 'page-pollen__content-info-forecast-card--multiply' : undefined;
+    }
+};
 </script>

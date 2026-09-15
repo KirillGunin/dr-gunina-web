@@ -9,7 +9,6 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(8, auto);
         gap: var(--spacer-xl);
-        margin-bottom: var(--spacer-xl);
     }
 
     &__header,

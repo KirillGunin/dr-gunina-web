@@ -1,6 +1,7 @@
 .reviews-carousel {
     display: flex;
     flex-direction: column;
+    margin-top: var(--spacer-xl);
 
     &__header {
         display: flex;

@@ -59,6 +59,11 @@
             </div>
 
             <AppReviews class="page-service__reviews" />
+
+            <AppServicesCarousel
+                :heading="$t('carousels.services.header')"
+                class="page-service__services-carousel"
+            />
         </div>
 
         <Transition :duration="300">
@@ -81,9 +86,10 @@ import { useCookieAgreement } from '~/composables/useCookieAgreement';
 import type { Service } from '@/types/service';
 import type { AxiosResponse } from 'axios';
 
-import PageSkeletonService from '@/components/skeletons/PageSkeletonService.vue';
 import AppReviews from '~/components/AppReviews.vue';
 import AppBreadcrumb from '~/components/AppBreadcrumb.vue';
+import AppServicesCarousel from '~/components/AppServicesCarousel.vue';
+import PageSkeletonService from '@/components/skeletons/PageSkeletonService.vue';
 
 const route = useRoute();
 const toast = useToast();

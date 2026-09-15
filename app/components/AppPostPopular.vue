@@ -1,5 +1,5 @@
 <template>
-    <div class="post-popular">
+    <div v-if="!pending && popular?.length" class="post-popular">
         <p class="post-popular__heading">{{ $t('pages.blog.popular') }}</p>
 
         <div class="post-popular__items">
@@ -33,7 +33,7 @@ const params = ref<PostQueryParams>({
     sort: 'popular',
 });
 
-const { data: popular } = useAsyncData<Post[]>('popular-posts', () =>
+const { data: popular, pending } = useAsyncData<Post[]>('popular-posts', () =>
     fetchPosts(params.value)
         .then((response) => response.data.data)
         .catch(() => [])

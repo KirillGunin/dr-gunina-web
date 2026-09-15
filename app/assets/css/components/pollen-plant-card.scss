@@ -1,6 +1,8 @@
 .pollen-plant-card {
     display: flex;
-    gap: var(--spacer-xl);
+    flex-direction: column;
+    width: 100%;
+    gap: var(--spacer-sm);
     padding: var(--spacer-sm) 0;
     border-top: 1px solid var(--p-surface-200);
 
@@ -10,8 +12,8 @@
 
     &__picture {
         width: 100%;
-        max-width: 350px;
-        height: 350px;
+        //max-width: 300px;
+        height: 220px;
         border-radius: 12px;
         object-fit: cover;
     }
@@ -19,7 +21,7 @@
     &__content-title {
         font-size: 15px;
         font-weight: 600;
-        margin: 0 0 var(--spacer-ml) var(--spacer-sm);
+        margin-bottom: var(--spacer-sm);
     }
 
     &__content-description {
@@ -35,7 +37,6 @@
 
     @media (--screen-xs) {
         display: flex;
-        flex-direction: column-reverse;
         gap: var(--spacer-sm);
 
         &__content-title {
