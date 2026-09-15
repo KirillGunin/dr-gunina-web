@@ -7,3 +7,43 @@
         margin-bottom: var(--spacer-md);
     }
 }
+
+@mixin carousel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacer-sm);
+    font-size: 26px;
+    font-weight: 500;
+
+    @media (--screen-xs) {
+        font-size: 20px;
+        margin-bottom: var(--spacer-md);
+    }
+}
+
+@mixin carousel-content {
+    position: relative;
+    display: flex;
+    margin: calc(var(--spacer-sm) * -1) calc(var(--spacer-xs) * -1);
+    padding: var(--spacer-sm) var(--spacer-xs);
+    gap: var(--spacer-md);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    touch-action: pan-x;
+    mask-image: linear-gradient(to right, transparent, black var(--spacer-lg), black calc(100% - var(--spacer-lg)), transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black var(--spacer-lg), black calc(100% - var(--spacer-lg)), transparent);
+}
+
+@mixin carousel-card {
+    display: grid;
+    align-items: start;
+    background: var(--p-card-background);
+    box-shadow: var(--shadow-soft);
+    border-radius: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}

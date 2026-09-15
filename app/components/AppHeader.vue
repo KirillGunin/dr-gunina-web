@@ -11,7 +11,7 @@
 
                 <!-- Логотип -->
                 <div class="header__logo">
-                    <NuxtLink to="/" class="header__logo-link" aria-label="Home">
+                    <NuxtLink :to="localePath('/')" class="header__logo-link" aria-label="Home">
                         <SvgIcon name="logo" />
                     </NuxtLink>
                 </div>
@@ -30,7 +30,7 @@
         >
             <!-- Навигация -->
             <nav class="header__menu" aria-label="Main navigation">
-                <NuxtLink to="/" class="header__navigation-item">
+                <NuxtLink :to="localePath('/')" class="header__navigation-item">
                     <AppButton variant="text">
                         <i class="pi pi-home" />
 
@@ -51,7 +51,7 @@
                     </li>
                 </ul>
 
-                <NuxtLink to="/pollen" class="header__navigation-item">
+                <NuxtLink :to="localePath('pollen')" class="header__navigation-item">
                     <AppButton variant="text">
                         <i class="pi pi-asterisk" />
 
@@ -59,7 +59,7 @@
                     </AppButton>
                 </NuxtLink>
 
-                <NuxtLink to="/blog" class="header__navigation-item">
+                <NuxtLink :to="localePath('blog')" class="header__navigation-item">
                     <AppButton variant="text">
                         <i class="pi pi-book" />
 
@@ -93,7 +93,7 @@
             </nav>
 
             <div class="header__navigation-item">
-                <AppButton variant="text" @click="moToProfile">
+                <AppButton variant="text" @click="moveToProfile">
                     <i :class="!user ? 'pi pi-sign-in' : 'pi pi-user'"></i>
                     {{ t('header.account') }}
                 </AppButton>
@@ -136,7 +136,7 @@ const scrollToSection = (sectionId: string) => {
     window.scrollTo({ top, behavior: 'smooth' });
 };
 
-const moToProfile = () => {
+const moveToProfile = () => {
     if (!user.value) {
         modalLogin.value = true;
         return;

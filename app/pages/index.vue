@@ -136,6 +136,17 @@ import type { AxiosResponse } from 'axios';
 import AppReviews from '@/components/AppReviews.vue';
 import AppSkeletonCardService from '@/components/skeletons/AppSkeletonCardService.vue';
 
+definePageMeta({
+    sitemap: {
+        images: [
+            {
+                loc: 'https://dr-gunina.ru/images/main.png',
+                title: 'Гунина Ксения Александровна — педиатр, аллерголог-иммунолог, дерматолог',
+            },
+        ],
+    },
+});
+
 useSeoHome();
 const { locale } = useI18n();
 const toast = useToast();

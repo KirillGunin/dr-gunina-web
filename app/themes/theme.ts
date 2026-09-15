@@ -266,6 +266,8 @@ const CustomPreset = definePreset(Aura, {
                         invalidBorderColor: 'var(--base-red)',
                         placeholderColor: 'var(--placeholder-color)',
                         invalidPlaceholderColor: 'var(--placeholder-color)',
+                        disabledBackground: '{neutral.50}',
+                        disabledColor: '{neutral.300}',
                     },
                     overlay: {
                         borderColor: '{salmon.200}',
@@ -282,6 +284,8 @@ const CustomPreset = definePreset(Aura, {
                     root: {
                         background: 'transparent',
                         invalidBorderColor: 'var(--base-red)',
+                        disabledBackground: 'transparent',
+                        disabledColor: '{neutral.400}',
                     },
                     option: {
                         selectedBackground: '{surface.800}',
