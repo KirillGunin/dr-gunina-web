@@ -25,9 +25,10 @@
                     <AppSelect
                         class="page-blog__sorting-select"
                         :model-value="params.sort"
-                        :placeholder="`${$t('pages.blog.sorting')} ${$t('pages.blog.posts-count', { count: meta?.total })}`"
+                        :placeholder="transformedPostCount"
                         option-value="value"
                         option-label="label"
+                        :disabled="!posts?.length"
                         :options="sortingValues"
                         @update:model-value="
                             (sort) => updateQueryParams({ sort: sort as PostQueryParams['sort'] })
@@ -101,18 +102,19 @@
     </div>
 </template>
 <script setup lang="ts">
+import { computed } from 'vue';
 import { useCookieAgreement } from '~/composables/useCookieAgreement';
 import { fetchPosts } from '~/api/posts';
+import { useSeoBlog } from '~/composables/seo-blog';
+import { declOfNum } from '~/composables/useHelpers';
 import type { AxiosResponse } from 'axios';
 import type { PostQueryParams, PostsResponse, Meta, Post } from '~/types/posts';
 
 import AppHeading from '~/components/AppHeading.vue';
 import AppReviews from '~/components/AppReviews.vue';
-import AppSkeletonPostPreview from '~/components/skeletons/AppSkeletonPostPreview.vue';
-import AppPostPopular from '~/components/AppPostPopular.vue';
 import AppBreadcrumb from '~/components/AppBreadcrumb.vue';
-import { useSeoBlog } from '~/composables/seo-blog';
-import { computed } from 'vue';
+import AppPostPopular from '~/components/AppPostPopular.vue';
+import AppSkeletonPostPreview from '~/components/skeletons/AppSkeletonPostPreview.vue';
 
 const { t } = useI18n();
 
@@ -171,4 +173,13 @@ const updateQueryParams = (patch: Partial<Pick<PostQueryParams, 'sort' | 'text'>
 };
 
 const breadcrumbs = computed(() => [{ label: t('pages.blog.title') }]);
+const transformedPostCount = computed(() => {
+    const word = declOfNum(meta.value?.total, [
+        t('pages.blog.post-one'),
+        t('pages.blog.posts-few'),
+        t('pages.blog.post-many'),
+    ]);
+
+    return `${t('pages.blog.sorting')} ${meta.value?.total ?? 0} ${word}`;
+});
 </script>

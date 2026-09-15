@@ -30,7 +30,6 @@
 import { ref } from 'vue';
 import { useI18n } from '#imports';
 import { useTheme } from '~/composables/useTheme';
-import { buildMailto } from '~/utils/buildMailto';
 import type { SpeedDialItem } from '~/types/speedDialItem';
 
 const { t, setLocale } = useI18n();

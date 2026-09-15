@@ -7,6 +7,7 @@
             :option-value="optionValue"
             :placeholder="placeholder"
             :invalid="invalid"
+            :disabled="disabled"
             @update:model-value="emits('update:model-value', $event)"
         />
     </div>
@@ -20,6 +21,7 @@ type Props = {
     optionLabel: string;
     optionValue: string;
     invalid?: boolean;
+    disabled?: boolean;
 };
 
 withDefaults(defineProps<Props>(), {
@@ -29,6 +31,7 @@ withDefaults(defineProps<Props>(), {
     optionLabel: '',
     optionValue: '',
     invalid: false,
+    disabled: false,
 });
 
 const emits = defineEmits<{

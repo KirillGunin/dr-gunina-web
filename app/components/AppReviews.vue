@@ -1,5 +1,5 @@
 <template>
-    <section class="reviews-carousel">
+    <section v-if="!pending && reviews?.length" class="reviews-carousel">
         <div class="reviews-carousel__header">
             <h2 class="reviews-carousel__title">{{ $t('review.reviews') }}</h2>
 
