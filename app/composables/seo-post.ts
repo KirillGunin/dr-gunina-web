@@ -6,20 +6,13 @@ import type { Post } from '@/types/posts';
 const SITE_URL = 'https://dr-gunina.ru';
 const DESCRIPTION_LENGTH = 160;
 
-const OG_LOCALE_BY_LANG: Record<string, string> = {
-    ru: 'ru_RU',
-    en: 'en_US',
-    es: 'es_ES',
-};
-
 export function useSeoPost(post: Ref<Post | null | undefined>) {
-    const { locale, t } = useI18n();
+    const { t } = useI18n();
     const route = useRoute();
     const physicianName = t('others.name');
 
-    const localePrefix = computed(() => (locale.value === 'ru' ? '' : `/${locale.value}`));
-    const path = computed(() => `/blog/${route.params.post}`);
-    const canonicalUrl = computed(() => `${SITE_URL}${localePrefix.value}${path.value}`);
+    // Статьи есть только на русском — /en и /es версии канонизируются на русскую
+    const canonicalUrl = computed(() => `${SITE_URL}/blog/${route.params.post}`);
 
     const seoTitle = computed(() => post.value?.title ?? t('pages.blog.title'));
     const seoDescription = computed(() => {
@@ -40,7 +33,7 @@ export function useSeoPost(post: Ref<Post | null | undefined>) {
         ogType: 'article',
         ogUrl: canonicalUrl,
         ogImage: imageUrl,
-        ogLocale: () => OG_LOCALE_BY_LANG[locale.value] ?? 'ru_RU',
+        ogLocale: 'ru_RU',
         articlePublishedTime: () => post.value?.date,
         twitterCard: 'summary_large_image',
         twitterTitle: seoTitle,
@@ -54,10 +47,8 @@ export function useSeoPost(post: Ref<Post | null | undefined>) {
     useHead({
         link: [
             { rel: 'canonical', href: canonicalUrl },
-            { rel: 'alternate', hreflang: 'ru', href: () => `${SITE_URL}${path.value}` },
-            { rel: 'alternate', hreflang: 'en', href: () => `${SITE_URL}/en${path.value}` },
-            { rel: 'alternate', hreflang: 'es', href: () => `${SITE_URL}/es${path.value}` },
-            { rel: 'alternate', hreflang: 'x-default', href: () => `${SITE_URL}${path.value}` },
+            { rel: 'alternate', hreflang: 'ru', href: canonicalUrl },
+            { rel: 'alternate', hreflang: 'x-default', href: canonicalUrl },
         ],
 
         script: [
@@ -80,7 +71,7 @@ export function useSeoPost(post: Ref<Post | null | undefined>) {
                                 image: imageUrl.value,
                                 datePublished: post.value.date,
                                 dateModified: post.value.date,
-                                inLanguage: locale.value,
+                                inLanguage: 'ru',
                                 url: canonicalUrl.value,
                                 isPartOf: { '@id': `${SITE_URL}/#blog` },
                                 // Google для Article/BlogPosting требует у author name,

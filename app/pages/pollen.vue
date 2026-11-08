@@ -40,6 +40,17 @@
 
                 <AppSkeletonPollenForecast v-if="loading" />
 
+                <p v-else-if="error" class="page-pollen__content-info-message">
+                    {{ t('pages.pollen.load-error') }}
+                </p>
+
+                <p
+                    v-else-if="pollenData && !dates?.length"
+                    class="page-pollen__content-info-message"
+                >
+                    {{ t('pages.pollen.no-season-data') }}
+                </p>
+
                 <!--Controls-->
                 <section
                     v-if="!loading && dates?.length"
@@ -224,6 +235,9 @@ const getTodayPollenDate = (): PollenDate => {
 
 const loadPollen = (coordinates: LngLat) => {
     loading.value = true;
+    error.value = false;
+    pollenData.value = null;
+    currentDailyInfo.value = null;
 
     fetchPollen(coordinates)
         .then((response) => {

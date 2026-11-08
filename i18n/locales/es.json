@@ -70,6 +70,8 @@
             "plants-title": "Plantas en temporada",
             "not-in-season": "Fuera de temporada",
             "no-data": "Sin datos",
+            "no-season-data": "Ahora no es temporada de floración: no hay datos de polen para este lugar.",
+            "load-error": "No se pudo cargar el pronóstico. Inténtalo de nuevo.",
             "uncategorized-title": "Sin categoría",
             "recommendations-title": "Recomendaciones",
             "family": "Familia",
