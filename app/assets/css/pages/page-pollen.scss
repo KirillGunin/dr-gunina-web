@@ -116,6 +116,12 @@
         }
     }
 
+    &__content-info-message {
+        font-size: 26px;
+        font-weight: 500;
+        margin-top: var(--spacer-ml);
+    }
+
     &__content-info-forecast {
         display: grid;
         grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -236,6 +242,11 @@
             width: calc(100% + var(--spacer-sm) * 2);
             -webkit-mask-image: unset;
             mask-image: unset;
+        }
+
+        &__content-info-message {
+            font-size: 20px;
+            margin-bottom: var(--spacer-2xs);
         }
 
         &__content-info-forecast {

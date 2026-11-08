@@ -70,6 +70,8 @@
             "plants-title": "Plants in season",
             "not-in-season": "Out of season",
             "no-data": "No data",
+            "no-season-data": "It is not flowering season right now: there is no pollen data for this location.",
+            "load-error": "Failed to load the forecast. Please try again.",
             "uncategorized-title": "Uncategorized",
             "recommendations-title": "Recommendations",
             "family": "Family",

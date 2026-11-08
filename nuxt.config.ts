@@ -60,7 +60,7 @@ export default defineNuxtConfig({
         name: 'Гунина Ксения Александровна — педиатр, аллерголог-имунолог, дерматолог',
     },
     sitemap: {
-        sources: ['/sitemap-urls/services'],
+        sources: ['/sitemap-urls/services', '/sitemap-urls/posts'],
         exclude: ['/admin', '/admin/**', '/privacy', '/en/privacy', '/es/privacy'],
     },
     routeRules: {
